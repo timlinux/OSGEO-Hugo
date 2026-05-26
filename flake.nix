@@ -1,5 +1,5 @@
 {
-  description = "QGIS Website";
+  description = "OSGeo Website";
 
   # nixConfig = {
   #   extra-substituters = [ "https://example.cachix.org" ];
@@ -94,13 +94,17 @@
               vscode # VSCode for development
               python3Packages.icalendar # Python packages
               python3Packages.requests # Python packages
+              python3Packages.beautifulsoup4 # HTML parsing for content harvester
+              python3Packages.lxml # Fast HTML/XML parser
+              python3Packages.html2text # HTML to markdown conversion
+              python3Packages.rich # Pretty terminal tables
               gnumake # GNU Make for build automation
             ];
             shellHook = ''
               export DIRENV_LOG_FORMAT=
               echo "-----------------------"
               echo "🌈 Your Hugo Dev Environment is ready."
-              echo "It provides hugo and vscode for use with the QGIS Website Project"
+              echo "It provides hugo and vscode for use with the OSGeo Website Project"
               echo ""
               echo "🪛 VSCode:"
               echo "--------------------------------"

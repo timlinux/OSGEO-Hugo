@@ -55,3 +55,17 @@ result
 PROMPT.log
 .claude/
 screenshot.png
+
+# Claude Code automation
+claude.sh
+claude.out
+PROMPT.log
+
+# Generated PDFs (regenerate from HTML)
+*.pdf
+
+# direnv
+.direnv/
+
+# VSCode logs
+vscode.log
