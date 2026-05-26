@@ -89,6 +89,38 @@
   font-weight: 400;
 }
 
+/* Divider and brand guide links */
+.theme-divider {
+  height: 1px;
+  background: #e5e5e5;
+  margin: 0.4rem 0;
+}
+.theme-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  color: #666;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.theme-link:hover {
+  background: #f4f4f4;
+  color: #333;
+}
+.theme-link .icon {
+  font-size: 0.75rem;
+  width: 20px;
+  text-align: center;
+  color: #999;
+}
+
+[data-theme="bold"] .theme-divider { background: rgba(255,255,255,0.06); }
+[data-theme="bold"] .theme-link { color: #9CA3AF; }
+[data-theme="bold"] .theme-link:hover { background: rgba(255,255,255,0.05); color: #D1D5DB; }
+[data-theme="bold"] .theme-link .icon { color: #666; }
+
 /* Dark theme overrides for dropdown */
 [data-theme="bold"] .theme-switcher-dropdown {
   background: #16162A;
@@ -422,12 +454,67 @@
 /* =============================================
    NAVBAR OVERRIDES PER THEME
    ============================================= */
+
+/* Current theme: fix green-on-white hover contrast failure (2.74:1 -> needs 4.5:1) */
+[data-theme="current"] .navbar.is-osgeo-nav .navbar-item:hover,
+[data-theme="current"] .navbar.is-osgeo-nav .navbar-link:hover {
+  color: #2D6E4B;
+}
+
+/* Refresh: dark navbar with white text */
 [data-theme="refresh"] .navbar.is-osgeo-nav {
   background: rgba(10,61,66,0.97) !important;
 }
+[data-theme="refresh"] .navbar.is-osgeo-nav .navbar-item,
+[data-theme="refresh"] .navbar.is-osgeo-nav .navbar-link {
+  color: rgba(255,255,255,0.9);
+}
+[data-theme="refresh"] .navbar.is-osgeo-nav .navbar-item:hover,
+[data-theme="refresh"] .navbar.is-osgeo-nav .navbar-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+[data-theme="refresh"] .navbar-dropdown {
+  background: #fff;
+  border-top: 2px solid #3DA34D;
+}
+[data-theme="refresh"] .navbar-dropdown .navbar-item {
+  color: #0A3D42;
+}
+[data-theme="refresh"] .navbar-dropdown .navbar-item:hover {
+  background: #E2F0E4;
+  color: #0A3D42;
+}
+
+/* Modern: dark slate navbar with white text */
 [data-theme="modern"] .navbar.is-osgeo-nav {
   background: rgba(15,23,42,0.97) !important;
 }
+[data-theme="modern"] .navbar.is-osgeo-nav .navbar-item,
+[data-theme="modern"] .navbar.is-osgeo-nav .navbar-link {
+  color: rgba(255,255,255,0.85);
+}
+[data-theme="modern"] .navbar.is-osgeo-nav .navbar-item:hover,
+[data-theme="modern"] .navbar.is-osgeo-nav .navbar-link:hover {
+  color: #22C55E;
+  background: rgba(255,255,255,0.05);
+}
+[data-theme="modern"] .navbar-dropdown {
+  background: #0F172A;
+  border-top: 2px solid #22C55E;
+}
+[data-theme="modern"] .navbar-dropdown .navbar-item {
+  color: #CBD5E1;
+}
+[data-theme="modern"] .navbar-dropdown .navbar-item:hover {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+[data-theme="modern"] .navbar-divider {
+  background-color: #1E293B;
+}
+
+/* Earth: deep ocean navbar (already defined below) */
 [data-theme="earth"] .navbar.is-osgeo-nav {
   background: rgba(11,29,58,0.97) !important;
 }
@@ -528,19 +615,146 @@
 }
 
 /* Solid heading colors per theme */
-[data-theme="current"] .section-title,
-[data-theme="current"] .hero-headline .highlight { color: var(--osgeo-teal); }
-
-[data-theme="refresh"] .section-title,
-[data-theme="refresh"] .hero-headline .highlight { color: #0A3D42; }
-
-[data-theme="modern"] .section-title,
-[data-theme="modern"] .hero-headline .highlight { color: #0F172A; }
-
-[data-theme="bold"] .section-title,
-[data-theme="bold"] .hero-headline .highlight { color: #00FF88; }
+/* Section titles (on light backgrounds) */
+[data-theme="current"] .section-title { color: var(--osgeo-teal); }
+[data-theme="refresh"] .section-title { color: #0A3D42; }
+[data-theme="modern"] .section-title { color: #0F172A; }
+[data-theme="bold"] .section-title { color: #00FF88; }
 [data-theme="bold"] .section-header.is-dark .section-title { color: #fff; }
-
-[data-theme="earth"] .section-title,
-[data-theme="earth"] .hero-headline .highlight { color: #0B1D3A; }
+[data-theme="earth"] .section-title { color: #0B1D3A; }
 [data-theme="earth"] .section-header.is-dark .section-title { color: #B8DCF0; }
+[data-theme="vibrant"] .section-title { color: #1A0A2E; }
+[data-theme="vibrant"] .section-header.is-dark .section-title { color: #FF6BB5; }
+
+/* Hero headline highlight - must be white (it's on a dark hero background) */
+[data-theme] .hero-headline .highlight {
+  color: #ffffff !important;
+}
+
+/* =============================================
+   THEME E: VIBRANT
+   Hot pink, electric blue, sunny yellow on white.
+   Loud, energetic, festival-poster energy.
+   ============================================= */
+[data-theme="vibrant"] {
+  --osgeo-green: #E5198C;
+  --osgeo-green-light: #FF6BB5;
+  --osgeo-green-dark: #B8136F;
+  --osgeo-teal: #1A0A2E;
+  --osgeo-teal-light: #3D1D72;
+  --osgeo-teal-dark: #0D0519;
+
+  --accent-cyan: #00D4FF;
+  --accent-emerald: #00E676;
+  --accent-amber: #FFD600;
+  --accent-coral: #FF3D00;
+
+  --gradient-earth: linear-gradient(135deg, #E5198C 0%, #7B2FFF 50%, #00D4FF 100%);
+  --gradient-ocean: linear-gradient(135deg, #00D4FF 0%, #00E676 50%, #FFD600 100%);
+  --gradient-sunset: linear-gradient(135deg, #FF3D00 0%, #FFD600 50%, #00E676 100%);
+  --gradient-forest: linear-gradient(135deg, #1A0A2E 0%, #7B2FFF 50%, #E5198C 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(26,10,46,0.92) 0%, rgba(123,47,255,0.8) 50%, rgba(229,25,140,0.7) 100%);
+  --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(252,245,255,0.99) 100%);
+  --gradient-dark-card: linear-gradient(145deg, rgba(26,10,46,0.97) 0%, rgba(13,5,25,0.99) 100%);
+
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.25);
+
+  --shadow-sm: 0 2px 4px rgba(26, 10, 46, 0.08);
+  --shadow-md: 0 4px 12px rgba(26, 10, 46, 0.12);
+  --shadow-lg: 0 8px 24px rgba(26, 10, 46, 0.18);
+  --shadow-xl: 0 16px 48px rgba(26, 10, 46, 0.24);
+  --shadow-glow: 0 0 40px rgba(229, 25, 140, 0.3);
+}
+
+/* Vibrant: hero overrides */
+[data-theme="vibrant"] .hero.is-osgeo-hero::after {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(229,25,140,0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0,212,255,0.25) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(123,47,255,0.15) 0%, transparent 70%);
+}
+[data-theme="vibrant"] .osgeo-hero > .hero-bg-image::after {
+  background: linear-gradient(135deg, rgba(26,10,46,0.8) 0%, rgba(123,47,255,0.5) 40%, rgba(229,25,140,0.3) 100%);
+}
+[data-theme="vibrant"] .osgeo-hero-home .hero-bg-image::after,
+[data-theme="vibrant"] .osgeo-hero-home::before {
+  background: linear-gradient(135deg, rgba(26,10,46,0.92) 0%, rgba(123,47,255,0.75) 50%, rgba(229,25,140,0.6) 100%) !important;
+}
+[data-theme="vibrant"] .interstitial-section.is-gradient-earth {
+  background: var(--gradient-earth);
+}
+[data-theme="vibrant"] .interstitial-section.is-gradient-ocean {
+  background: var(--gradient-ocean);
+}
+[data-theme="vibrant"] .page-hero-badge {
+  border-color: rgba(229,25,140,0.5);
+}
+
+/* Vibrant: navbar - deep purple with pink/cyan accents */
+[data-theme="vibrant"] .navbar.is-osgeo-nav {
+  background: rgba(26,10,46,0.97) !important;
+}
+[data-theme="vibrant"] .navbar.is-osgeo-nav .navbar-item,
+[data-theme="vibrant"] .navbar.is-osgeo-nav .navbar-link {
+  color: rgba(255,255,255,0.9);
+}
+[data-theme="vibrant"] .navbar.is-osgeo-nav .navbar-item:hover,
+[data-theme="vibrant"] .navbar.is-osgeo-nav .navbar-link:hover {
+  color: #FF6BB5;
+  background: rgba(255,255,255,0.06);
+}
+[data-theme="vibrant"] .navbar-dropdown {
+  background: #1A0A2E;
+  border-top: 2px solid #E5198C;
+}
+[data-theme="vibrant"] .navbar-dropdown .navbar-item {
+  color: rgba(255,255,255,0.85);
+}
+[data-theme="vibrant"] .navbar-dropdown .navbar-item:hover {
+  background: rgba(229,25,140,0.1);
+  color: #fff;
+}
+[data-theme="vibrant"] .navbar-divider {
+  background-color: rgba(255,255,255,0.08);
+}
+
+/* Vibrant: buttons */
+[data-theme="vibrant"] .button.is-osgeo-primary {
+  background: #E5198C; border-color: #E5198C; color: #fff;
+}
+[data-theme="vibrant"] .button.is-osgeo-primary:hover {
+  background: #FF6BB5;
+}
+
+/* Vibrant: section badges */
+[data-theme="vibrant"] .section-header-badge { background: #E5198C; color: #fff; }
+
+/* Vibrant: section titles handled above in consolidated block */
+
+/* Vibrant: footer */
+[data-theme="vibrant"] .footer {
+  background: #0D0519;
+  color: #B388FF;
+}
+[data-theme="vibrant"] .footer a { color: #E0B0FF; }
+[data-theme="vibrant"] .footer a:hover { color: #FFD600; }
+
+/* Vibrant: dropdown theme */
+[data-theme="vibrant"] .theme-switcher-dropdown {
+  background: #1A0A2E;
+  border: 1px solid rgba(229,25,140,0.2);
+}
+[data-theme="vibrant"] .theme-switcher-dropdown .theme-option {
+  color: rgba(255,255,255,0.85);
+}
+[data-theme="vibrant"] .theme-switcher-dropdown .theme-option:hover {
+  background: rgba(229,25,140,0.1);
+}
+[data-theme="vibrant"] .theme-switcher-dropdown .theme-option.is-active::after {
+  color: #E5198C;
+}
+[data-theme="vibrant"] .theme-divider { background: rgba(255,255,255,0.06); }
+[data-theme="vibrant"] .theme-link { color: #B388FF; }
+[data-theme="vibrant"] .theme-link:hover { background: rgba(229,25,140,0.1); color: #fff; }
+[data-theme="vibrant"] .theme-link .icon { color: #7B2FFF; }
