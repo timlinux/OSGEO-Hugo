@@ -182,3 +182,133 @@ section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number .stat-plus {
 .hero-stat-card .stat-icon {
   color: rgba(255, 255, 255, 0.4);
 }
+
+/* Project info tags (avoids bulma-badge .badge conflict) */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* =============================================
+   PROJECT HERO - Make it beautiful
+   Use category color for a rich gradient hero
+   ============================================= */
+
+.project-hero {
+  background: var(--gradient-hero) !important;
+  padding: 6rem 0 4rem !important;
+  min-height: 360px;
+}
+
+/* Remove the thin top border - the gradient IS the hero now */
+.project-hero::before {
+  display: none;
+}
+
+/* Add ambient glow orbs like the main hero */
+.project-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* White breadcrumb on dark hero */
+.project-hero .project-breadcrumb {
+  color: rgba(255,255,255,0.6);
+}
+.project-hero .project-breadcrumb a {
+  color: rgba(255,255,255,0.7);
+}
+.project-hero .project-breadcrumb a:hover {
+  color: #fff;
+}
+.project-hero .project-breadcrumb span {
+  color: rgba(255,255,255,0.4);
+}
+
+/* White title and tagline */
+.project-hero .project-hero-title {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.project-hero .project-hero-tagline {
+  color: rgba(255,255,255,0.85);
+}
+
+/* Badges on dark background */
+.project-hero .badge {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.project-hero .badge-incubated {
+  background: rgba(255,255,255,0.2);
+}
+.project-hero .badge-category {
+  border: 1px solid rgba(255,255,255,0.3) !important;
+}
+
+/* Buttons - primary stays vivid, others get glass treatment */
+.project-hero .btn-hero.btn-secondary {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
+}
+.project-hero .btn-hero.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+.project-hero .btn-hero.btn-outline {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-color: rgba(255,255,255,0.25);
+}
+.project-hero .btn-hero.btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Logo image - white container with glow */
+.project-hero .project-hero-image {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.2),
+    0 0 60px rgba(255,255,255,0.1);
+}
+.project-hero .project-hero-image img {
+  max-height: 160px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Icon fallback - glass card */
+.project-hero .project-hero-icon {
+  background: rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+}

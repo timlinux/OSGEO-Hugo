@@ -1,0 +1,145 @@
+<footer class="footer is-osgeo-footer">
+    <div class="container">
+        <div class="columns is-desktop">
+            <div class="column is-2-desktop">
+                <figure class="image is-128x128">
+                    <img alt="OSGeo Logo" src="{{ absURL "img/osgeo/osgeo-logo.svg" }}" class="footer-logo" />
+                </figure>
+                <p class="mt-4 is-size-7 has-text-grey-light">
+                    The Open Source Geospatial Foundation
+                </p>
+            </div>
+            <div class="column mb-6">
+                <div class="columns is-desktop">
+                    <ul class="column mb-5">
+                        <li class="footer-heading mb-4">
+                            Projects
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "projects" }}">OSGeo Projects</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "projects/community" }}">Community Projects</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "about/incubation" }}">Incubation</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "initiatives/osgeolive" }}">OSGeoLive</a>
+                        </li>
+                    </ul>
+
+                    <ul class="column mb-5">
+                        <li class="footer-heading mb-4">
+                            Community
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "community/getting-started" }}">Get Started</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "local-chapters" }}">Local Chapters</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "community/mailing-lists" }}">Mailing Lists</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "community/code-of-conduct" }}">Code of Conduct</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "service-providers" }}">Service Providers</a>
+                        </li>
+                    </ul>
+
+                    <ul class="column mb-5">
+                        <li class="footer-heading mb-4">
+                            Initiatives
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "initiatives/foss4g" }}">FOSS4G</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "initiatives/geo-for-all" }}">Geo for All</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "initiatives/gsoc" }}">Google Summer of Code</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "events" }}">Events</a>
+                        </li>
+                    </ul>
+
+                    <ul class="column mb-5">
+                        <li class="footer-heading mb-4">
+                            About
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "about" }}">About OSGeo</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "about/faq" }}">FAQ</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "sponsors" }}">Sponsors</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "about/contact" }}">Contact</a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="{{ absURL "about/branding" }}">Branding</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column is-2-desktop has-text-centered-mobile">
+                <a href="{{ absURL "membership" }}" class="button is-osgeo-cta mb-4">
+                    Support OSGeo
+                </a>
+                <div class="footer-social mt-4">
+                    <a href="https://fosstodon.org/@osgeo" aria-label="Mastodon">
+                        <i class="fa-brands fa-mastodon"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/osgeo" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/osgeo" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@osgeo" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="has-background-grey-dark my-5">
+
+        <div class="columns is-desktop is-vcentered">
+            <div class="column">
+                <p class="is-size-7 has-text-grey-light">
+                    &copy; {{ now.Year }} Open Source Geospatial Foundation. OSGeo is a US 501(c)(4) not-for-profit organization.
+                </p>
+            </div>
+            <div class="column is-narrow">
+                <div class="privacy-links is-size-7">
+                    <a href="{{ absURL "community/code-of-conduct" }}">Code of Conduct</a>
+                    <span class="mx-2">|</span>
+                    <a href="{{ absURL "about/branding" }}">Trademark Policy</a>
+                    <span class="mx-2">|</span>
+                    <a href="https://wiki.osgeo.org">Wiki</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ if .Site.Params.commitFile }}
+    <div class="commit-link is-size-7 has-text-centered mt-4">
+        {{ $commit := readFile (print .Site.Params.commitFile) }}
+        <p class="has-text-grey">
+            <a href="https://github.com/OSGeo/osgeo-hugo/commit/{{ $commit }}" target="_blank" class="has-text-grey">
+                <i class="fa-brands fa-github"></i> Commit: {{ $commit | truncate 7 "" }}
+            </a>
+        </p>
+    </div>
+    {{ end }}
+</footer>
+{{ partial "fix-links.html" . }}

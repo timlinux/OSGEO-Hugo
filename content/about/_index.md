@@ -1,346 +1,79 @@
 ---
-type: "page"
-title: "About OSGeo"
-subtitle: "Empowering everyone with open geospatial technology"
-description: "The Open Source Geospatial Foundation (OSGeo) is a not-for-profit organization supporting the collaborative development of open source geospatial software."
-
+title: "About OSGeo - OSGeo"
 draft: false
-heroSize: "is-medium"
-HeroImage: "img/banners/about-banner.webp"
-HasBanner: true
-ButtonText: "Become a Member"
-ButtonLink: "/membership/"
-LabelText: "Est. February 2006"
+aliases:
+  - /about/
+harvested_from: "https://www.osgeo.org/about/"
 ---
 
-{{< box-start class="is-light2 p-5 mb-6" >}}
+The foundation provides financial, organizational and legal support to the broader open source geospatial community. It also serves as an independent legal entity to which community members can contribute code, funding and other resources, secure in the knowledge that their contributions will be maintained for public benefit. OSGeo also serves as an outreach and advocacy organization for the open source geospatial community, and provides a common forum and shared infrastructure for improving cross-project collaboration.
 
-<div class="section-header">
-<div class="section-header-badge">
-<i class="fa-solid fa-eye"></i>
-<span>Vision</span>
-</div>
-<h2 class="section-title">Our Vision</h2>
-</div>
+The foundation’s projects are all freely available and useable under an [Open Source Initiative](<http://www.opensource.org/licenses/>) certified open source license.
 
-**Empower everyone with open source geospatial.**
+OSGeo has [US 501(c)(4)](<https://en.wikipedia.org/wiki/501\(c\)_organization#501.28c.29.284.29>) legal status as a not-for-profit organization, supported by GeoCat and other [sponsors](</sponsors/>).
 
-We believe that geographic data and the tools to work with it should be accessible to all.
+## OSGeo Vision
 
-{{< box-end >}}
+Empower everyone with open source geospatial
 
-<div class="section-header">
-<div class="section-header-badge">
-<i class="fa-solid fa-bullseye"></i>
-<span>Mission</span>
-</div>
-<h2 class="section-title">Our Mission</h2>
-</div>
+## OSGeo Mission Statement
 
-The Open Source Geospatial Foundation (OSGeo) is a **not-for-profit organization** whose mission is to foster global adoption of open geospatial technology by being an inclusive software foundation devoted to an open philosophy and participatory community-driven development.
+Foster global adoption of open geospatial technology by being an inclusive software foundation devoted to an open philosophy and participatory community driven development.
 
-We serve as:
-- **An independent legal entity** to hold code and other resources for the benefit of our projects
-- **A financial hub** to accept and distribute funds for community development
-- **An advocacy organization** promoting open source geospatial software and open standards
-- **A community catalyst** fostering cooperation among projects and users worldwide
+## OSGeo Goals
 
-<div class="section-header">
-<div class="section-header-badge">
-<i class="fa-solid fa-gears"></i>
-<span>Activities</span>
-</div>
-<h2 class="section-title">What We Do</h2>
-</div>
+The following aspirational goals support the overall mission. As a foundation we seek to:
 
-{{< columns-start >}}
+  * provide resources for foundation projects;
+  * foster the use of open source geospatial software;
+  * encourage interoperability with open and community standards;
+  * ensure interoperability between the foundation projects;
+  * encourage a high degree of quality and innovation in foundation projects;
+  * champion the use of open-source and community participation through the development of an open education curriculum
+  * enable communication and cooperation amongst OSGeo communities;
+  * champion community building through horizontal (local chapters) engagement and through vertical (sector specific) agreements with like-minded organizations;
+  * be a welcoming and inclusive worldwide organization at all levels;
+  * celebrate excellence, openness and service within the OSGeo community.
 
-{{< column-start class="is-6" >}}
-{{< rich-box-start icon="fa-solid fa-code" >}}
-### Support Open Source Projects
+## Foundation Details
 
-We provide a home for 50+ open source geospatial software projects, helping them grow through infrastructure, community support, and governance guidance. Our incubation process ensures projects meet high standards for code quality and community health.
+**Information**
 
-[View Our Projects &rarr;](/projects/)
-{{< rich-box-end >}}
-{{< column-end >}}
+  * [What is open source?](</about/what-is-open-source/>)
+  * [Contact](</about/contact/>)
+  * [FAQ](</about/faq/>)
 
-{{< column-start class="is-6" >}}
-{{< rich-box-start icon="fa-solid fa-calendar-days" >}}
-### Organize Global Events
+**Governance**
 
-FOSS4G (Free and Open Source Software for Geospatial) is our flagship annual conference, drawing 1,000+ participants from around the world. We also support regional events and local chapter meetups.
+  * [Certificate of Incorporation](</wp-content/uploads/osgeo_certificate.pdf>) (pdf)
+  * [Bylaws](</about/bylaws/>)
+  * [Code of Conduct](</code_of_conduct/>)
+  * [Board Meeting Archives](<http://wiki.osgeo.org/wiki/Board_of_Directors#Board_Activities_and_Meetings>)
 
-[Learn About FOSS4G &rarr;](/initiatives/foss4g/)
-{{< rich-box-end >}}
-{{< column-end >}}
+**Bodies**
 
-{{< columns-end >}}
+  * [Board of Directors and Officers](</about/board/>) ([wiki](<https://wiki.osgeo.org/wiki/Board_of_Directors>))
+  * [Membership Categories & Rules](<http://www.osgeo.org/Membership>)
+  * [Charter Members](</about/charter-members/>) ([wiki](<https://wiki.osgeo.org/wiki/Charter_Members>))
+  * [Local Chapters](<https://www.osgeo.org/local-chapters/>) ([wiki](<https://wiki.osgeo.org/wiki/Local_Chapters>))
+  * [Committees](</about/committees/>) ([wiki](<https://wiki.osgeo.org/wiki/Category:Committees>))
 
-{{< columns-start >}}
+**Initiatives**
 
-{{< column-start class="is-6" >}}
-{{< rich-box-start icon="fa-solid fa-graduation-cap" >}}
-### Promote Education
+  * [Initiatives](</initiatives/>)
 
-Through Geo for All, we partner with universities and research institutions worldwide to expand open source geospatial education. Our OSGeoLive distribution provides hands-on learning with 50+ pre-configured applications.
+**Legal**
 
-[Explore Geo for All &rarr;](/initiatives/geo-for-all/)
-{{< rich-box-end >}}
-{{< column-end >}}
+  * [Legal Information](</legal-information/>)
+  * [Licenses](</about/licenses/>)
 
-{{< column-start class="is-6" >}}
-{{< rich-box-start icon="fa-solid fa-users" >}}
-### Build Global Community
+**Awards**
 
-We connect developers, users, and advocates through local chapters, mailing lists, and online collaboration. OSGeo provides an inclusive, welcoming space for everyone interested in open geospatial.
+  * [Awards](</community/awards/>)
 
-[Join the Community &rarr;](/community/)
-{{< rich-box-end >}}
-{{< column-end >}}
+**Media and Communication**
 
-{{< columns-end >}}
-
-<div class="section-header">
-<div class="section-header-badge">
-<i class="fa-solid fa-clock-rotate-left"></i>
-<span>History</span>
-</div>
-<h2 class="section-title">Our History</h2>
-</div>
-
-{{< columns-start >}}
-
-{{< column-start class="is-8" >}}
-
-OSGeo was founded in **February 2006** in Chicago, bringing together existing open source geospatial projects under a unified foundation. The founding was supported by a generous contribution from Autodesk, which donated the MapGuide code base to the foundation.
-
-### Key Milestones
-
-- **2006**: OSGeo founded; first FOSS4G conference held in Lausanne, Switzerland
-- **2008**: Geo for All initiative launched
-- **2010**: 100th charter member joins
-- **2016**: OSGeo celebrates 10th anniversary
-- **2020**: OSGeo adapts to virtual events during pandemic
-- **2026**: OSGeo celebrates 20 years of open source geospatial!
-
-Today, OSGeo supports over 50 software projects and has more than 300 charter members from around the world.
-
-{{< column-end >}}
-
-{{< column-start class="is-4" >}}
-{{< rich-box-start >}}
-### 20 Years Strong
-
-In 2026, we celebrate two decades of fostering open source geospatial technology. Join us in building the next 20 years!
-
-[Join the Celebration &rarr;](/news/)
-{{< rich-box-end >}}
-{{< column-end >}}
-
-{{< columns-end >}}
-
-<div class="section-header">
-<div class="section-header-badge">
-<i class="fa-solid fa-landmark"></i>
-<span>Leadership</span>
-</div>
-<h2 class="section-title">Governance</h2>
-</div>
-
-OSGeo is governed by a **Board of Directors** elected by our Charter Members. The board sets the strategic direction of the foundation and oversees its operations.
-
-{{< columns-start >}}
-
-{{< column-start class="is-6" >}}
-
-### Board of Directors
-
-| Name | Role |
-|------|------|
-| Jeroen Ticheler | President |
-| Tom Kralidis | VP North America |
-| Tim Sutton | VP Africa |
-| Codrina Maria Ilie | VP Europe |
-| Marco Bernasocchi | VP Oceania |
-| Vicky Vergara | VP South America & Asia |
-| Angelos Tzotsos | Board Member |
-| Joana Simoes | Board Member |
-| Michael Smith | Treasurer |
-
-*Secretary: Astrid Emde*
-
-{{< column-end >}}
-
-{{< column-start class="is-6" >}}
-{{< rich-box-start >}}
-### How Governance Works
-
-- **Charter Members** elect the Board of Directors
-- **Board** appoints officers and sets foundation direction
-- **Committees** drive specific initiatives (Conference, Incubation, Marketing, etc.)
-- **Project Steering Committees** guide individual software projects
-
-The foundation operates as a "do-ocracy" - influence comes from participation.
-
-[View Board Meeting Minutes &rarr;](https://wiki.osgeo.org/wiki/Board_of_Directors)
-{{< rich-box-end >}}
-{{< column-end >}}
-
-{{< columns-end >}}
-
-<div class="section-header">
-<div class="section-header-badge">
-<i class="fa-solid fa-scale-balanced"></i>
-<span>Legal</span>
-</div>
-<h2 class="section-title">Legal Status</h2>
-</div>
-
-{{< columns-start >}}
-
-{{< column-start class="is-6" >}}
-
-OSGeo is incorporated in the **State of Delaware, USA** as a **501(c)(4)** not-for-profit organization. This status allows us to:
-
-- Hold intellectual property on behalf of projects
-- Accept donations and sponsorships
-- Enter into contracts and agreements
-- Provide legal protection for contributors
-
-{{< column-end >}}
-
-{{< column-start class="is-6" >}}
-
-### Key Documents
-
-- [Certificate of Incorporation](https://wiki.osgeo.org/wiki/Incorporation)
-- [Bylaws](/about/bylaws/)
-- [Code of Conduct](/community/code-of-conduct/)
-- [Trademark Guidelines](/legal-information/)
-
-{{< column-end >}}
-
-{{< columns-end >}}
-
-<div class="section-header">
-<div class="section-header-badge">
-<i class="fa-solid fa-people-group"></i>
-<span>Teams</span>
-</div>
-<h2 class="section-title">Committees</h2>
-</div>
-
-OSGeo's work is driven by passionate volunteers organized into committees:
-
-{{< columns-start >}}
-
-{{< column-start class="is-4" >}}
-
-### Operations
-- Board of Directors
-- System Administration Committee
-- Marketing Committee
-- Finance
-
-{{< column-end >}}
-
-{{< column-start class="is-4" >}}
-
-### Projects
-- Incubation Committee
-- Project Steering Committees
-- Standards Committee
-
-{{< column-end >}}
-
-{{< column-start class="is-4" >}}
-
-### Initiatives
-- Conference Committee
-- GeoForAll Advisory Board
-- UN Committee
-- Open GeoScience Committee
-
-{{< column-end >}}
-
-{{< columns-end >}}
-
-[Learn About Committees &rarr;](/about/committees/)
-
----
-
-{{< box-start class="cta-section my-6" >}}
-
-<div class="section-header">
-<div class="section-header-badge">
-<i class="fa-solid fa-hand-point-right"></i>
-<span>Action</span>
-</div>
-<h2 class="section-title has-text-white">Get Involved</h2>
-</div>
-
-Join thousands of developers, users, and advocates working together to advance open geospatial technology.
-
-{{< button-bar
-    button1-text="Become a Member"
-    button1-link="/membership/"
-    button1-class="button is-white is-large"
-    button2-text="View FAQ"
-    button2-link="/about/faq/"
-    button2-class="button is-outlined is-white is-large"
->}}
-
-{{< box-end >}}
-
-<div class="section-header">
-<div class="section-header-badge">
-<i class="fa-solid fa-circle-info"></i>
-<span>Resources</span>
-</div>
-<h2 class="section-title">More About OSGeo</h2>
-</div>
-
-{{< columns-start >}}
-
-{{< column-start class="is-3 has-text-centered" >}}
-<i class="fa-solid fa-question-circle is-size-1 has-text-primary mb-4"></i>
-
-### FAQ
-
-Common questions about OSGeo, open source, and our projects.
-
-[Read FAQ &rarr;](/about/faq/)
-{{< column-end >}}
-
-{{< column-start class="is-3 has-text-centered" >}}
-<i class="fa-solid fa-palette is-size-1 has-text-primary mb-4"></i>
-
-### Branding
-
-Logos, style guidelines, and media resources.
-
-[View Branding &rarr;](/about/branding/)
-{{< column-end >}}
-
-{{< column-start class="is-3 has-text-centered" >}}
-<i class="fa-solid fa-handshake is-size-1 has-text-primary mb-4"></i>
-
-### Sponsors
-
-Organizations supporting OSGeo's mission.
-
-[View Sponsors &rarr;](/sponsors/)
-{{< column-end >}}
-
-{{< column-start class="is-3 has-text-centered" >}}
-<i class="fa-solid fa-trophy is-size-1 has-text-primary mb-4"></i>
-
-### Awards
-
-Recognizing outstanding contributions.
-
-[View Awards &rarr;](/about/awards/)
-{{< column-end >}}
-
-{{< columns-end >}}
+  * [News](<https://www.osgeo.org/foundation-news/>)
+  * [Events](<https://www.osgeo.org/events/>)
+  * [Branding Material](</about/branding-material/>)
+  * [Resources](</resources/>) (filter for journals and other content)
