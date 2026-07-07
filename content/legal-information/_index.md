@@ -34,7 +34,7 @@ The OSGeo trademarks include:
   * the name  _OSGeo_
   * the name  _OSGeo.org_
   * the name  _OSGeo Foundation_
-  * the name  _[FOSS4G](<http://wiki.osgeo.org/wiki/FOSS4G#Using_the_Name_FOSS4G> "Using the Name FOSS4G")_
+  * the name  _[FOSS4G](<https://wiki.osgeo.org/wiki/FOSS4G#Using_the_Name_FOSS4G> "Using the Name FOSS4G")_
   * the OSGeo compass logo
 
 OSGeo’s trademarks should be used in their exact form, including capitalization – neither abbreviated nor combined with any other word or words (e.g. “OSGeo” rather than “osgeo” or “OS GEO”, etc).

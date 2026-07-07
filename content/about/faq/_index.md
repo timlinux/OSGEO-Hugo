@@ -28,7 +28,7 @@ Who are the members?
     The membership is composed from users, supporters, promoters, and developers of open source geospatial software. Becoming a member is as easy as joining the site and contributing to the foundation goals. Beyond members, there are currently over 300 [charter members](<http://old.www.osgeo.org/charter_members>).
 
 Can I become a charter member?
-    New charter members are nominated and elected by existing charter members during the annual [charter member election](<http://wiki.osgeo.org/wiki/Membership_Process>).
+    New charter members are nominated and elected by existing charter members during the annual [charter member election](<https://wiki.osgeo.org/wiki/Membership_Process>).
 
 Can a regular member have any influence?
     Yes! First, a regular member can do everything a charter member can do, except vote in board elections. They can be members of committees and vote on them. They can speak up, and contribute in every other way. The foundation aims to be a  _do-acracy_ , and so the way to have influence is to  _do_ things! Ultimately, of course, the foundation will  _only_ succeed in its mission if the entire community gets involved — so please don’t hesitate! We need your help!
@@ -43,7 +43,7 @@ What are the detailed rules of governance of OSGeo?
     OSGeo is governed by a board of directors elected by the charter members. The board selects a President, Treasurer and Secretary as officers with particular areas of responsibility. Projects are operated by Project Steering Committees which select a chair or board liaison who is designated an officer of OSGeo after confirmation by the board. The board also designates some special purpose committees responsible for particular areas with a chair who is an officer. Typical committees and projects operate fairly autonomously and largely by consensus. However, as needed, the board can step in to address issues inconsistent with the goals and responsibilities of OSGeo. By virtue of their selection of the board and new charter members, the charter membership are the ultimate authority at OSGeo.
 
 What is the relationship between OSGeo and OGC?
-    OGC is a organization for creating geospatial standards, while OSGeo is an organization for promoting open source geospatial software and data. It is also an explicit goal of OSGeo to support and promote standards, including OGC standards. Towards that end OGC and OSGeo have signed a [memorandum of understanding](<http://wiki.osgeo.org/wiki/OSGeo_signs_Memorandum_of_Understanding_with_OGC>) to facilitate cooperation, including OSGeo cooperation on implementing reference standards of OGC standards, and a mechanism for open source developers to participate in OGC standards development. Also of note is the [Open Source and Open Standards](<http://wiki.osgeo.org/wiki/Open_Source_and_Open_Standards>) paper explaining the two aspects of open supported by OSGeo and OGC respectively.
+    OGC is a organization for creating geospatial standards, while OSGeo is an organization for promoting open source geospatial software and data. It is also an explicit goal of OSGeo to support and promote standards, including OGC standards. Towards that end OGC and OSGeo have signed a [memorandum of understanding](<https://wiki.osgeo.org/wiki/OSGeo_signs_Memorandum_of_Understanding_with_OGC>) to facilitate cooperation, including OSGeo cooperation on implementing reference standards of OGC standards, and a mechanism for open source developers to participate in OGC standards development. Also of note is the [Open Source and Open Standards](<https://wiki.osgeo.org/wiki/Open_Source_and_Open_Standards>) paper explaining the two aspects of open supported by OSGeo and OGC respectively.
 
 ## Open Source
 
@@ -65,7 +65,7 @@ What software projects are currently part of the foundation?
     On its formation, the GDAL/OGR, GeoTools, GRASS GIS, Mapbender, MapBuilder, MapGuide Open Source, MapServer and OSSIM projects declared their support, and joined as projects in incubation. Since then GDAL/OGR, GRASS GIS, Mapbender, MapBuilder, and MapGuide Open Source have graduated as full projects from this list. Further projects have entered incubation and some have also graduated. See the “OSGeo Projects” for an official list.
 
 What does a project need to do to join?
-    Projects need to go through the Incubation process to join the foundation. Details on how to apply, and how the process works are available on the [Incubator](<http://www.osgeo.org/incubator/index.html>) web page.
+    Projects need to go through the Incubation process to join the foundation. Details on how to apply, and how the process works are available on the [Incubator](<https://www.osgeo.org/incubator/index.html>) web page.
 
 So when can my project join?
     The Incubator is now accepting applications to join the foundation. Only a limited number of projects can be effectively handled in the incubation process at a time, so please be patient.
@@ -94,13 +94,13 @@ Does the foundation mandate a particular license for content other than software
 ## Participation
 
 What can I do to get involved?
-    Visit the [OSGeo](<http://osgeo.org/> "http://osgeo.org/") web site. Join the main foundation  _discuss_ list. Check out the [Volunteers Needed](<http://wiki.osgeo.org/index.php/Volunteers_Needed> "Volunteers Needed") wiki. You don’t need to be a programmer.
+    Visit the [OSGeo](<http://osgeo.org/> "http://osgeo.org/") web site. Join the main foundation  _discuss_ list. Check out the [Volunteers Needed](<https://wiki.osgeo.org/wiki/Volunteers_Needed> "Volunteers Needed") wiki. You don’t need to be a programmer.
 
 How can I contribute code?
     The governance model currently being formulated will define the legal and related issues concerning how code will be accepted into foundation software projects. Individual Project Steering Committees will determine the criteria for accepting contributions within this broader legal framework. In the meantime, you are encouraged to participate on the mailing lists for the foundation projects.
 
 Does the foundation need money?
-    The foundation is [soliciting organizational sponsorships](<http://www.osgeo.org/content/sponsorship/sponsorship.html>) now. Once some organizational and financial details are worked out it will also be possible for individuals to make tax deductible (if in the USA) donations. However, contributions of time for committee work, development, documentation, testing, user support, and advocacy are the preferred form of contribution from individuals. Some countries have tax exempt organizations with similar goals to OSGeo that may be candidates for donations or that are willing to receive donations for OSGeo.
+    The foundation is [soliciting organizational sponsorships](<https://www.osgeo.org/content/sponsorship/sponsorship.html>) now. Once some organizational and financial details are worked out it will also be possible for individuals to make tax deductible (if in the USA) donations. However, contributions of time for committee work, development, documentation, testing, user support, and advocacy are the preferred form of contribution from individuals. Some countries have tax exempt organizations with similar goals to OSGeo that may be candidates for donations or that are willing to receive donations for OSGeo.
 
 May I used the OSGeo logo and name freely?
-    Yes, but the foundation considers the OSGeo name, and logo to be trademarks, so please review the trademark [guidelines](<http://www.osgeo.org/content/foundation/legal/trademark_guidelines.html>) and [FAQ](<http://www.osgeo.org/content/foundation/legal/trademark_faq.html>). The [logos](<http://www.osgeo.org/logos/>) page has logos in a variety of styles and formats.
+    Yes, but the foundation considers the OSGeo name, and logo to be trademarks, so please review the trademark [guidelines](<https://www.osgeo.org/content/foundation/legal/trademark_guidelines.html>) and [FAQ](<https://www.osgeo.org/content/foundation/legal/trademark_faq.html>). The [logos](<https://www.osgeo.org/logos/>) page has logos in a variety of styles and formats.

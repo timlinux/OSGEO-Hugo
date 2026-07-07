@@ -30,7 +30,7 @@ The **Sol Katz Award for Geospatial Free and Open Source Software** (GFOSS) is a
   * [2010](</foundation-news/prof-helena-mitasova-receives-sol-katz-award/>): [Helena Mitasova](</member/helena-mitasova>)
   * [2009](</foundation-news/daniel-morissette-receives-sol-katz-award/>): [Daniel Morissette](<https://wiki.osgeo.org/wiki/User:Dmorissette>)
   * [2008](</foundation-news/paul-ramsey-receives-sol-katz-gfoss-award/>): [Paul Ramsey](</member/paul-ramsey>)
-  * [2007](</foundation-news/steve-lime-wins-sol-katz-gfoss-award/>): [Steve Lime](<http://www.osgeo.org/node/446>)
+  * [2007](</foundation-news/steve-lime-wins-sol-katz-gfoss-award/>): [Steve Lime](<https://www.osgeo.org/node/446>)
   * [2006](</foundation-news/markus-neteler-wins-sol-katz-gfoss-award/>): [Markus Neteler](</member/markus-neteler>)
   * 2005: [Frank Warmerdam](<https://wiki.osgeo.org/wiki/User:Warmerda>)
 

@@ -14,10 +14,10 @@ This is a low-volume OSGeo mailing list where official Open Source Geospatial Fo
 
 If you want to know about what is going on in the Open Source Geospatial Foundation, you are encouraged to:
 
-  * [Subscribe](<http://lists.osgeo.org/mailman/listinfo/announce>) to the announcements e-mail list.
-  * Review the [archive](<http://lists.osgeo.org/pipermail/announce/>) for past announcements.
+  * [Subscribe](<https://lists.osgeo.org/mailman/listinfo/announce>) to the announcements e-mail list.
+  * Review the [archive](<https://lists.osgeo.org/pipermail/announce/>) for past announcements.
 
-When you have an announcement to make follow these [instructions](<http://www.osgeo.org/content/news/submit_news.html>).
+When you have an announcement to make follow these [instructions](<https://www.osgeo.org/content/news/submit_news.html>).
 
 ### Discussion List
 
@@ -34,7 +34,7 @@ Therefore, to get more interactive and involved in the Open Source Geospatial Fo
   * Only subscribers to the Discuss e-mail list can participate in the discussions.
   * If you are a subscriber then you can contribute to the discussions, by simply sending e-mail messages to [discuss@lists.osgeo.org](<mailto:discuss@lists.osgeo.org>).
   * All new comments and questions will be seen by all the list subscribers.
-  * All discussions are stored in an [archive](<http://lists.osgeo.org/pipermail/discuss>) and are accessible at any time without a subscription.
+  * All discussions are stored in an [archive](<https://lists.osgeo.org/pipermail/discuss>) and are accessible at any time without a subscription.
   * Please avoid emailing others in the list directly about various topics, so that everyone can benefit from the discussion.
   * Before you post a question to the list, please search the mailing list archive to see if answers can be found. Newcomers may find this to be a valuable resource, and should feel free to ask questions if they cannot find satisfactory answers in the archive.
 
@@ -42,4 +42,4 @@ Therefore, to get more interactive and involved in the Open Source Geospatial Fo
 
 OSGeo also hosts a wide variety of other mailing lists for **[projects](</index.php?p=123>), [committees](</index.php?p=439>) **and[**initiatives**](</initiatives/>).
 
-A comprehensive list of all OSGeo mailing lists can be found on the [OSGeo Lists Server](<http://lists.osgeo.org/mailman/listinfo>).
+A comprehensive list of all OSGeo mailing lists can be found on the [OSGeo Lists Server](<https://lists.osgeo.org/mailman/listinfo>).

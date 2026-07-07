@@ -14,7 +14,7 @@ The motto of Geo for All Lab initiative is “Geo For All”. Central to “Geo 
 
 The key requirements for joining “Geo for All” initiative are:
 
-(A) Your local organization MUST BE COMMITTED TO CONTRIBUTE to the vision outlined in the ICA-OSGeo MoU [<http://wiki.osgeo.org/wiki/MOU_ICA>] to develop collaboration opportunities for academia, industry and government organizations in free and open source GIS software , FOSS, open data , open access (publications) and contribute to open education in the future. All participants should contribute to Education, Research and Service for the betterment of humanity as the key guiding principle and work towards the vision of the [**UN 2030 Agenda for Sustainable Development**](<http://sustainabledevelopment.un.org/>) for building a better world.
+(A) Your local organization MUST BE COMMITTED TO CONTRIBUTE to the vision outlined in the ICA-OSGeo MoU [<https://wiki.osgeo.org/wiki/MOU_ICA>] to develop collaboration opportunities for academia, industry and government organizations in free and open source GIS software , FOSS, open data , open access (publications) and contribute to open education in the future. All participants should contribute to Education, Research and Service for the betterment of humanity as the key guiding principle and work towards the vision of the [**UN 2030 Agenda for Sustainable Development**](<http://sustainabledevelopment.un.org/>) for building a better world.
 
 (B) At least one person at your institution or organization should have strong knowledge in geospatial information science and vision to lead this activity and to build a team of people, locally. This person should act as a liaison officer to the initiative.
 
@@ -36,20 +36,20 @@ For Global/Strategic level enquirers please contact the GeoforAll mailing list [
 
 **Africa Region**  
 Chair: Msilikale Msilanga (Tanzania)  
-Subscribe at maillist: <http://lists.osgeo.org/cgi-bin/mailman/listinfo/geoforall-africa>  
-Website: <http://wiki.osgeo.org/wiki/GeoForAll_Africa>  
+Subscribe at maillist: <https://lists.osgeo.org/cgi-bin/mailman/listinfo/geoforall-africa>  
+Website: <https://wiki.osgeo.org/wiki/GeoForAll_Africa>  
 Email: [msilikalemsilanga@gmail.com](<mailto:msilikalemsilanga@gmail.com>)
 
 **Asia Region (including Australia)**  
 Chairs: Tuong Thuy Vu (Malaysia/Vietnam) and Venkatesh Raghavan (Japan/India)  
-Subscribe at mail list: <http://lists.osgeo.org/cgi-bin/mailman/listinfo/geoforall-asiaaustralia>  
-Website: <http://wiki.osgeo.org/wiki/GeoForAll_Asia>  
+Subscribe at mail list: <https://lists.osgeo.org/cgi-bin/mailman/listinfo/geoforall-asiaaustralia>  
+Website: <https://wiki.osgeo.org/wiki/GeoForAll_Asia>  
 Email: [raghavan@media.osaka-cu.ac.jp; Tuongthuy.Vu@nottingham.edu.my](<mailto:raghavan@media.osaka-cu.ac.jp;%20Tuongthuy.Vu@nottingham.edu.my>)
 
 **Europe Region**  
 Chairs: Maria Brovelli (Italy) and Peter Mooney (Ireland)  
-Subscribe at mail list: <http://lists.osgeo.org/cgi-bin/mailman/listinfo/geoforall-europe>  
-Website: <http://wiki.osgeo.org/wiki/GeoForAll_Europe>  
+Subscribe at mail list: <https://lists.osgeo.org/cgi-bin/mailman/listinfo/geoforall-europe>  
+Website: <https://wiki.osgeo.org/wiki/GeoForAll_Europe>  
 Email: [maria.brovelli@polimi.it; petermooney78@gmail.com](<mailto:maria.brovelli@polimi.it;%20petermooney78@gmail.com>)
 
 **Iberoamerica  
@@ -60,6 +60,6 @@ Email: [geoforall-iberoamerica@lists.osgeo.org](<mailto:geoforall-iberoamerica@l
 
 **North America Region**  
 Chairs: Helena Mitasova (USA), Charles Schweik (USA), Phillip Davis (USA)  
-Subscribe at mail list: <http://lists.osgeo.org/cgi-bin/mailman/listinfo/geoforall-northamerica>  
-Website: <http://wiki.osgeo.org/wiki/GeoForAll_North_America>  
+Subscribe at mail list: <https://lists.osgeo.org/cgi-bin/mailman/listinfo/geoforall-northamerica>  
+Website: <https://wiki.osgeo.org/wiki/GeoForAll_North_America>  
 Email: [cschweik@pubpol.umass.edu; hmitaso@ncsu.edu; pdavis@delmar.edu](<mailto:cschweik@pubpol.umass.edu;%20hmitaso@ncsu.edu;%20pdavis@delmar.edu>)

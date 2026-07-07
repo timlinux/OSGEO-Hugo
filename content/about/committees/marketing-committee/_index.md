@@ -12,7 +12,7 @@ These include:
 
   * Public listing of [Service Provider](<https://www.osgeo.org/service-providers/>) supporting use of free and open source geospatial technology
   * _OSGeo Exhibition Pack_ Marketing Committee aims to limited matching sponsorship for a few targeted areas. These include 100% funding covered for the non-consumable items in one Exhibition Pack per OSGeo Local Organising Committee.
-  * [Digital asset rebranding and website reboot](<http://www.osgeo.org/marketing/rebranding.html>): marketing committee volunteered to undertake an [Expression of Interest](<http://www.osgeo.org/sites/osgeo.org/files/Page/OSGeoBrandingMarketingWebsiteEOI.pdf>) and  _Request for Proposals_ process to revamp the OSGeo visual and online presence.
+  * [Digital asset rebranding and website reboot](<https://www.osgeo.org/marketing/rebranding.html>): marketing committee volunteered to undertake an [Expression of Interest](<https://www.osgeo.org/sites/osgeo.org/files/Page/OSGeoBrandingMarketingWebsiteEOI.pdf>) and  _Request for Proposals_ process to revamp the OSGeo visual and online presence.
 
 ![OSGeo Marketing](https://www.osgeo.org/wp-content/uploads/osgeo-marketing.png)
 

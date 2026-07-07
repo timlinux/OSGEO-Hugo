@@ -67,11 +67,43 @@
                 -d ${self.packages.${system}.website}/public_www/
             '';
           };
+
+          # Python env for the content verifier with all required libraries
+          # provisioned from nixpkgs (no pip/npm).
+          verifyPython = pkgs.python3.withPackages (ps: [
+            ps.requests
+            ps.beautifulsoup4
+            ps.lxml
+            ps.html2text
+            ps.rich
+          ]);
+
+          verifyLauncher = pkgs.writeShellApplication {
+            name = "verify-content";
+            runtimeInputs = [ verifyPython pkgs.git ];
+            text = ''
+              # Locate the project root so the script works from any
+              # subdirectory. Honour an explicit override first.
+              if [[ -z "''${OSGEO_HUGO_ROOT:-}" ]]; then
+                if root="$(git rev-parse --show-toplevel 2>/dev/null)"; then
+                  export OSGEO_HUGO_ROOT="$root"
+                else
+                  export OSGEO_HUGO_ROOT="$PWD"
+                fi
+              fi
+              exec ${verifyPython}/bin/python3 \
+                "$OSGEO_HUGO_ROOT/scripts/verify_content.py" "$@"
+            '';
+          };
         in
         rec {
           website = {
             type = "app";
             program = "${wwwLauncher}/bin/website";
+          };
+          verify-content = {
+            type = "app";
+            program = "${verifyLauncher}/bin/verify-content";
           };
           default = website;
         }

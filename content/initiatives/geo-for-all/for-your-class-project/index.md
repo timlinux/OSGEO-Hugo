@@ -34,4 +34,4 @@ We would like to help you find an appropriate open source technology
 
 Provides the full list of available [Open source GIS](</about/what-is-open-source/>) from web mapping to desktop GIS that you can make use of for your teaching and research.
 
-[**Join GeoForAll mail lis** t](<http://lists.osgeo.org/mailman/listinfo/geoforall>) and be part of the global open geo education community.
+[**Join GeoForAll mail lis** t](<https://lists.osgeo.org/mailman/listinfo/geoforall>) and be part of the global open geo education community.

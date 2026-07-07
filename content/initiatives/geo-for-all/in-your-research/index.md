@@ -28,7 +28,7 @@ Spatial data analysis and processing is an important benefit to working with a G
 
 We would like to help you find an appropriate open source technology
 
-[**Join GeoForAll mail lis** t](<http://lists.osgeo.org/mailman/listinfo/geoforall>) and be part of the global open geo education community.
+[**Join GeoForAll mail lis** t](<https://lists.osgeo.org/mailman/listinfo/geoforall>) and be part of the global open geo education community.
 
 **References:**
 

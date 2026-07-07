@@ -10,7 +10,7 @@ The foundation provides financial, organizational and legal support to the broad
 
 The foundation’s projects are all freely available and useable under an [Open Source Initiative](<http://www.opensource.org/licenses/>) certified open source license.
 
-OSGeo has [US 501(c)(4)](<https://en.wikipedia.org/wiki/501\(c\)_organization#501.28c.29.284.29>) legal status as a not-for-profit organization, supported by GeoCat and other [sponsors](</sponsors/>).
+OSGeo has [US 501(c)(4)](<https://en.wikipedia.org/wiki/501(c)_organization#501.28c.29.284.29>) legal status as a not-for-profit organization, supported by GeoCat and other [sponsors](</sponsors/>).
 
 ## OSGeo Vision
 
@@ -48,12 +48,12 @@ The following aspirational goals support the overall mission. As a foundation we
   * [Certificate of Incorporation](</wp-content/uploads/osgeo_certificate.pdf>) (pdf)
   * [Bylaws](</about/bylaws/>)
   * [Code of Conduct](</code_of_conduct/>)
-  * [Board Meeting Archives](<http://wiki.osgeo.org/wiki/Board_of_Directors#Board_Activities_and_Meetings>)
+  * [Board Meeting Archives](<https://wiki.osgeo.org/wiki/Board_of_Directors#Board_Activities_and_Meetings>)
 
 **Bodies**
 
   * [Board of Directors and Officers](</about/board/>) ([wiki](<https://wiki.osgeo.org/wiki/Board_of_Directors>))
-  * [Membership Categories & Rules](<http://www.osgeo.org/Membership>)
+  * [Membership Categories & Rules](<https://www.osgeo.org/Membership>)
   * [Charter Members](</about/charter-members/>) ([wiki](<https://wiki.osgeo.org/wiki/Charter_Members>))
   * [Local Chapters](<https://www.osgeo.org/local-chapters/>) ([wiki](<https://wiki.osgeo.org/wiki/Local_Chapters>))
   * [Committees](</about/committees/>) ([wiki](<https://wiki.osgeo.org/wiki/Category:Committees>))

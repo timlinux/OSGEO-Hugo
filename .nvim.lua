@@ -8,6 +8,9 @@
 --   3. Edit content, preview changes
 --   4. Format files: <leader>pf
 --   5. Build for production: <leader>pb
+--   6. Verify content vs osgeo.org: <leader>pv (or :VerifyContent)
+--      :VerifyContentReport saves a markdown table
+--      :VerifyContentNginx writes osgeo-redirects.conf
 
 -- Guard against re-sourcing
 if vim.g.osgeo_hugo_loaded then
@@ -114,6 +117,37 @@ vim.api.nvim_create_user_command('MakeDev', function()
   vim.cmd('terminal make hugo-run-dev')
 end, { desc = 'Run make hugo-run-dev' })
 
+-- Content verification (cross-check local Hugo content against upstream osgeo.org
+-- and optionally emit an nginx redirect map). Runs via the flake app so all
+-- Python deps are provisioned from nixpkgs.
+vim.api.nvim_create_user_command('VerifyContent', function(opts)
+  local args = opts.args ~= '' and (' ' .. opts.args) or ''
+  vim.cmd('terminal nix run .#verify-content --' .. args)
+end, { nargs = '*', desc = 'Verify content against upstream osgeo.org' })
+
+vim.api.nvim_create_user_command('VerifyContentReport', function()
+  vim.cmd('terminal nix run .#verify-content -- --output markdown --save VERIFICATION-REPORT.md')
+end, { desc = 'Verify content and save markdown report' })
+
+vim.api.nvim_create_user_command('VerifyContentNginx', function()
+  vim.cmd('terminal nix run .#verify-content -- --nginx-config osgeo-redirects.conf')
+end, { desc = 'Verify content and emit nginx redirect snippet' })
+
+vim.api.nvim_create_user_command('VerifyContentLinks', function()
+  vim.cmd('terminal nix run .#verify-content -- --output markdown --save VERIFICATION-REPORT.md --verbose')
+end, { desc = 'Verify content + walk every hyperlink, flag broken' })
+
+vim.api.nvim_create_user_command('VerifyContentRemap', function()
+  -- Destructive: rewrites internal absolute URLs in content/**/*.md.
+  -- Run --skip-links first so the rewrite isn't gated on slow HTTP checks.
+  local choice = vim.fn.confirm(
+    'Rewrite all https://www.osgeo.org/* links in content/ to Hugo-relative form?',
+    '&Yes\n&No', 2)
+  if choice == 1 then
+    vim.cmd('terminal nix run .#verify-content -- --remap-internal --skip-links --verbose')
+  end
+end, { desc = 'Rewrite internal osgeo.org links to Hugo-relative (DESTRUCTIVE)' })
+
 -- Utility commands
 vim.api.nvim_create_user_command('OpenBrowser', function()
   vim.cmd('!xdg-open http://localhost:1313 2>/dev/null || open http://localhost:1313')
@@ -185,6 +219,13 @@ if wk_ok then
     { '<leader>pn', '<cmd>NewPost<cr>', desc = 'New news post' },
     { '<leader>pN', '<cmd>NewPage<cr>', desc = 'New section page' },
 
+    -- Verification (content cross-check + link integrity + nginx redirect map)
+    { '<leader>pv', '<cmd>VerifyContent<cr>', desc = 'Verify content vs osgeo.org' },
+    { '<leader>pV', '<cmd>VerifyContentReport<cr>', desc = 'Verify + save markdown report' },
+    { '<leader>pr', '<cmd>VerifyContentNginx<cr>', desc = 'Verify + emit nginx redirects' },
+    { '<leader>pk', '<cmd>VerifyContentLinks<cr>', desc = 'Verify + walk all hyperlinks' },
+    { '<leader>pR', '<cmd>VerifyContentRemap<cr>', desc = 'Rewrite internal links (DESTRUCTIVE)' },
+
     -- Utilities
     { '<leader>px', '<cmd>NixDevelop<cr>', desc = 'Nix develop shell' },
     { '<leader>pC', '<cmd>CleanPublic<cr>', desc = 'Clean build dirs' },
@@ -206,6 +247,9 @@ else
 
   -- Pre-commit
   vim.keymap.set('n', '<leader>pp', '<cmd>PreCommit<cr>', vim.tbl_extend('force', opts, { desc = 'Pre-commit' }))
+
+  -- Verification
+  vim.keymap.set('n', '<leader>pv', '<cmd>VerifyContent<cr>', vim.tbl_extend('force', opts, { desc = 'Verify content' }))
 end
 
 -- ============================================================================

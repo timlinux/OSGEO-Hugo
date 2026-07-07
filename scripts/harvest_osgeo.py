@@ -49,10 +49,85 @@ from rich.table import Table
 SITE_ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = SITE_ROOT / "content"
 IGNORE_LIST_FILE = SITE_ROOT / "scripts" / "harvest_ignore.json"
+LINK_FIXES_FILE = SITE_ROOT / "scripts" / "link_fixes.json"
 SITEMAP_INDEX_URL = "https://www.osgeo.org/sitemap.xml"
 PAGE_SITEMAP_URL = "https://www.osgeo.org/page-sitemap.xml"
 BASE_URL = "https://www.osgeo.org"
 REQUEST_DELAY = 0.5  # seconds between requests, be polite
+
+# Markdown link regexes shared with scripts/verify_content.py. Keep these in
+# sync if either side changes -- they encode the link forms we need to rewrite
+# when applying scripts/link_fixes.json after html2text conversion. Allow
+# backslash-escaped parens inside URLs (CommonMark).
+_HARVEST_URL_CHAR = r"(?:\\[()]|[^\s()<>])"
+HARVEST_MD_LINK_RE = re.compile(
+    r'\[(?:[^\]]+)\]\(\s*<([^>]+)>(?:\s+"[^"]*")?\s*\)'
+    r'|'
+    r'\[(?:[^\]]+)\]\(\s*(' + _HARVEST_URL_CHAR + r'+)(?:\s+"[^"]*")?\s*\)'
+)
+HARVEST_MD_AUTOLINK_RE = re.compile(r"<((?:https?|ftp)://[^>\s]+)>")
+HARVEST_MD_REF_DEF_RE = re.compile(
+    r"^\s{0,3}\[(?:[^\]]+)\]:\s*<?([^\s>]+)>?", re.MULTILINE
+)
+
+
+def load_link_fixes() -> list[tuple[str, "re.Pattern", str]]:
+    """Load the persistent URL-rewrite registry shared with the verifier.
+
+    Each fix is (id, compiled_pattern, replacement). Returns [] if the file
+    is missing or empty.
+    """
+    if not LINK_FIXES_FILE.exists():
+        return []
+    data = json.loads(LINK_FIXES_FILE.read_text(encoding="utf-8"))
+    out: list[tuple[str, re.Pattern, str]] = []
+    for entry in data.get("fixes", []):
+        try:
+            out.append((entry["id"], re.compile(entry["pattern"]), entry["replacement"]))
+        except (KeyError, re.error) as e:
+            console.print(f"[red]Skipping malformed link fix:[/red] {entry} ({e})")
+    return out
+
+
+def apply_link_fixes_to_markdown(md: str, fixes) -> tuple[str, int]:
+    """Apply the link_fixes.json registry to every link target in `md`.
+
+    Returns (new_markdown, substitutions_applied). Used by the harvester so
+    that re-harvests do not silently overwrite the systematic fixes we have
+    recorded in the registry.
+    """
+    if not fixes:
+        return md, 0
+    count = 0
+
+    def _try_fix(target: str) -> str:
+        nonlocal count
+        for _fid, pat, repl in fixes:
+            new = pat.sub(repl, target)
+            if new != target:
+                count += 1
+                return new
+        return target
+
+    def _md_link(m: re.Match) -> str:
+        target = m.group(1) or m.group(2)
+        new = _try_fix(target)
+        return m.group(0).replace(target, new, 1) if new != target else m.group(0)
+
+    def _autolink(m: re.Match) -> str:
+        target = m.group(1)
+        new = _try_fix(target)
+        return f"<{new}>" if new != target else m.group(0)
+
+    def _ref(m: re.Match) -> str:
+        target = m.group(1)
+        new = _try_fix(target)
+        return m.group(0).replace(target, new, 1) if new != target else m.group(0)
+
+    md = HARVEST_MD_LINK_RE.sub(_md_link, md)
+    md = HARVEST_MD_AUTOLINK_RE.sub(_autolink, md)
+    md = HARVEST_MD_REF_DEF_RE.sub(_ref, md)
+    return md, count
 
 # Default ignore list - pages where local content takes precedence
 DEFAULT_IGNORE = [
@@ -313,12 +388,15 @@ def fetch_page_urls() -> list[str]:
 def harvest(dry_run: bool = False, verbose: bool = False) -> list[dict]:
     """Run the full harvest. Returns a list of result dicts for the report."""
     ignore_list = load_ignore_list()
+    link_fixes = load_link_fixes()
     console.print(f"[bold]Fetching sitemap from {PAGE_SITEMAP_URL}...[/bold]")
     urls = fetch_page_urls()
     console.print(f"Found [bold]{len(urls)}[/bold] pages in sitemap")
     console.print(f"Ignore list has [bold]{len(ignore_list)}[/bold] entries")
+    console.print(f"Link-fix registry: [bold]{len(link_fixes)}[/bold] rule(s)")
 
     results = []
+    total_fixes_applied = 0
 
     for i, url in enumerate(urls):
         parsed = urlparse(url)
@@ -356,6 +434,16 @@ def harvest(dry_run: bool = False, verbose: bool = False) -> list[dict]:
 
             # Convert to markdown
             md_body = html_to_markdown(content_html)
+            # Apply the persistent link-fix registry (scripts/link_fixes.json)
+            # so re-harvests keep the systematic URL fixes we have already made.
+            md_body, fixes_applied = apply_link_fixes_to_markdown(md_body, link_fixes)
+            if fixes_applied:
+                total_fixes_applied += fixes_applied
+                if verbose:
+                    console.print(
+                        f"      [magenta]link_fixes: {fixes_applied} "
+                        f"substitution(s)[/magenta]"
+                    )
             front_matter = build_front_matter(title, description, url_path)
             new_content = f"{front_matter}\n\n{md_body}\n"
 
@@ -445,6 +533,12 @@ def harvest(dry_run: bool = False, verbose: bool = False) -> list[dict]:
                 "similarity": "-",
                 "detail": f"No longer in sitemap: {md_file.relative_to(SITE_ROOT)}",
             })
+
+    if total_fixes_applied:
+        console.print(
+            f"\n[bold magenta]Link-fix registry applied "
+            f"{total_fixes_applied} substitution(s) during harvest[/bold magenta]"
+        )
 
     return results
 

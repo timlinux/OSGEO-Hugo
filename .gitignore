@@ -34,6 +34,7 @@ scraped-data
 /test/e2e/__pycache__/
 /test/screenshots/
 /screenshots/
+/screenshots-gitignored/
 .pytest_cache/
 __pycache__
 

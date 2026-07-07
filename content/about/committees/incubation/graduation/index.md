@@ -11,13 +11,13 @@ harvested_from: "https://www.osgeo.org/about/committees/incubation/graduation/"
 **Version:** 2.0  
 **Status:** approved  
 **Last Edited:** June 16, 2014  
-**Previous:** [ 1.0](<http://www.osgeo.org/incubator/process/project_graduation_checklist_v1.html>)
+**Previous:** [ 1.0](<https://www.osgeo.org/incubator/process/project_graduation_checklist_v1.html>)
 
 ### Purpose
 
 The purpose of this checklist is to determine whether an Incubator Project produces quality products, remains true to its stated licence and is sustainable. Satisfying this checklist is a prerequisite for graduation.
 
-A project should have institutionalized the processes in this list or provide justification why the process is not used. See also the [Incubation Application Questionnaire](<http://www.osgeo.org/incubator/process/application.html>).
+A project should have institutionalized the processes in this list or provide justification why the process is not used. See also the [Incubation Application Questionnaire](<https://www.osgeo.org/incubator/process/application.html>).
 
 ### Terms and Definitions
 
@@ -53,7 +53,7 @@ We need to ensure that the project owns or otherwise has obtained the ability to
   2. Project documentation is available under an open license.  
 _Eg. Creative Commons_
   3. The project code, documentation and data has been adequately vetted to assure it is all properly licensed, and a copyright notice included.  
-_As per a[Provenance Review](<http://www.osgeo.org/incubator/process/codereview.html>)_
+_As per a[Provenance Review](<https://www.osgeo.org/incubator/process/codereview.html>)_
   4. The project maintains a list of all copyright holders identified in the Provenance Review Document.
   5. All code contributors have agreed to abide by the project’s license policy, and this agreement has been documented and archived.
 
@@ -92,30 +92,30 @@ _Ideally this includes documented conformance to set quality goals, such as repo
 
 ## OSGeo Committees and Community
 
-The OSGeo Foundation is made up of a number of [committees](<http://www.osgeo.org/content/foundation/committees.html>), projects and local chapters. This section gathers up information these groups have requested from OSGeo projects. These expectations are not mandatory requirements before graduation, but a project should be prepared to address them in order to be considered a good OSGeo citizen.
+The OSGeo Foundation is made up of a number of [committees](<https://www.osgeo.org/content/foundation/committees.html>), projects and local chapters. This section gathers up information these groups have requested from OSGeo projects. These expectations are not mandatory requirements before graduation, but a project should be prepared to address them in order to be considered a good OSGeo citizen.
 
 ### Board
 
-The [OSGeo Board](<http://wiki.osgeo.org/wiki/Board_of_Directors>) holds ultimate responsibility for all OSGeo activities. The Board requests:
+The [OSGeo Board](<https://wiki.osgeo.org/wiki/Board_of_Directors>) holds ultimate responsibility for all OSGeo activities. The Board requests:
 
   1. A project provide a Project Officer as primary contact point: 
-     * The Project Officer should be listed at [Officers and Board of Directors](<http://www.osgeo.org/content/foundation/board_and_officers.html>) and [Contacts](<http://wiki.osgeo.org/wiki/Contacts#Software_Projects>)
+     * The Project Officer should be listed at [Officers and Board of Directors](<https://www.osgeo.org/content/foundation/board_and_officers.html>) and [Contacts](<https://wiki.osgeo.org/wiki/Contacts#Software_Projects>)
      * This person is established when the incubation committee recommends the project for graduation
      * Your community can change the project officer as needed  
 _Add an agenda item to the next board meeting so they can recognise the change of officer._
 
 ### Marketing
 
-Access to OSGeo’s [Marketing_Committee](<http://wiki.osgeo.org/wiki/Marketing_Committee>) and associated [Marketing Pipeline](<http://wiki.osgeo.org/wiki/Marketing_Pipeline>) is one of the key benefits of joining the OSGeo foundation. The Marketing Committee requests:
+Access to OSGeo’s [Marketing_Committee](<https://wiki.osgeo.org/wiki/Marketing_Committee>) and associated [Marketing Pipeline](<https://wiki.osgeo.org/wiki/Marketing_Pipeline>) is one of the key benefits of joining the OSGeo foundation. The Marketing Committee requests:
 
-  1. Marketing artefacts have been created about the project in line with the incubation criteria listed in the OSGeo Marketing Committee’s [Marketing Artefacts](<http://wiki.osgeo.org/wiki/Marketing_Artefacts>).  
+  1. Marketing artefacts have been created about the project in line with the incubation criteria listed in the OSGeo Marketing Committee’s [Marketing Artefacts](<https://wiki.osgeo.org/wiki/Marketing_Artefacts>).  
 This lists the documentation requirements for [OSGeo-Live](<http://live.osgeo.org/>). Marketing Artefacts include: 
      * Application Overview
      * Application Quick Start
      * Logo
      * Graphical Image
   2. Ideally, stable version(s) of executable applications are bundled with appropriate distributions.  
-_In most cases, this will at least include[OSGeo-Live](<http://live.osgeo.org/>), but may also include [DebianGIS](<http://wiki.debian.org/DebianGis>), [UbuntuGIS](<https://wiki.ubuntu.com/UbuntuGIS>), and/or [osgeo4w](<http://trac.osgeo.org/osgeo4w/>), [ms4w](<http://ms4w.com/>), etc.)_
+_In most cases, this will at least include[OSGeo-Live](<http://live.osgeo.org/>), but may also include [DebianGIS](<http://wiki.debian.org/DebianGis>), [UbuntuGIS](<https://wiki.ubuntu.com/UbuntuGIS>), and/or [osgeo4w](<https://trac.osgeo.org/osgeo4w/>), [ms4w](<http://ms4w.com/>), etc.)_
 
 ### Projects
 
@@ -125,7 +125,7 @@ _As an example the PostGIS release procedure asks that the release be checked wi
 
 ### SAC
 
-The [System Administration Committee](<http://wiki.osgeo.org/wiki/SAC>) is available to help with infrastructure and facilities. Information for this committee is collected as part of the [Project Graduation Checklist](<http://www.osgeo.org/incubator/process/project_graduation_checklist.html>).
+The [System Administration Committee](<https://wiki.osgeo.org/wiki/SAC>) is available to help with infrastructure and facilities. Information for this committee is collected as part of the [Project Graduation Checklist](<https://www.osgeo.org/incubator/process/project_graduation_checklist.html>).
 
   1. The following should be set up: 
      * A http://projectname.osgeo.org domain name

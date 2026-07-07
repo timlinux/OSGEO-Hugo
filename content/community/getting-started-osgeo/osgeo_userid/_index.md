@@ -28,7 +28,7 @@ Currently the following services honour OSGeo-wide userids:
   * [trac.osgeo.org](<https://trac.osgeo.org/>): committee and project wiki and issue tracker.
   * [git.osgeo.org/gitea](<https://git.osgeo.org/gitea>): git source control system hosted by the foundation.
   * [svn.osgeo.org](<https://wiki.osgeo.org/wiki/Subversion>): developer subversion source control system hosted by the foundation.
-  * [Shell Access to servers](<http://wiki.osgeo.org/wiki/SAC_Service_Status>) can be enabled for OSGeo **userids** by arrangement with the [System Administration Committee](<http://wiki.osgeo.org/wiki/SAC>).
+  * [Shell Access to servers](<https://wiki.osgeo.org/wiki/SAC_Service_Status>) can be enabled for OSGeo **userids** by arrangement with the [System Administration Committee](<https://wiki.osgeo.org/wiki/SAC>).
   * [plugins.qgis.org](<http://plugins.qgis.org>): Login to publish to QGIS plugins repository (download is open to everyone without login).
   * The OSGeo’s [Matrix Homeserver](<https://wiki.osgeo.org/wiki/SAC:MatrixSynapse>)
   * The OSGeo’s [Weblate](<https://weblate.osgeo.org>) for translating some OSGeo project documentation
