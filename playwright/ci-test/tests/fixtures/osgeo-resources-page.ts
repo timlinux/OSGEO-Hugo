@@ -1,6 +1,6 @@
 import type { Page, Locator } from "@playwright/test";
 
-export class QgisResourcesPage {
+export class OsgeoResourcesPage {
     private readonly url: string = "/resources/hub/";
     public readonly pageBody: Locator;
     public readonly installationGuideLink: Locator;

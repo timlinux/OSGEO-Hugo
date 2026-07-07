@@ -5,7 +5,7 @@
 }:
 
 stdenv.mkDerivation {
-  name = "qgis-website";
+  name = "osgeo-website";
 
   src = lib.cleanSourceWith {
     src = ../.;
@@ -34,7 +34,7 @@ stdenv.mkDerivation {
     cp -r public_www public_prod $out/
   '';
   meta = with lib; {
-    description = "A QGIS website";
+    description = "The OSGeo website";
     license = licenses.mit;
   };
 }

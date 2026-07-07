@@ -1,6 +1,6 @@
 import { test as base, expect } from "@playwright/test";
 import { Sidebar } from "./fixtures/sidebar";
-import { QgisResourcesPage } from "./fixtures/qgis-resources-page";
+import { OsgeoResourcesPage } from "./fixtures/osgeo-resources-page";
 import { InstallationGuidePage } from "./fixtures/installation-guide-page";
 import { RoadmapPage } from "./fixtures/roadmap-page";
 import { ReportsPage } from "./fixtures/report-page";
@@ -8,7 +8,7 @@ import { BooksPage } from "./fixtures/books-page";
 
 type ResourcesPageFixtures = {
     sidebar: Sidebar;
-    qgisResourcesPage: QgisResourcesPage;
+    osgeoResourcesPage: OsgeoResourcesPage;
     installationGuidePage: InstallationGuidePage;
     roadmapPage: RoadmapPage;
     reportsPage: ReportsPage;
@@ -20,9 +20,9 @@ const test = base.extend<ResourcesPageFixtures>({
         const sidebar = new Sidebar(page);
         await use(sidebar);
     },
-    qgisResourcesPage: async ({ page }, use) => {
-        const qgisResourcesPage = new QgisResourcesPage(page);
-        await use(qgisResourcesPage);
+    osgeoResourcesPage: async ({ page }, use) => {
+        const osgeoResourcesPage = new OsgeoResourcesPage(page);
+        await use(osgeoResourcesPage);
     },
     installationGuidePage: async ({ page }, use) => {
         const installationGuidePage = new InstallationGuidePage(page);
@@ -43,43 +43,43 @@ const test = base.extend<ResourcesPageFixtures>({
 });
 
 test.describe("Resources pages", () => {
-    test.beforeEach(async ({ qgisResourcesPage }) => {
+    test.beforeEach(async ({ osgeoResourcesPage }) => {
         // Go to the resources url before each test.
-        await qgisResourcesPage.goto();
+        await osgeoResourcesPage.goto();
     });
 
-    test("Documentation", async ({ sidebar, qgisResourcesPage }) => {
+    test("Documentation", async ({ sidebar, osgeoResourcesPage }) => {
         await expect(sidebar.resourcesLink).toBeVisible();
         await sidebar.resourcesLink.click();
-        await expect(qgisResourcesPage.installationGuideLink).toBeVisible();
-        await expect(qgisResourcesPage.getInvolvedLink).toBeVisible();
-        await expect(qgisResourcesPage.tab3Element).toBeVisible();
-        await expect(qgisResourcesPage.desktopUserGuideLink).toBeVisible();
-        await expect(qgisResourcesPage.serverGuideLink).toBeVisible();
-        await expect(qgisResourcesPage.qgisTrainingManualLink).toBeVisible();
-        await expect(qgisResourcesPage.introductionInGISLink).toBeVisible();
+        await expect(osgeoResourcesPage.installationGuideLink).toBeVisible();
+        await expect(osgeoResourcesPage.getInvolvedLink).toBeVisible();
+        await expect(osgeoResourcesPage.tab3Element).toBeVisible();
+        await expect(osgeoResourcesPage.desktopUserGuideLink).toBeVisible();
+        await expect(osgeoResourcesPage.serverGuideLink).toBeVisible();
+        await expect(osgeoResourcesPage.qgisTrainingManualLink).toBeVisible();
+        await expect(osgeoResourcesPage.introductionInGISLink).toBeVisible();
         await expect(
-            qgisResourcesPage.documentationGuidelinesLink,
+            osgeoResourcesPage.documentationGuidelinesLink,
         ).toBeVisible();
-        await expect(qgisResourcesPage.pyQGISCookbookLink).toBeVisible();
+        await expect(osgeoResourcesPage.pyQGISCookbookLink).toBeVisible();
         await expect(
-            qgisResourcesPage.cPlusPlusAPIDocumentationLink,
+            osgeoResourcesPage.cPlusPlusAPIDocumentationLink,
         ).toBeVisible();
-        await expect(qgisResourcesPage.pyQGISApiLink).toBeVisible();
+        await expect(osgeoResourcesPage.pyQGISApiLink).toBeVisible();
         await expect(
-            qgisResourcesPage.buildingQGISFromSourceLink,
+            osgeoResourcesPage.buildingQGISFromSourceLink,
         ).toBeVisible();
-        await expect(qgisResourcesPage.forDownloadParagraph).toBeVisible();
-        await expect(qgisResourcesPage.pdfManualsLink).toBeVisible();
-        await expect(qgisResourcesPage.htmlZipManualsLink).toBeVisible();
-        await expect(qgisResourcesPage.viewSupportOptionsLink).toBeVisible();
+        await expect(osgeoResourcesPage.forDownloadParagraph).toBeVisible();
+        await expect(osgeoResourcesPage.pdfManualsLink).toBeVisible();
+        await expect(osgeoResourcesPage.htmlZipManualsLink).toBeVisible();
+        await expect(osgeoResourcesPage.viewSupportOptionsLink).toBeVisible();
 
-        for (const text of qgisResourcesPage.textList) {
-            await expect(qgisResourcesPage.pageBody).toContainText(text);
+        for (const text of osgeoResourcesPage.textList) {
+            await expect(osgeoResourcesPage.pageBody).toContainText(text);
         }
 
-        await qgisResourcesPage.dataProtectionLink.click();
-        await expect(qgisResourcesPage.appNetworkConnectionsLink).toBeVisible();
+        await osgeoResourcesPage.dataProtectionLink.click();
+        await expect(osgeoResourcesPage.appNetworkConnectionsLink).toBeVisible();
     });
 
     test("Installation guide", async ({ sidebar, installationGuidePage }) => {
