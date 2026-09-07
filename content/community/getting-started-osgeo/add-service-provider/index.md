@@ -11,7 +11,7 @@ To be listed as a service provider:
   1. Create an [OSGeo UserID](</community/getting-started-osgeo/osgeo_userid/>), which is the user-name used for this website.
   2. Login into this website (in the upper right corner above) to create a profile. Profile pages are listed [OSGeo members](</community/members/>).
   3. Drop into the [OSGeo marketing discourse forum](<https://discourse.osgeo.org/c/committees/marketing/46>) and request **_Service Provider Author_** role be added to your profile.
-  4. Use **Service Providers – > Add New **to create a new service providers page.
+  4. Use **Service Providers – > Add New** to create a new service providers page.
   5. When ready ask the OSGeo marketing forum to review your page and publish.
   6. Once published you may continue to update content to reflect your identity and growing expertise.
 

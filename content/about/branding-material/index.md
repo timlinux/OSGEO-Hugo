@@ -25,7 +25,7 @@ Please contact the marketing committee if you require assistance or clarificatio
 
 This is the standard [osgeo-logo-rgb.png](<https://github.com/OSGeo/osgeo/raw/master/marketing/branding/logo/osgeo-logo-rgb.png> "osgeo-logo-rgb.png") logo for use in most scenarios (shown full size, click to download origional):
 
-[![](/wp-content/uploads/osgeo-logo-rgb.png)](<https://raw.githubusercontent.com/OSGeo/osgeo/master/marketing/branding/logo/osgeo-logo-rgb.png>)
+[![](/img/osgeo/osgeo-logo-rgb.png)](<https://raw.githubusercontent.com/OSGeo/osgeo/master/marketing/branding/logo/osgeo-logo-rgb.png>)
 
 ## Logo History
 

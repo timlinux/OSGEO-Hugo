@@ -395,3 +395,9 @@ section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number .stat-plus {
 :root {
   --font-heading: 'Miriam Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+/* Body text on dark CTA bands was inheriting a dark colour. */
+.cta-section,
+.cta-section p {
+  color: rgba(255, 255, 255, 0.88);
+}

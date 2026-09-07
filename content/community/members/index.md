@@ -59,7 +59,7 @@ Charter Members are individuals who have demonstrated sustained and significant 
 
 <div class="section-header">
 <div class="section-header-badge">
-<i class="fa-solid fa-building" >}}
+<i class="fa-solid fa-building"></i>
 <span>Providers</span>
 </div>
 <h2 class="section-title">Service Providers</h2>

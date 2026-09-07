@@ -21,7 +21,7 @@ _Confirm by checking README or project description_
 _The license must be OSI approved_
        3. _Welcome participation and new contributors._  
 _We look for a clear contribution policy_
-  4. Use **\+ New > Project **to create a new project page 
+  4. Use **\+ New > Project** to create a new project page 
      * Forms are used to collect information about your project
      * Detailed instructions are provided below
      * Users will be automatically logged out after some inactivity. Make sure you save your progress using **Save Draft** if needed.
@@ -79,8 +79,8 @@ To create a Project:
 The Project form starts out with key information used for the project listing:
 
   * **Title** : Name of your project _._
-  * **Project Type** : If you are setting up your page initially, choose **None  
-**_Projects that have joined the “OSGeo Community Initiative” or graduated as full “OSGeo Project” or associated with a parter organiszation will choose those options._  
+  * **Project Type** : If you are setting up your page initially, choose **None**  
+_Projects that have joined the “OSGeo Community Initiative” or graduated as full “OSGeo Project” or associated with a parter organiszation will choose those options._  
 ![](https://www.osgeo.org/wp-content/uploads/add-new-project-type-370x157.png)
 
   * **Logo** : Select your prepared logo from the list of available media, uploading if necessary.  
