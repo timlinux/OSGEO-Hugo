@@ -67,7 +67,7 @@ Recipients are selected based on:
 | 2017 | Thomas Gratier | OpenLayers and web mapping |
 | 2016 | Jochen Topf | OSM tools and Libosmium |
 
-[View Full List](https://wiki.osgeo.org/wiki/Sol_Katz_Award){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="View Full List" link="https://wiki.osgeo.org/wiki/Sol_Katz_Award" >}}
 
 <div class="section-header">
 <div class="section-header-badge">

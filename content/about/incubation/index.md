@@ -246,7 +246,7 @@ Becoming an OSGeo project provides:
 
 Ready to apply? Start by reviewing the incubation criteria and contacting the Incubation Committee.
 
-[Incubation Wiki](https://wiki.osgeo.org/wiki/Incubation_Committee){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Incubation Wiki" link="https://wiki.osgeo.org/wiki/Incubation_Committee" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

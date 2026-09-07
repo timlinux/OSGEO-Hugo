@@ -83,7 +83,7 @@ The Open GeoScience committee works on:
 
 Interested in Open GeoScience? Join us:
 
-[Open GeoScience Committee](https://wiki.osgeo.org/wiki/Open_GeoScience){.button .is-osgeo-secondary}
+{{< button class="is-osgeo-secondary" text="Open GeoScience Committee" link="https://wiki.osgeo.org/wiki/Open_GeoScience" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

@@ -126,7 +126,7 @@ For most users, we recommend:
 2. **Join #osgeo** for general questions
 3. **Join your project's channel** for specific help
 
-[Join IRC Now](https://web.libera.chat/?channel=#osgeo){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Join IRC Now" link="https://web.libera.chat/?channel=#osgeo" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

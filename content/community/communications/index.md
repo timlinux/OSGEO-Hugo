@@ -67,7 +67,7 @@ Mailing lists remain a popular way to communicate with the OSGeo community.
 
 OSGeo hosts mailing lists for projects, committees and initiatives.
 
-[View All Mailing Lists](/community/mailing-lists/){.button .is-osgeo-secondary .is-medium}
+{{< button class="is-osgeo-secondary is-medium" text="View All Mailing Lists" link="/community/mailing-lists/" >}}
 
 <div class="section-header">
 <div class="section-header-badge">
@@ -126,7 +126,7 @@ For real-time discussions, join us on:
 | **IRC** | #osgeo on Libera.Chat | [Join IRC](https://web.libera.chat/?channel=#osgeo) |
 | **Slack** | osgeo.slack.com | [Join Slack](https://osgeo.slack.com) |
 
-[More Chat Options](/community/irc/){.button .is-osgeo-secondary .is-medium}
+{{< button class="is-osgeo-secondary is-medium" text="More Chat Options" link="/community/irc/" >}}
 
 <div class="section-header">
 <div class="section-header-badge">

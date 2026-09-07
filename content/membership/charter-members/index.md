@@ -199,7 +199,7 @@ OSGeo has over 300 Charter Members from around the world, representing diverse b
 
 The complete list of Charter Members is maintained on the OSGeo wiki:
 
-[View Full Charter Member List](https://wiki.osgeo.org/wiki/Charter_Members){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="View Full Charter Member List" link="https://wiki.osgeo.org/wiki/Charter_Members" >}}
 
 ---
 
@@ -230,7 +230,7 @@ Emeritus Members:
 
 Interested in becoming a Charter Member someday? Start contributing to the OSGeo community today!
 
-[Get Involved](/community/get-involved/){.button .is-osgeo-secondary .is-medium}
+{{< button class="is-osgeo-secondary is-medium" text="Get Involved" link="/community/get-involved/" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

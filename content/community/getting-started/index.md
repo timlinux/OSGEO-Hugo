@@ -276,7 +276,7 @@ You don't need to be a programmer to contribute! Here are ways to help:
 </div>
 </div>
 
-[Learn More About Contributing](/community/get-involved/){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Learn More About Contributing" link="/community/get-involved/" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

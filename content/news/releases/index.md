@@ -131,7 +131,7 @@ Get notified about new releases:
 - **Social media** - Follow OSGeo and projects on social media
 - **RSS feeds** - Subscribe to project blogs and release feeds
 
-[View Mailing Lists](/community/mailing-lists/){.button .is-osgeo-secondary .is-medium}
+{{< button class="is-osgeo-secondary is-medium" text="View Mailing Lists" link="/community/mailing-lists/" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

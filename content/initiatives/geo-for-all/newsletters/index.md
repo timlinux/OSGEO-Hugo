@@ -39,7 +39,7 @@ Geo for All newsletters are published periodically to share news about:
 
 All past newsletters are available on the OSGeo wiki:
 
-[View Newsletter Archives](https://wiki.osgeo.org/wiki/GeoForAll/Newsletters){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="View Newsletter Archives" link="https://wiki.osgeo.org/wiki/GeoForAll/Newsletters" >}}
 
 ---
 

@@ -93,7 +93,7 @@ The OSGeo community is always welcoming new contributors. There are many ways to
 - **Events** - Organize or help at local meetups
 - **Support** - Answer questions on mailing lists
 
-[Get Involved](/community/get-involved/){.button .is-osgeo-secondary .is-medium}
+{{< button class="is-osgeo-secondary is-medium" text="Get Involved" link="/community/get-involved/" >}}
 
 ---
 

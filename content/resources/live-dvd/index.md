@@ -82,7 +82,7 @@ Boot directly from USB or DVD - no installation required.
 ### OSGeo-Live ISO
 Standard ISO image for various uses.
 
-[Download OSGeoLive](https://live.osgeo.org/en/download.html){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Download OSGeoLive" link="https://live.osgeo.org/en/download.html" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

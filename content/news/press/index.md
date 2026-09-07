@@ -53,7 +53,7 @@ OSGeo welcomes [Sponsor Name] as a new Diamond sponsor, demonstrating their comm
 
 Previous press releases are archived on the OSGeo wiki:
 
-[View Press Archive](https://wiki.osgeo.org/wiki/Press_Releases){.button .is-osgeo-secondary .is-medium}
+{{< button class="is-osgeo-secondary is-medium" text="View Press Archive" link="https://wiki.osgeo.org/wiki/Press_Releases" >}}
 
 ---
 

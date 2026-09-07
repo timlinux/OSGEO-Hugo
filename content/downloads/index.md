@@ -49,7 +49,7 @@ Try 50+ open source geospatial applications without installing anything. Perfect
 
 **Includes:** QGIS, GRASS GIS, PostGIS, GeoServer, MapServer, OpenLayers, and many more.
 
-[Download OSGeoLive](/initiatives/osgeolive/){.button .is-osgeo-cta}
+{{< button class="is-osgeo-cta" text="Download OSGeoLive" link="/initiatives/osgeolive/" >}}
 {{< rich-box-end >}}
 
 ---
@@ -276,7 +276,7 @@ Lightweight interactive maps.
 
 View the complete catalog of OSGeo projects:
 
-[Browse All Projects](/projects/){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Browse All Projects" link="/projects/" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

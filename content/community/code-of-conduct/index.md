@@ -89,7 +89,7 @@ If a community member engages in harassing behavior, OSGeo may take any action d
 
 If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact the OSGeo Board:
 
-[Contact the Board](mailto:board@osgeo.org){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Contact the Board" link="mailto:board@osgeo.org" >}}
 
 All reports will be treated confidentially.
 

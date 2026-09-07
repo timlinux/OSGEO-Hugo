@@ -161,7 +161,7 @@ OSGeo uses clean, readable typefaces:
 
 Download official brand assets:
 
-[Download Logo Pack](https://wiki.osgeo.org/wiki/Logo){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Download Logo Pack" link="https://wiki.osgeo.org/wiki/Logo" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

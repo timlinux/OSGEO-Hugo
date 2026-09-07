@@ -41,7 +41,7 @@ Service providers are listed on the OSGeo wiki, organized by:
 - **Project expertise** - Specialists in specific software
 - **Service type** - Development, training, hosting, etc.
 
-[Browse Service Provider Directory](https://wiki.osgeo.org/wiki/Service_Providers){.button .is-osgeo-primary .is-large}
+{{< button class="is-osgeo-primary is-large" text="Browse Service Provider Directory" link="https://wiki.osgeo.org/wiki/Service_Providers" >}}
 
 <div class="section-header">
 <div class="section-header-badge">
@@ -143,7 +143,7 @@ If your organization provides professional services for OSGeo software, you can 
 - Agree to accurate representation of services
 - Maintain current contact information
 
-[Add Your Listing](https://wiki.osgeo.org/wiki/Service_Providers){.button .is-osgeo-secondary .is-medium}
+{{< button class="is-osgeo-secondary is-medium" text="Add Your Listing" link="https://wiki.osgeo.org/wiki/Service_Providers" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

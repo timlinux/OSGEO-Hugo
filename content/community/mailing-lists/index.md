@@ -126,7 +126,7 @@ To get the most from mailing lists:
 </ul>
 </div>
 
-[Browse All Lists](https://lists.osgeo.org/mailman/listinfo){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Browse All Lists" link="https://lists.osgeo.org/mailman/listinfo" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

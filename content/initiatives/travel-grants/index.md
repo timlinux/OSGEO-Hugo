@@ -238,7 +238,7 @@ The Travel Grant Program is funded by:
 
 **Help us send more people to FOSS4G!** Your donation directly supports community members who couldn't otherwise attend.
 
-[Donate to OSGeo](/donate/){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Donate to OSGeo" link="/donate/" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

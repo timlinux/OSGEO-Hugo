@@ -162,7 +162,7 @@ Follow OSGeo on social media:
 
 For questions about specific OSGeo projects, please contact them directly through their mailing lists or issue trackers.
 
-[View Mailing Lists](/community/mailing-lists/){.button .is-osgeo-secondary .is-medium}
+{{< button class="is-osgeo-secondary is-medium" text="View Mailing Lists" link="/community/mailing-lists/" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

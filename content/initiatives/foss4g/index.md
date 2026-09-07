@@ -60,7 +60,7 @@ The conference alternates between three geographic regions: Europe, North Americ
 
 This year's conference offers a unique opportunity for both newcomers and regular attendees to immerse themselves in the world of open geospatial. The venue provides a central location with proximity to Auckland's business district and multiple accommodation options.
 
-[Visit FOSS4G 2025 Website](https://2025.foss4g.org){.button .is-osgeo-primary .is-medium}
+{{< button class="is-osgeo-primary is-medium" text="Visit FOSS4G 2025 Website" link="https://2025.foss4g.org" >}}
 
 <div class="section-header">
 <div class="section-header-badge">

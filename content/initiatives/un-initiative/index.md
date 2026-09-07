@@ -107,7 +107,7 @@ Promoting OGC and ISO standards in UN systems.
 <h2 class="section-title">Learn More</h2>
 </div>
 
-[UN Committee Wiki](https://wiki.osgeo.org/wiki/UN_Committee){.button .is-osgeo-secondary}
+{{< button class="is-osgeo-secondary" text="UN Committee Wiki" link="https://wiki.osgeo.org/wiki/UN_Committee" >}}
 
 {{< column-end >}}
 {{< column-start class="is-4" >}}

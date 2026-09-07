@@ -45,7 +45,7 @@ Over 100 Geo for All labs at universities worldwide provide:
 - Student projects and internships
 - Community collaboration
 
-[Learn More About Geo for All](/initiatives/geo-for-all/){.button .is-osgeo-secondary}
+{{< button class="is-osgeo-secondary" text="Learn More About Geo for All" link="/initiatives/geo-for-all/" >}}
 
 ---
 
