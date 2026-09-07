@@ -7,7 +7,7 @@
 // Environment:
 //   BASE_URL         server to crawl        (default http://127.0.0.1:1316)
 //   FRAMES_DIR       output directory       (default site-video/frames)
-//   VIDEO_MAX_STEPS  max scroll frames/page (default 6)
+//   VIDEO_MAX_STEPS  max scroll frames/page, 0 = full page (default 0)
 //   VIDEO_LIMIT      only first N pages, 0 = all (default 0)
 
 import { chromium } from 'playwright';
@@ -16,7 +16,7 @@ import { join } from 'node:path';
 
 const BASE_URL = process.env.BASE_URL ?? 'http://127.0.0.1:1316';
 const FRAMES_DIR = process.env.FRAMES_DIR ?? 'site-video/frames';
-const MAX_STEPS = Math.max(1, Number(process.env.VIDEO_MAX_STEPS ?? 6));
+const MAX_STEPS = Math.max(0, Number(process.env.VIDEO_MAX_STEPS ?? 0));
 const LIMIT = Number(process.env.VIDEO_LIMIT ?? 0);
 const WIDTH = 1440;
 const HEIGHT = 900;
@@ -66,7 +66,10 @@ const page = await browser.newPage({
 });
 
 const paths = await pagePaths();
-console.log(`Capturing ${paths.length} pages from ${BASE_URL} (max ${MAX_STEPS} frames/page)`);
+console.log(
+  `Capturing ${paths.length} pages from ${BASE_URL} ` +
+  (MAX_STEPS > 0 ? `(max ${MAX_STEPS} frames/page)` : '(full pages)'),
+);
 
 let frame = 0;
 const manifest = [];
@@ -81,7 +84,8 @@ for (const [index, pagePath] of paths.entries()) {
   await addBanner(page, label);
 
   const scrollHeight = await page.evaluate(() => document.documentElement.scrollHeight);
-  const steps = Math.min(MAX_STEPS, Math.max(1, Math.ceil(scrollHeight / HEIGHT)));
+  const needed = Math.max(1, Math.ceil(scrollHeight / HEIGHT));
+  const steps = MAX_STEPS > 0 ? Math.min(MAX_STEPS, needed) : needed;
 
   for (let step = 0; step < steps; step += 1) {
     const y = step === steps - 1 ? scrollHeight : step * HEIGHT;

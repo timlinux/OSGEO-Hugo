@@ -5,10 +5,10 @@
 # the URL path burned into each frame), then stitch the frames into an
 # mp4 with ffmpeg. Invoked as `osgeo video`.
 #
-#   ./site-video.sh                 # whole site
+#   ./site-video.sh                 # whole site, full pages top to bottom
 #   ./site-video.sh --limit 10      # only the first 10 pages (quick check)
 #   ./site-video.sh --fps 4         # faster playback
-#   ./site-video.sh --max-steps 3   # at most 3 scroll frames per page
+#   ./site-video.sh --max-steps 3   # cap scroll frames per page (0 = full page)
 #
 # Output: site-video/site.mp4 plus site-video/frames/ (with manifest.tsv
 # mapping each frame back to its page path).
