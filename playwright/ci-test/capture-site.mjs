@@ -7,7 +7,9 @@
 // Environment:
 //   BASE_URL         server to crawl        (default http://127.0.0.1:1316)
 //   FRAMES_DIR       output directory       (default site-video/frames)
-//   VIDEO_MAX_STEPS  max scroll frames/page, 0 = full page (default 0)
+//   VIDEO_MAX_STEPS  max scroll frames/page, 0 = full page (default 1:
+//                    top of page only; use --full in site-video.sh for
+//                    the whole page)
 //   VIDEO_LIMIT      only first N pages, 0 = all (default 0)
 
 import { chromium } from 'playwright';
@@ -16,7 +18,7 @@ import { join } from 'node:path';
 
 const BASE_URL = process.env.BASE_URL ?? 'http://127.0.0.1:1316';
 const FRAMES_DIR = process.env.FRAMES_DIR ?? 'site-video/frames';
-const MAX_STEPS = Math.max(0, Number(process.env.VIDEO_MAX_STEPS ?? 0));
+const MAX_STEPS = Math.max(0, Number(process.env.VIDEO_MAX_STEPS ?? 1));
 const LIMIT = Number(process.env.VIDEO_LIMIT ?? 0);
 const WIDTH = 1440;
 const HEIGHT = 900;

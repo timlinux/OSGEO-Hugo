@@ -114,16 +114,17 @@ hugo --config config.toml,config/config.prod.toml
 
 ### Visual validation video
 
-To eyeball the whole site quickly, record a scroll-through video of
-every page in the sitemap (about 145 pages), captured top to bottom.
-Each frame shows the page's URL path in a banner so issues can be
-reported by path:
+To eyeball the whole site quickly, record a video of every page in the
+sitemap (about 145 pages) — by default the top of each page, or the
+whole page with `--full`. Each frame shows the page's URL path in a
+banner so issues can be reported by path:
 
 ```bash
-osgeo video                 # whole site → site-video/site.mp4
+osgeo video                 # top of every page → site-video/site.mp4
+osgeo video --full          # scroll through each page top to bottom
 osgeo video --limit 10      # quick check, first 10 pages only
 osgeo video --fps 4         # faster playback
-osgeo video --max-steps 3   # cap scroll frames per page (default: full page)
+osgeo video --max-steps 3   # cap scroll frames per page (0 = full page)
 ```
 
 The frame-to-page mapping is written to `site-video/frames/manifest.tsv`.

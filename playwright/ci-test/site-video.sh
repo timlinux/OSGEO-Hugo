@@ -5,7 +5,8 @@
 # the URL path burned into each frame), then stitch the frames into an
 # mp4 with ffmpeg. Invoked as `osgeo video`.
 #
-#   ./site-video.sh                 # whole site, full pages top to bottom
+#   ./site-video.sh                 # whole site, top of each page only
+#   ./site-video.sh --full          # scroll through each page top to bottom
 #   ./site-video.sh --limit 10      # only the first 10 pages (quick check)
 #   ./site-video.sh --fps 4         # faster playback
 #   ./site-video.sh --max-steps 3   # cap scroll frames per page (0 = full page)
@@ -25,10 +26,11 @@ FPS="${VIDEO_FPS:-2}"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        --full) export VIDEO_MAX_STEPS=0; shift ;;
         --limit) export VIDEO_LIMIT="$2"; shift 2 ;;
         --fps) FPS="$2"; shift 2 ;;
         --max-steps) export VIDEO_MAX_STEPS="$2"; shift 2 ;;
-        *) echo "Unknown option: $1 (supported: --limit N, --fps N, --max-steps N)" >&2; exit 1 ;;
+        *) echo "Unknown option: $1 (supported: --full, --limit N, --fps N, --max-steps N)" >&2; exit 1 ;;
     esac
 done
 
