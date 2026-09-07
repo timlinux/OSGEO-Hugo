@@ -62,6 +62,7 @@ print_menu() {
   menu_item "verify" "Verify content against osgeo.org (args pass through)"
   menu_item "test" "Run the Playwright e2e suite"
   menu_item "video" "Record a validation video of every page (site-video/site.mp4)"
+  menu_item "review" "Review captured screenshots in the terminal (pass/fail lists)"
   menu_group "🪛 Content"
   menu_item "new-page" "Create a page: osgeo new-page about/contact"
   menu_item "new-post" "Create a news post: osgeo new-post \"My Post\""
@@ -127,6 +128,9 @@ case "$cmd" in
     ;;
   video)
     exec "$OSGEO_HUGO_ROOT/playwright/ci-test/site-video.sh" "$@"
+    ;;
+  review)
+    exec "$OSGEO_HUGO_ROOT/scripts/site_review.sh" "$@"
     ;;
   new-page)
     if [[ $# -lt 1 ]]; then

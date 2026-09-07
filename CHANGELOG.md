@@ -24,6 +24,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   URL path burned into each frame). Also `nix run .#video` and
   `:SiteVideo` / `<leader>py` in Neovim. Node.js and ffmpeg are now
   provided by the flake dev shell.
+- `osgeo review`: interactive terminal review of the screenshots from
+  `osgeo video`, rendered with chafa (sixel/kitty capable). Yes/no
+  verdict per page with resume support; verdicts accumulate in
+  `site-video/review-passed.txt` and `review-failed.txt` (the repair
+  worklist), with `--restart` and `--failed-only` modes.
 - The Neovim `<leader>p` which-key menu (`.nvim.lua`) now delegates to
   the `osgeo` dispatcher and gained `:Osgeo` (any subcommand, with
   completion), `:Harvest`, `:CheckLinks` and `:Preview` plus keymaps

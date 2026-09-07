@@ -50,6 +50,7 @@ The full command menu (also shown by `osgeo help`):
 |           | `verify`                | Verify content against osgeo.org (args pass through) |
 |           | `test`                  | Run the Playwright e2e suite                       |
 |           | `video`                 | Record a validation video of every page            |
+|           | `review`                | Review captured screenshots in the terminal        |
 | Content   | `new-page <path>`       | Create a page, e.g. `osgeo new-page about/contact` |
 |           | `new-post "<title>"`    | Create a news post                                 |
 |           | `harvest`               | Harvest content from osgeo.org (supports `--dry-run`) |
@@ -126,6 +127,22 @@ osgeo video --max-steps 3   # cap scroll frames per page (default: full page)
 ```
 
 The frame-to-page mapping is written to `site-video/frames/manifest.tsv`.
+
+After capturing, review every page interactively right in the terminal
+(screenshots rendered with chafa, using sixel/kitty graphics where the
+terminal supports them). Each page gets a yes/no verdict; results
+accumulate in `site-video/review-passed.txt` and
+`site-video/review-failed.txt` — the failed list is your repair
+worklist:
+
+```bash
+osgeo review                # resumes where you left off
+osgeo review --restart      # forget previous verdicts
+osgeo review --failed-only  # re-check the repair list after fixes
+```
+
+Keys: `y` pass, `n` fail, `f`/`b` next/previous frame of the current
+page, `o` open the page in a browser, `q` quit with a summary.
 
 ## Project Structure
 
