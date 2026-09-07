@@ -59,7 +59,18 @@ async function addBanner(page, text) {
 
 mkdirSync(FRAMES_DIR, { recursive: true });
 
-const browser = await chromium.launch();
+// CHROMIUM_PATH overrides the browser binary — useful when the pinned
+// playwright browser bundle is unavailable (a system chromium works).
+// The extra flags keep chromium alive in containers/sandboxes.
+const browser = await chromium.launch(
+  process.env.CHROMIUM_PATH
+    ? {
+        executablePath: process.env.CHROMIUM_PATH,
+        chromiumSandbox: false,
+        args: ['--disable-gpu', '--disable-dev-shm-usage', '--disable-crashpad'],
+      }
+    : {},
+);
 const page = await browser.newPage({
   viewport: { width: WIDTH, height: HEIGHT },
   deviceScaleFactor: 1,
@@ -81,7 +92,21 @@ for (const [index, pagePath] of paths.entries()) {
   } catch {
     console.warn(`  ⚠ slow load, capturing anyway: ${pagePath}`);
   }
-  await addBanner(page, label);
+  // Alias pages navigate again via meta-refresh; let that settle, and
+  // retry once if the first injection races a navigation.
+  await page.waitForTimeout(300);
+  try {
+    await addBanner(page, label);
+  } catch {
+    try {
+      await page.waitForLoadState('load', { timeout: 10000 });
+      await page.waitForTimeout(300);
+      await addBanner(page, label);
+    } catch (err) {
+      console.warn(`  ⚠ skipping ${pagePath}: ${String(err).split('\n')[0]}`);
+      continue;
+    }
+  }
 
   const scrollHeight = await page.evaluate(() => document.documentElement.scrollHeight);
   const needed = Math.max(1, Math.ceil(scrollHeight / HEIGHT));
