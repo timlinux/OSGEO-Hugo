@@ -1,0 +1,20 @@
+{{/* Fix bare /path/ links for subdirectory deployments.
+     On osgeo.org (baseURL=/) this is a no-op. */}}
+{{ $basePath := urls.Parse .Site.BaseURL }}
+{{ if ne $basePath.Path "/" }}
+<script>
+(function(){
+  var p='{{ $basePath.Path }}';
+  if(!p||p==='/')return;
+  if(!p.endsWith('/'))p+='/';
+  document.querySelectorAll('a[href^="/"]').forEach(function(a){
+    var h=a.getAttribute('href');
+    if(!h.startsWith(p)&&!h.startsWith('//'))a.setAttribute('href',p+h.substring(1));
+  });
+  document.querySelectorAll('img[src^="/"]').forEach(function(i){
+    var s=i.getAttribute('src');
+    if(!s.startsWith(p)&&!s.startsWith('//'))i.setAttribute('src',p+s.substring(1));
+  });
+})();
+</script>
+{{ end }}

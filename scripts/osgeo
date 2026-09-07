@@ -1,0 +1,162 @@
+#!/usr/bin/env bash
+# osgeo — single entry point for all OSGeo website project commands.
+#
+# Each subcommand delegates to the existing Makefile targets, scripts/,
+# or flake apps so the underlying logic lives in exactly one place.
+# The menu printed by `osgeo help` is also shown by the devShell
+# shellHook on `nix develop`.
+
+set -euo pipefail
+
+# Locate the project root so the command works from any subdirectory.
+# Honour an explicit override first (same convention as the flake's
+# verify-content launcher).
+if [[ -z "${OSGEO_HUGO_ROOT:-}" ]]; then
+  if root="$(git rev-parse --show-toplevel 2>/dev/null)"; then
+    OSGEO_HUGO_ROOT="$root"
+  else
+    OSGEO_HUGO_ROOT="$PWD"
+  fi
+fi
+export OSGEO_HUGO_ROOT
+cd "$OSGEO_HUGO_ROOT"
+
+# Colours only when writing to a terminal.
+if [[ -t 1 ]]; then
+  BOLD=$'\033[1m'
+  CYAN=$'\033[36m'
+  RESET=$'\033[0m'
+else
+  BOLD=""
+  CYAN=""
+  RESET=""
+fi
+
+menu_group() {
+  printf '\n%b\n' "${BOLD}$1${RESET}"
+}
+
+menu_item() {
+  printf '  %b%-14s%b %s\n' "$CYAN" "$1" "$RESET" "$2"
+}
+
+print_menu() {
+  printf '%s\n' "-----------------------------------------------------------------"
+  printf '%b\n' "🌈 ${BOLD}OSGeo Website${RESET} — project commands: ${CYAN}osgeo <command>${RESET}"
+  printf '%s\n' "-----------------------------------------------------------------"
+  menu_group "🪛 Serve"
+  menu_item "serve" "Run the Hugo dev server (http://localhost:1313)"
+  menu_item "drafts" "Dev server with drafts enabled"
+  menu_item "preview" "Serve the nix-built site (http://localhost:8000)"
+  menu_item "open" "Open the dev site in your browser"
+  menu_group "🪛 Build"
+  menu_item "build" "Production build (public_prod)"
+  menu_item "clean" "Remove build artefacts"
+  menu_group "🪛 Quality"
+  menu_item "format" "Format md/html/css with Prettier"
+  menu_item "format-check" "Check formatting without changing files"
+  menu_item "lint" "Run all linters"
+  menu_item "lint-md" "Lint Markdown files"
+  menu_item "lint-html" "Lint built HTML (run a build first)"
+  menu_item "pre-commit" "Run pre-commit hooks on all files"
+  menu_item "verify" "Verify content against osgeo.org (args pass through)"
+  menu_item "test" "Run the Playwright e2e suite"
+  menu_group "🪛 Content"
+  menu_item "new-page" "Create a page: osgeo new-page about/contact"
+  menu_item "new-post" "Create a news post: osgeo new-post \"My Post\""
+  menu_item "harvest" "Harvest content from osgeo.org (supports --dry-run)"
+  menu_item "check-links" "Check links on the local dev site"
+  menu_group "🪛 Utilities (production)"
+  menu_item "deploy" "Deploy the site (pull, backup, rebuild)"
+  menu_item "revert-deploy" "Revert to the previous deployment"
+  menu_item "help" "Show this menu"
+  printf '\n%s\n' "-----------------------------------------------------------------"
+}
+
+cmd="${1:-help}"
+if [[ $# -gt 0 ]]; then
+  shift
+fi
+
+case "$cmd" in
+  serve)
+    if [[ $# -gt 0 ]]; then
+      exec make hugo-run-dev HUGOSERVERFLAGS="$*"
+    fi
+    exec make hugo-run-dev
+    ;;
+  drafts)
+    exec make hugo-run-drafts
+    ;;
+  preview)
+    exec nix run "$OSGEO_HUGO_ROOT#website"
+    ;;
+  open)
+    exec make open
+    ;;
+  build)
+    exec make build
+    ;;
+  clean)
+    exec make clean
+    ;;
+  format)
+    exec make format
+    ;;
+  format-check)
+    exec make format-check
+    ;;
+  lint)
+    exec make lint
+    ;;
+  lint-md)
+    exec make lint-md
+    ;;
+  lint-html)
+    exec make lint-html
+    ;;
+  pre-commit)
+    exec make pre-commit
+    ;;
+  verify)
+    exec python3 "$OSGEO_HUGO_ROOT/scripts/verify_content.py" "$@"
+    ;;
+  test)
+    exec "$OSGEO_HUGO_ROOT/playwright/ci-test/run-tests.sh" "$@"
+    ;;
+  new-page)
+    if [[ $# -lt 1 ]]; then
+      echo "Usage: osgeo new-page <section/name>   (e.g. osgeo new-page about/contact)" >&2
+      exit 1
+    fi
+    exec hugo new "$1/_index.md"
+    ;;
+  new-post)
+    if [[ $# -lt 1 ]]; then
+      echo "Usage: osgeo new-post \"Post Title\"" >&2
+      exit 1
+    fi
+    exec make new-post TITLE="$*"
+    ;;
+  harvest)
+    exec python3 "$OSGEO_HUGO_ROOT/scripts/harvest_osgeo.py" "$@"
+    ;;
+  check-links)
+    echo "Note: check_links.py targets http://localhost:1314/OSGEO-Hugo/ (hardcoded in the script)." >&2
+    exec python3 "$OSGEO_HUGO_ROOT/scripts/check_links.py"
+    ;;
+  deploy)
+    exec make deploy
+    ;;
+  revert-deploy)
+    exec make revert-deploy
+    ;;
+  help | menu | -h | --help)
+    print_menu
+    ;;
+  *)
+    printf 'osgeo: unknown command "%s"\n\n' "$cmd" >&2
+    print_menu >&2
+    exit 1
+    ;;
+esac

@@ -1,0 +1,46 @@
+# ⚠️ QGIS VESTIGE: sanitizes the QGIS commercial-support listings.
+# Confirm this maps to OSGeo service providers before enabling.
+# This workflow scrapes the latest show episodes and commits the new episode and data
+# files to the repo.
+
+name: '🧹 Sanitize commercial support links and commit'
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # At midnight UTC every Sunday
+  workflow_dispatch:   # Allows you to run this workflow manually from the Actions tab
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'OSGeo'
+    steps:
+    - name: '🛒 Checkout OSGeo Website'
+      uses: actions/checkout@v7
+      with:
+        ref: main
+        path: ./osgeo-website
+
+    - name: '🐍 Setup Python'
+      uses: actions/setup-python@v7
+      with:
+        python-version: '3.13'
+        architecture: 'x64'
+        cache: "pipenv"
+
+    - name: '🚸Install Python deps'
+      run: |
+        cd ./osgeo-website
+        pip install pipenv && pipenv install -r REQUIREMENTS.txt && pipenv sync --bare
+        pipenv run pip freeze
+
+    - name: '⚙️ Check commercial support links'
+      run: |
+        cd ./osgeo-website
+        pipenv run ./scripts/sanitize_commercial_supports.py
+
+    - name: '✉️ Commit'
+      uses: stefanzweifel/git-auto-commit-action@v7
+      with:
+        commit_message: 'Commercial support links sanitized and committed via a GitHub Action.'
+        repository: ./osgeo-website
+        # push_options: --force

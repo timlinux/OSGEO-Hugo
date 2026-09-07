@@ -1,0 +1,30 @@
+# Direct runtime dependencies for the Python helper scripts in scripts/ and
+# fetch_feeds.py. Transitive dependencies are resolved by pipenv and captured
+# in Pipfile.lock -- do not pin them here.
+#
+# Kept in step with the Python provided by the flake dev shell (3.13).
+#
+# atoma            -- RSS/Atom parsing            (fetch_feeds.py)
+# beautifulsoup4   -- HTML parsing                (harvesters, link checkers)
+# boto3            -- S3 download listings        (update_s3_downloads.py)
+# html2text        -- HTML -> markdown            (harvest_osgeo.py)
+# icalendar        -- release schedule .ics       (update-schedule.py)
+# lxml             -- fast parser backend for bs4 (harvest_osgeo, verify_content)
+# pillow           -- logo/image resizing         (resize_image.py)
+# python-dateutil  -- feed date parsing           (fetch_feeds.py)
+# requests         -- HTTP client                 (most scripts)
+# rich             -- terminal tables             (harvest_osgeo, verify_content)
+# stripe           -- donation sync               (update_donors.py)
+# pytest           -- test runner
+atoma==0.0.17
+beautifulsoup4==4.15.0
+boto3==1.43.84
+html2text==2025.4.15
+icalendar==7.3.0
+lxml==6.1.2
+pillow==12.3.0
+python-dateutil==2.9.0.post0
+requests==2.34.2
+rich==15.0.0
+stripe==15.6.0
+pytest==9.1.1

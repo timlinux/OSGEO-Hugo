@@ -1,0 +1,337 @@
+/**
+ * OSGeo Site Overrides
+ * Custom styling improvements
+ */
+
+/* =============================================
+   HERO TEXT CONTRAST IMPROVEMENTS
+   ============================================= */
+
+/* Enhanced title with text shadow for better legibility */
+.page-hero-title {
+  color: #ffffff;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced subtitle with better contrast */
+.page-hero-subtitle {
+  color: #ffffff;
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge with better contrast */
+.page-hero-badge {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(77, 176, 91, 0.5);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero background image - increase visibility */
+.page-hero-bg .hero-bg-image {
+  opacity: 0.25;
+}
+
+/* Add a subtle dark overlay for text readability */
+.page-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 30, 34, 0.3) 0%,
+    rgba(0, 58, 64, 0.2) 50%,
+    rgba(0, 30, 34, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+.page-hero-pattern {
+  z-index: 2;
+}
+
+.page-hero-content {
+  z-index: 10;
+}
+
+/* Hero buttons with better contrast */
+.hero-btn-primary {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn-secondary {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Logo with light background frame for contrast */
+.page-hero-logo {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+.page-hero-logo img {
+  filter: none;
+  max-width: 180px;
+}
+
+/* =============================================
+   HOMEPAGE HERO (osgeo-hero.html) OVERRIDES
+   ============================================= */
+
+/* Marquee OSGeo logo — colored SVG framed in a crisp white card */
+.osgeo-hero .hero-logo-container {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 2.25rem 2.75rem;
+  border-radius: 24px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    0 20px 60px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto 3rem;
+  box-sizing: border-box;
+}
+
+.osgeo-hero .hero-logo {
+  width: 100% !important;
+  max-width: 480px !important;
+  height: auto !important;
+  filter: none !important;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Radiant glow behind the white card to lift it off the gradient */
+.osgeo-hero .logo-glow {
+  display: block;
+  position: absolute;
+  inset: -12%;
+  background: radial-gradient(circle,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(77, 176, 91, 0.22) 40%,
+    transparent 72%);
+  filter: blur(48px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Homepage stat cards - bright white text for readability */
+.osgeo-hero .hero-stat-card {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #f5f5f5 !important;
+  color: #f5f5f5 !important;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number .stat-plus {
+  color: #d4e8d6 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.osgeo-hero .hero-stat-card .stat-label {
+  color: #f0f0f0 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.osgeo-hero .hero-stat-card .stat-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =============================================
+   HERO STAT CARDS - FORCE WHITE TEXT
+   ============================================= */
+
+/* Force white text on all stat numbers - override gradient */
+.stat-number {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.hero-stat-card .stat-number {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.stat-plus {
+  -webkit-text-fill-color: #90EE90 !important;
+  color: #90EE90 !important;
+}
+
+/* Brighter labels */
+.hero-stat-card .stat-label {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Add slight backdrop blur and lighter background for better contrast */
+.hero-stat-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Brighter icons */
+.hero-stat-card .stat-icon {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Project info tags (avoids bulma-badge .badge conflict) */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* =============================================
+   PROJECT HERO - Make it beautiful
+   Use category color for a rich gradient hero
+   ============================================= */
+
+.project-hero {
+  background: var(--gradient-hero) !important;
+  padding: 6rem 0 4rem !important;
+  min-height: 360px;
+}
+
+/* Remove the thin top border - the gradient IS the hero now */
+.project-hero::before {
+  display: none;
+}
+
+/* Add ambient glow orbs like the main hero */
+.project-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* White breadcrumb on dark hero */
+.project-hero .project-breadcrumb {
+  color: rgba(255,255,255,0.6);
+}
+.project-hero .project-breadcrumb a {
+  color: rgba(255,255,255,0.7);
+}
+.project-hero .project-breadcrumb a:hover {
+  color: #fff;
+}
+.project-hero .project-breadcrumb span {
+  color: rgba(255,255,255,0.4);
+}
+
+/* White title and tagline */
+.project-hero .project-hero-title {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.project-hero .project-hero-tagline {
+  color: rgba(255,255,255,0.85);
+}
+
+/* Badges on dark background */
+.project-hero .badge {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.project-hero .badge-incubated {
+  background: rgba(255,255,255,0.2);
+}
+.project-hero .badge-category {
+  border: 1px solid rgba(255,255,255,0.3) !important;
+}
+
+/* Buttons - primary stays vivid, others get glass treatment */
+.project-hero .btn-hero.btn-secondary {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
+}
+.project-hero .btn-hero.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+.project-hero .btn-hero.btn-outline {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-color: rgba(255,255,255,0.25);
+}
+.project-hero .btn-hero.btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Logo image - white container with glow */
+.project-hero .project-hero-image {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.2),
+    0 0 60px rgba(255,255,255,0.1);
+}
+.project-hero .project-hero-image img {
+  max-height: 160px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Icon fallback - glass card */
+.project-hero .project-hero-icon {
+  background: rgba(255,255,255,0.1) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+}

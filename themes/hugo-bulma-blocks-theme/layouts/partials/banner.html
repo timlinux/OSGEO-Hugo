@@ -1,0 +1,7 @@
+{{/* see https://bulma.io/documentation/layout/hero/ for size options */}}
+{{ if .Params.HasDownloadBanner }}
+    {{ partial "download-banner.html" . }}
+{{ else if .Params.HasBanner }}
+    {{/* Use the new consistent page hero */}}
+    {{ partial "page-hero.html" . }}
+{{ end }}

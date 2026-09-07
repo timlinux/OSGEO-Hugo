@@ -1,0 +1,5 @@
+baseURL = 'https://www.osgeo.org/'
+publishDir = "public_www"
+
+[minify]
+  minifyOutput = true

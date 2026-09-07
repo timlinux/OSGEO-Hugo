@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+# Direct dependencies only; transitive pins live in Pipfile.lock.
+# Keep this list in step with REQUIREMENTS.txt.
+[packages]
+atoma = "==0.0.17"
+beautifulsoup4 = "==4.15.0"
+boto3 = "==1.43.84"
+html2text = "==2025.4.15"
+icalendar = "==7.3.0"
+lxml = "==6.1.2"
+pillow = "==12.3.0"
+python-dateutil = "==2.9.0.post0"
+requests = "==2.34.2"
+rich = "==15.0.0"
+stripe = "==15.6.0"
+pytest = "==9.1.1"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "description": "Systematic URL rewrites applied to harvested content. Read by both scripts/verify_content.py (link integrity check + --write-fixes) and scripts/harvest_osgeo.py (post-conversion rewrite). The registry is the persistent memory of every fix we have made on top of the upstream content: re-harvests apply it again so fixes are never silently lost. Fixes are tried in order; the first matching pattern wins.",
+  "fixes": [
+    {
+      "id": "osgeo-wiki-mediawiki-path",
+      "pattern": "^https?://wiki\\.osgeo\\.org/index\\.php/(.+)$",
+      "replacement": "https://wiki.osgeo.org/wiki/\\1",
+      "reason": "OSGeo wiki migrated from MediaWiki default URLs (/index.php/X) to pretty URLs (/wiki/X); the old paths now 404.",
+      "verified_at": "2026-06-30",
+      "example_before": "http://wiki.osgeo.org/index.php/Bolivia",
+      "example_after": "https://wiki.osgeo.org/wiki/Bolivia"
+    },
+    {
+      "id": "osgeo-subdomain-http-to-https",
+      "pattern": "^http://(wiki|lists|download|grass|www|trac)\\.osgeo\\.org(/.*)?$",
+      "replacement": "https://\\1.osgeo.org\\2",
+      "reason": "OSGeo subdomains all 301-redirect HTTP to HTTPS; promote the link so browsers do not need the extra hop.",
+      "verified_at": "2026-06-30",
+      "example_before": "http://lists.osgeo.org/mailman/listinfo/discuss",
+      "example_after": "https://lists.osgeo.org/mailman/listinfo/discuss"
+    },
+    {
+      "id": "strip-backslash-escaped-parens",
+      "pattern": "\\\\([()])",
+      "replacement": "\\1",
+      "reason": "html2text often inserts backslash-escapes for parens inside angle-bracket URLs (e.g. <https://en.wikipedia.org/wiki/501\\(c\\)_organization>) where escaping is neither needed nor honoured by browsers. Remove the bogus backslashes so the URL resolves.",
+      "verified_at": "2026-06-30",
+      "example_before": "https://en.wikipedia.org/wiki/501\\(c\\)_organization",
+      "example_after": "https://en.wikipedia.org/wiki/501(c)_organization"
+    }
+  ]
+}

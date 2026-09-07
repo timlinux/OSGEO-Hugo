@@ -1,0 +1,365 @@
+# OSGeo Hugo Website Configuration
+# Based on QGIS-Hugo structure with OSGeo branding
+# Note: For GitHub Pages deployment, this is overridden by the --baseURL flag
+baseURL = 'https://timlinux.github.io/OSGEO-Hugo/'
+locale = 'en-us'
+title = 'OSGeo - Open Source Geospatial Foundation'
+theme = 'hugo-bulma-blocks-theme'
+
+# Default pagination
+[pagination]
+  paginate = 50
+
+# Syntax highlighting
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+# Static directories
+staticDir = ['static']
+
+# Robots.txt
+enableRobotsTXT = false
+
+[taxonomies]
+  category = 'categories'
+  series = 'series'
+  tag = 'tags'
+  submenu = 'submenus'
+
+[params]
+# Min hugo version
+minHugoVersion = "0.158.0"
+
+# OSGeo Brand Colours (from OSGeo Branding Style Guide)
+# Primary: Light Green #4DB05B (Pantone 361 U)
+# Secondary: Dark Teal #003A40 (Pantone 330 U)
+primary1 = "#4DB05B"
+primary2 = "#003A40"
+primary3 = "#2D6E4B"
+primary4 = "#5DC06B"
+primary5 = "#006670"
+primary6 = "#00858C"
+primary1-invert = "#fff"
+primary2-invert = "#ffffff"
+primary3-invert = "#ffffff"
+primary4-invert = "#003A40"
+primary5-invert = "#ffffff"
+primary6-invert = "#ffffff"
+links = "#4DB05B"
+
+# Complementary colours
+complementary1 = "#4DB05B"
+complementary2 = "#003A40"
+complementary3 = "#5DC06B"
+complementary4 = "#006670"
+complementary5 = "#87D492"
+complementary6 = "#2D6E4B"
+complementary7 = "#00858C"
+complementary8 = "#004D52"
+
+light1 = "#f8faf8"
+light2 = "#e8f5e9"
+light3 = "#c8e6c9"
+dark1 = "#003A40"
+dark2 = "#001F22"
+text-primary1 = "#003A40"
+text-primary2 = "#2D5A52"
+
+# Bulma specific colours based on OSGeo branding
+black = "#001F22"
+white = "#ffffff"
+grey-dark = "#003A40"
+grey-darker = "#001F22"
+grey-light = "#c8e6c9"
+primary = "#4DB05B"
+danger = "#d32f2f"
+info = "#003A40"
+success = "#4DB05B"
+warning = "#ffc107"
+link = "#4DB05B"
+
+# OSGeo Brand fonts
+# Headers: Miriam Libre Bold
+# Body: Sintony Regular
+heading-font = "'Miriam Libre', 'Helvetica Neue', sans-serif"
+text-font = "'Sintony', 'Helvetica Neue', sans-serif"
+fancy-font = "'Miriam Libre', serif"
+
+menuFontClass = "is-size-6"
+
+## GitHub repo edit link
+githubRepo = "https://github.com/OSGeo/osgeo-hugo/"
+githubSubdir = "content"
+githubBranch = "main"
+
+## GH Repo for filing a new issue
+githubIssueUrl = "https://github.com/OSGeo/osgeo-hugo/issues/new/choose"
+### Edit content repo
+githubEditUrl = "https://github.com/OSGeo/osgeo-hugo/edit/main"
+### Radius for boxes
+corner-radius = "4px"
+
+## Disable uni-navigation (OSGeo doesn't use this)
+uniNavHeaderUrl = ''
+uniNavHeaderLocationPrefix = ""
+
+## News feed - to be configured
+newsfeed = ''
+
+## Cookie popup
+cookiesstate = false
+
+# Analytics - to be configured
+# matomoURL = ""
+# matomoSiteId = ''
+
+# commit hash file
+commitFile = "config/commit.toml"
+
+# Allow HTML in markdown files
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Syntax highlighter
+[markup.highlight]
+  codeFences = true
+  guessSyntax = true
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = false
+  lineNumbersInTable = false
+  tabWidth = 4
+  noClasses = false
+  style = "monokai"
+
+[markup.tableOfContents]
+  endLevel = 3
+  ordered = false
+  startLevel = 2
+
+sectionPagesMenu = 'main'
+
+# ============================================
+# OSGeo Menu Structure
+# Based on osgeo.org navigation
+# ============================================
+[menu]
+
+# ------------------------------------------
+# Projects Menu
+# ------------------------------------------
+[[menu.main]]
+  name = "Projects"
+  url = "/projects/"
+  weight = 10
+
+[[menu.main]]
+  parent = "Projects"
+  name = "OSGeo Projects"
+  url = "/projects/"
+  weight = 10
+
+[[menu.main]]
+  parent = "Projects"
+  name = "Community Projects"
+  url = "/projects/community/"
+  weight = 20
+
+[[menu.main]]
+  parent = "Projects"
+  name = "Incubation"
+  url = "/about/incubation/"
+  weight = 30
+
+# ------------------------------------------
+# Resources Menu
+# ------------------------------------------
+[[menu.main]]
+  name = "Resources"
+  url = "/resources/"
+  weight = 20
+
+[[menu.main]]
+  parent = "Resources"
+  name = "Live DVD"
+  url = "/resources/live-dvd/"
+  weight = 10
+
+[[menu.main]]
+  parent = "Resources"
+  name = "Events"
+  url = "/events/"
+  weight = 20
+
+[[menu.main]]
+  parent = "Resources"
+  name = "Education"
+  url = "/resources/education/"
+  weight = 30
+
+[[menu.main]]
+  parent = "Resources"
+  name = "Blog"
+  url = "/news/"
+  weight = 40
+
+# ------------------------------------------
+# About OSGeo Menu
+# ------------------------------------------
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 30
+
+[[menu.main]]
+  parent = "About"
+  name = "About OSGeo"
+  url = "/about/"
+  weight = 10
+
+[[menu.main]]
+  parent = "About"
+  name = "FAQ"
+  url = "/about/faq/"
+  weight = 20
+
+[[menu.main]]
+  parent = "About"
+  name = "Contact"
+  url = "/about/contact/"
+  weight = 30
+
+[[menu.main]]
+  parent = "About"
+  name = "Branding"
+  url = "/about/branding/"
+  weight = 40
+
+[[menu.main]]
+  parent = "About"
+  name = "Sponsors"
+  url = "/sponsors/"
+  weight = 50
+
+[[menu.main]]
+  parent = "About"
+  name = "Awards"
+  url = "/about/awards/"
+  weight = 60
+
+[[menu.main]]
+  parent = "Awards"
+  name = "Sol Katz Award"
+  url = "/about/awards/sol-katz/"
+  weight = 61
+
+# ------------------------------------------
+# Initiatives Menu
+# ------------------------------------------
+[[menu.main]]
+  name = "Initiatives"
+  url = "/initiatives/"
+  weight = 40
+
+[[menu.main]]
+  parent = "Initiatives"
+  name = "FOSS4G"
+  url = "/initiatives/foss4g/"
+  weight = 10
+
+[[menu.main]]
+  parent = "Initiatives"
+  name = "OSGeo Local Chapters"
+  url = "/local-chapters/"
+  weight = 20
+
+[[menu.main]]
+  parent = "Initiatives"
+  name = "GeoForAll"
+  url = "/initiatives/geo-for-all/"
+  weight = 30
+
+[[menu.main]]
+  parent = "Initiatives"
+  name = "UN Committee of Experts"
+  url = "/initiatives/un-ggim/"
+  weight = 40
+
+# ------------------------------------------
+# Community Menu
+# ------------------------------------------
+[[menu.main]]
+  name = "Community"
+  url = "/community/"
+  weight = 50
+
+[[menu.main]]
+  parent = "Community"
+  name = "Get Involved"
+  url = "/community/get-involved/"
+  weight = 10
+
+[[menu.main]]
+  parent = "Community"
+  name = "Mailing Lists"
+  url = "/community/mailing-lists/"
+  weight = 20
+
+[[menu.main]]
+  parent = "Community"
+  name = "IRC / Chat"
+  url = "/community/irc/"
+  weight = 30
+
+[[menu.main]]
+  parent = "Community"
+  name = "Code of Conduct"
+  url = "/community/code-of-conduct/"
+  weight = 40
+
+[[menu.main]]
+  parent = "Community"
+  name = "Local Chapters"
+  url = "/local-chapters/"
+  weight = 50
+
+# ------------------------------------------
+# Membership/Donate Menu
+# ------------------------------------------
+[[menu.main]]
+  name = "Membership"
+  url = "/membership/"
+  weight = 60
+
+[[menu.main]]
+  parent = "Membership"
+  name = "Become a Member"
+  url = "/membership/"
+  weight = 10
+
+[[menu.main]]
+  parent = "Membership"
+  name = "Charter Members"
+  url = "/membership/charter-members/"
+  weight = 20
+
+[[menu.main]]
+  parent = "Membership"
+  name = "Donate"
+  url = "/donate/"
+  weight = 30
+
+# ------------------------------------------
+# Language Menu
+# ------------------------------------------
+[[menu.lang]]
+  name = "English"
+  url = "en"
+  weight = 1
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[outputFormats]

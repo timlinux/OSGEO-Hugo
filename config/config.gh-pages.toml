@@ -1,0 +1,5 @@
+[params]
+uniNavHeaderLocationPrefix = "/OSGEO-Hugo"
+
+[minify]
+  minifyOutput = true
