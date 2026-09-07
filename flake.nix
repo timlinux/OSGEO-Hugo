@@ -79,6 +79,9 @@
             pkgs.gnumake
             hugoFor.${system}
             scriptsPythonFor.${system}
+            pkgs.nodejs # playwright capture scripts + npx (format/lint)
+            pkgs.ffmpeg # osgeo video frame stitching
+            pkgs.curl # server readiness probe in site-video.sh
           ];
           text = ''
             if [[ -z "''${OSGEO_HUGO_ROOT:-}" ]]; then
@@ -141,6 +144,7 @@
             "pre-commit"
             "verify"
             "test"
+            "video"
             # Content
             "new-page"
             "new-post"
@@ -255,6 +259,8 @@
             ]
             ++ (with pkgs; [
               gnumake # GNU Make for build automation
+              nodejs # npx (prettier, markdownlint) + playwright capture
+              ffmpeg # osgeo video frame stitching
             ])
             ++ [
               osgeoFor.${system} # `osgeo` project command dispatcher

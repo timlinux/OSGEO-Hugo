@@ -49,6 +49,7 @@ The full command menu (also shown by `osgeo help`):
 |           | `pre-commit`            | Run pre-commit hooks on all files                  |
 |           | `verify`                | Verify content against osgeo.org (args pass through) |
 |           | `test`                  | Run the Playwright e2e suite                       |
+|           | `video`                 | Record a validation video of every page            |
 | Content   | `new-page <path>`       | Create a page, e.g. `osgeo new-page about/contact` |
 |           | `new-post "<title>"`    | Create a news post                                 |
 |           | `harvest`               | Harvest content from osgeo.org (supports `--dry-run`) |
@@ -109,6 +110,21 @@ Or directly with Hugo:
 ```bash
 hugo --config config.toml,config/config.prod.toml
 ```
+
+### Visual validation video
+
+To eyeball the whole site quickly, record a scroll-through video of
+every page in the sitemap. Each frame shows the page's URL path in a
+banner so issues can be reported by path:
+
+```bash
+osgeo video                 # whole site → site-video/site.mp4
+osgeo video --limit 10      # quick check, first 10 pages only
+osgeo video --fps 4         # faster playback
+osgeo video --max-steps 3   # fewer scroll frames per page
+```
+
+The frame-to-page mapping is written to `site-video/frames/manifest.tsv`.
 
 ## Project Structure
 

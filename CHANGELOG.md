@@ -19,6 +19,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Every `osgeo` subcommand is also exposed as its own flake app, so
   `nix run .#serve`, `nix run .#build`, `nix run .#verify -- <args>`
   etc. work without entering the dev shell.
+- `osgeo video`: records a scroll-through validation video of every
+  page in the sitemap (Playwright screenshots stitched with ffmpeg,
+  URL path burned into each frame). Also `nix run .#video` and
+  `:SiteVideo` / `<leader>py` in Neovim. Node.js and ffmpeg are now
+  provided by the flake dev shell.
 - The Neovim `<leader>p` which-key menu (`.nvim.lua`) now delegates to
   the `osgeo` dispatcher and gained `:Osgeo` (any subcommand, with
   completion), `:Harvest`, `:CheckLinks` and `:Preview` plus keymaps

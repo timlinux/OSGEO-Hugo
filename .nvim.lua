@@ -50,7 +50,7 @@ local osgeo_commands = {
   'serve', 'drafts', 'preview', 'open',
   'build', 'clean',
   'format', 'format-check', 'lint', 'lint-md', 'lint-html',
-  'pre-commit', 'verify', 'test',
+  'pre-commit', 'verify', 'test', 'video',
   'new-page', 'new-post', 'harvest', 'check-links',
   'deploy', 'revert-deploy', 'help',
 }
@@ -168,6 +168,11 @@ vim.api.nvim_create_user_command('E2eTestUI', function()
   osgeo_term('test --ui')
 end, { desc = 'Run the Playwright suite in UI mode' })
 
+vim.api.nvim_create_user_command('SiteVideo', function(opts)
+  local args = opts.args ~= '' and (' ' .. opts.args) or ''
+  osgeo_term('video' .. args)
+end, { nargs = '*', desc = 'Record a validation video of every page (osgeo video)' })
+
 -- Content verification (cross-check local Hugo content against upstream
 -- osgeo.org and optionally emit an nginx redirect map).
 vim.api.nvim_create_user_command('VerifyContent', function(opts)
@@ -270,6 +275,7 @@ if wk_ok then
     -- Testing
     { '<leader>pt', '<cmd>E2eTest<cr>', desc = 'Run Playwright e2e tests (osgeo test)' },
     { '<leader>pT', '<cmd>E2eTestUI<cr>', desc = 'Playwright e2e tests (UI mode)' },
+    { '<leader>py', '<cmd>SiteVideo<cr>', desc = 'Record site validation video (osgeo video)' },
 
     -- Pre-commit / Git
     { '<leader>pp', '<cmd>PreCommit<cr>', desc = 'Run pre-commit (osgeo pre-commit)' },
