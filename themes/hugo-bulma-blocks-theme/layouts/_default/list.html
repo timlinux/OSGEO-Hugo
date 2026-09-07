@@ -9,7 +9,8 @@
         <div class="columns is-multiline is-centered">
             {{ partial "sidebar.html" . }}
             <div class="content column is-9">
-            <h1 class="title">{{ .Title }}</h1>
+            {{/* Harvested titles carry the scraped "<title>" suffix; strip it for display */}}
+            <h1 class="title">{{ .Title | replaceRE `\s+- OSGeo$` "" }}</h1>
             {{ if .Params.subtitle }}
                 <p class="is-size-5">{{ .Params.subtitle }}</p>
             {{ end }}
@@ -20,7 +21,7 @@
 
                 <div class="container rich {{ $has_right }}" >
                     <div class="cont coloring-1">
-                        <h3 class="">{{ .Title }}</h3>
+                        <h3 class="">{{ .Title | replaceRE `\s+- OSGeo$` "" }}</h3>
                             <p> {{ .Description }}</p>
                             <a class="button is-primary1 " href="{{ .Permalink }}">
                                 <span>Read more</span>

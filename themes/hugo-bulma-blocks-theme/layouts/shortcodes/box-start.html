@@ -2,9 +2,10 @@
 {{ $classFromParam := .Get "class" }}
 {{ $classesFromParam := .Get "classes" }}
 {{ if $classFromParam }}
-    {{ $classes = $classFromParam }}
+    {{/* Keep Bulma's "content" typography even with custom classes */}}
+    {{ $classes = printf "content %s" $classFromParam }}
 {{ else if $classesFromParam }}
-    {{ $classes = $classesFromParam }}
+    {{ $classes = printf "content %s" $classesFromParam }}
 {{ else }}
     {{ $classes = "container content notification is-light" }}
 {{ end }}

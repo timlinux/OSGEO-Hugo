@@ -20,11 +20,13 @@ staticDir = ['static']
 # Robots.txt
 enableRobotsTXT = false
 
+# No content uses taxonomies; disabling them keeps the auto-generated
+# near-empty /categories/, /tags/, /series/ and /submenus/ stub pages
+# out of the build and the sitemap. The empty [taxonomies] table is
+# needed too, or Hugo re-enables its default tags/categories.
+disableKinds = ["taxonomy", "term"]
+
 [taxonomies]
-  category = 'categories'
-  series = 'series'
-  tag = 'tags'
-  submenu = 'submenus'
 
 [params]
 # Min hugo version

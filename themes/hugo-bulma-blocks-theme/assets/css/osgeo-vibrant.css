@@ -1447,8 +1447,9 @@ html {
   font-size: 1.25rem;
 }
 
-/* Support/Primary button in navbar */
-.button.is-osgeo-primary {
+/* Support/Primary button in navbar — scoped so it does not override
+   the site-wide gradient pill style defined earlier in this file */
+.navbar .button.is-osgeo-primary {
   background: var(--osgeo-green);
   border-color: transparent;
   color: white;
@@ -1456,7 +1457,7 @@ html {
   transition: all 0.3s var(--ease-smooth);
 }
 
-.button.is-osgeo-primary:hover {
+.navbar .button.is-osgeo-primary:hover {
   background: var(--osgeo-green-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
@@ -1661,7 +1662,9 @@ html {
   flex-grow: 1;
 }
 
-.container.rich a {
+/* :not(.button) — buttons keep their own label colour; without it the
+   green link colour matches the green button background (invisible label) */
+.container.rich a:not(.button) {
   color: var(--osgeo-green);
   font-weight: 600;
   text-decoration: none;
@@ -1671,7 +1674,7 @@ html {
   transition: all 0.2s var(--ease-smooth);
 }
 
-.container.rich a:hover {
+.container.rich a:not(.button):hover {
   color: var(--osgeo-green-dark);
   gap: var(--space-sm);
 }

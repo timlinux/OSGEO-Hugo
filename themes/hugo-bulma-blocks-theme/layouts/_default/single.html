@@ -3,5 +3,9 @@
 {{ partial "submenu.html" . }}
 {{ partial "contextmenu.html" . }}
 {{ partial "banner.html" . }}
-{{ .Content }}
+<section class="section">
+    <div class="container content">
+        {{ .Content }}
+    </div>
+</section>
 {{ partial "footer.html" . }}

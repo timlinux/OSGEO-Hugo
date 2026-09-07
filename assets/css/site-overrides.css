@@ -335,3 +335,63 @@ section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number .stat-plus {
   border: 1px solid rgba(255,255,255,0.2);
   backdrop-filter: blur(8px);
 }
+
+/* =============================================
+   READABILITY REPAIRS (visual review 2026-09)
+   ============================================= */
+
+/* Bulma's $box-color compiles to near-white (#f8faf8) because the
+   default .box background is brand green. Boxes repainted with a light
+   background utility must switch to dark text or they are unreadable. */
+.box.has-background-osgeo-light,
+.box.has-background-light,
+.box.has-background-white,
+.box.is-light2 {
+  color: #333333;
+}
+.box.has-background-osgeo-light h1, .box.has-background-osgeo-light h2,
+.box.has-background-osgeo-light h3, .box.has-background-osgeo-light h4,
+.box.has-background-light h1, .box.has-background-light h2,
+.box.has-background-light h3, .box.has-background-light h4,
+.box.has-background-white h1, .box.has-background-white h2,
+.box.has-background-white h3, .box.has-background-white h4,
+.box.is-light2 h1, .box.is-light2 h2,
+.box.is-light2 h3, .box.is-light2 h4 {
+  color: var(--osgeo-teal);
+}
+
+/* Links inside light boxes: teal + underline for visible contrast
+   (the green link colour sits at ~2.2:1 on the pale green boxes). */
+.box.has-background-osgeo-light a:not(.button),
+.box.has-background-light a:not(.button),
+.box.has-background-white a:not(.button),
+.box.is-light2 a:not(.button) {
+  color: var(--osgeo-teal);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* .section-title paints its glyphs with a dark gradient via
+   background-clip:text, which makes headings on dark CTA bands
+   invisible. On dark bands (and wherever has-text-white is asked for)
+   fall back to solid white text. */
+.cta-section .section-title,
+.section-title.has-text-white {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* The small uppercase badge on dark CTA bands used dark green text. */
+.cta-section .section-header-badge {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* osgeo-vibrant.css references --font-heading but never defines it,
+   so headings fell back to the UA default. Define the brand stack
+   (matches heading-font in config.toml). */
+:root {
+  --font-heading: 'Miriam Libre', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
