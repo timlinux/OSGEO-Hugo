@@ -9,10 +9,14 @@
         <div class="columns is-multiline is-centered">
             {{ partial "sidebar.html" . }}
             <div class="content column is-9">
-            {{/* Harvested titles carry the scraped "<title>" suffix; strip it for display */}}
+            {{/* The page hero already shows title and subtitle, so only
+                 repeat them here on pages without a banner. Harvested
+                 titles carry the scraped "<title>" suffix; strip it. */}}
+            {{ if not (or .Params.HasBanner .Params.HasDownloadBanner) }}
             <h1 class="title">{{ .Title | replaceRE `\s+- OSGeo$` "" }}</h1>
             {{ if .Params.subtitle }}
                 <p class="is-size-5">{{ .Params.subtitle }}</p>
+            {{ end }}
             {{ end }}
 
                 {{ range (.Paginator 500 ).Pages }}
