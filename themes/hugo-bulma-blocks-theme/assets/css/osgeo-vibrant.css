@@ -2056,33 +2056,6 @@ html {
   position: relative;
 }
 
-.section-header::before {
-  content: '';
-  position: absolute;
-  top: var(--space-2xl);
-  left: 50%;
-  transform: translateX(-50%) skewX(-20deg);
-  width: 100px;
-  height: 4px;
-  background: var(--gradient-earth);
-  border-radius: var(--radius-sm);
-  opacity: 0.4;
-}
-
-/* Angular line accent - second skewed line */
-.section-header::after {
-  content: '';
-  position: absolute;
-  top: calc(var(--space-2xl) + 8px);
-  left: 50%;
-  transform: translateX(-30%) skewX(-20deg);
-  width: 60px;
-  height: 3px;
-  background: var(--osgeo-green);
-  border-radius: var(--radius-sm);
-  opacity: 0.25;
-}
-
 .section-header-badge {
   display: inline-flex;
   align-items: center;
