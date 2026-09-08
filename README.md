@@ -158,10 +158,20 @@ content blocks. It drives three things that therefore stay in lockstep:
 - the Neovim `:InsertBlock` picker (`<leader>pa`), which inserts the
   same snippets at the cursor;
 - a drift check (`osgeo blocks --check`) that fails when a shortcode
-  exists on disk but not in the registry, or vice versa.
+  exists on disk but not in the registry, or vice versa;
+- a presentation deck (`osgeo blocks --pdf`) — one slide per block,
+  written to `site-video/blocks-deck.pdf`.
 
 When you add or change a shortcode, update `data/shortcodes.json` and
 run `osgeo blocks`.
+
+**Dev-only pages**: everything under `content/dev/` (including the
+gallery) is rendered only by the local dev server, which uses the base
+`config.toml`. The production overlays (`config/config.prod.toml`,
+`config.www.toml`, `config.gh-pages.toml`) carry a `[[cascade]]` block
+that sets `_build.render = 'never'` for `/dev` and `/dev/**`, so these
+pages never appear in production builds or sitemaps. To add more
+developer-only pages, just create them under `content/dev/`.
 
 ## Project Structure
 

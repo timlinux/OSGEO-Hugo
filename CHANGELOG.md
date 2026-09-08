@@ -27,6 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `osgeo video --theme <name>`: capture screenshots in any brand-pack
   theme; defaults to the `current` theme regardless of any theme
   previously persisted by the site's theme switcher.
+- `osgeo blocks --pdf`: one-slide-per-block gallery deck
+  (`site-video/blocks-deck.pdf`).
+- Dev-only pages: `content/dev/` renders on the local server only;
+  production configs exclude it via a build cascade.
 - Shortcode gallery: `data/shortcodes.json` registry (71 blocks) drives
   the generated `/dev/blocks/` demo page (`osgeo blocks`), the Neovim
   `:InsertBlock` / `<leader>pa` snippet picker, and a lockstep drift
