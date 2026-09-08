@@ -34,11 +34,24 @@ FAILED_FILE="site-video/review-failed.txt"
 
 RESTART=0
 FAILED_ONLY=0
+usage() {
+  cat <<'USAGE'
+osgeo review — interactively review captured screenshots (run osgeo video first)
+
+  osgeo review                resume where you left off
+  osgeo review --restart      forget previous verdicts, review everything
+  osgeo review --failed-only  re-review only the pages marked failed
+
+Keys: [y] pass  [n] fail  [f/b] next/prev frame  [o] open in browser  [q] quit
+USAGE
+}
+
 while [[ $# -gt 0 ]]; do
   case "$1" in
+    -h|--help) usage; exit 0 ;;
     --restart) RESTART=1; shift ;;
     --failed-only) FAILED_ONLY=1; shift ;;
-    *) echo "Unknown option: $1 (supported: --restart, --failed-only)" >&2; exit 1 ;;
+    *) echo "Unknown option: $1" >&2; usage >&2; exit 1 ;;
   esac
 done
 

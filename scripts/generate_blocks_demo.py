@@ -120,8 +120,28 @@ def render(entries: list[dict]) -> str:
     return "".join(out)
 
 
+USAGE = """\
+osgeo blocks — shortcode gallery tooling (registry: data/shortcodes.json)
+
+Usage:
+  osgeo blocks           regenerate content/dev/blocks/index.md and
+                         report registry/file drift
+  osgeo blocks --check   drift report only; exit 1 on drift (for CI)
+  osgeo blocks --pdf     build the slide deck (site-video/blocks-deck.pdf)
+  osgeo blocks --help    show this help
+"""
+
+
 def main() -> int:
-    check_only = "--check" in sys.argv
+    args = sys.argv[1:]
+    if any(a in ("-h", "--help") for a in args):
+        print(USAGE)
+        return 0
+    unknown = [a for a in args if a not in ("--check",)]
+    if unknown:
+        print(f"Unknown option: {' '.join(unknown)}\n\n{USAGE}", file=sys.stderr)
+        return 2
+    check_only = "--check" in args
     entries = json.loads(REGISTRY.read_text())
 
     missing, stale = drift_report(entries)

@@ -73,7 +73,8 @@ print_menu() {
   menu_item "deploy" "Deploy the site (pull, backup, rebuild)"
   menu_item "revert-deploy" "Revert to the previous deployment"
   menu_item "help" "Show this menu"
-  printf '\n%s\n' "-----------------------------------------------------------------"
+  printf '\n%s\n' "Flagged commands (video, review, blocks, verify, harvest) accept --help."
+  printf '%s\n' "-----------------------------------------------------------------"
 }
 
 cmd="${1:-help}"

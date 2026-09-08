@@ -27,14 +27,28 @@ OUT_DIR="$ROOT/site-video"
 FRAMES_DIR="$OUT_DIR/frames"
 FPS="${VIDEO_FPS:-2}"
 
+usage() {
+    cat <<'USAGE'
+osgeo video — record a validation video of the site
+
+  osgeo video                 top of every page → site-video/site.mp4
+  osgeo video --full          scroll through each page top to bottom
+  osgeo video --limit N       only the first N pages
+  osgeo video --fps N         playback speed (default 2)
+  osgeo video --max-steps N   cap scroll frames per page (0 = full page)
+  osgeo video --theme NAME    brand theme: current|refresh|modern|bold|earth|vibrant
+USAGE
+}
+
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        -h|--help) usage; exit 0 ;;
         --full) export VIDEO_MAX_STEPS=0; shift ;;
         --limit) export VIDEO_LIMIT="$2"; shift 2 ;;
         --fps) FPS="$2"; shift 2 ;;
         --max-steps) export VIDEO_MAX_STEPS="$2"; shift 2 ;;
         --theme) export VIDEO_THEME="$2"; shift 2 ;;
-        *) echo "Unknown option: $1 (supported: --full, --limit N, --fps N, --max-steps N, --theme NAME)" >&2; exit 1 ;;
+        *) echo "Unknown option: $1" >&2; usage >&2; exit 1 ;;
     esac
 done
 
