@@ -49,8 +49,11 @@
       );
       hugoFor = forAllSystems (system: unstableFor.${system}.hugo);
 
-      # Python env for the content scripts (verifier, harvester) with all
-      # required libraries provisioned from nixpkgs (no pip/npm).
+      # Python env for the content scripts (verifier, harvester, deck
+      # builder) with all required libraries provisioned from nixpkgs
+      # (no pip/npm). NOTE: the osgeo launcher puts this python first on
+      # PATH, shadowing the dev shell interpreter — every library an
+      # osgeo subcommand needs must be listed here.
       scriptsPythonFor = forAllSystems (
         system:
         nixpkgsFor.${system}.python3.withPackages (ps: [
@@ -59,6 +62,7 @@
           ps.lxml
           ps.html2text
           ps.rich
+          ps.pillow # osgeo blocks --pdf deck assembly
         ])
       );
 
