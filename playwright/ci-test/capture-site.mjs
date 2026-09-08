@@ -11,6 +11,8 @@
 //                    top of page only; use --full in site-video.sh for
 //                    the whole page)
 //   VIDEO_LIMIT      only first N pages, 0 = all (default 0)
+//   VIDEO_THEME      brand theme to capture (default "current"; the
+//                    site's theme switcher persists via localStorage)
 
 import { chromium } from 'playwright';
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -20,6 +22,7 @@ const BASE_URL = process.env.BASE_URL ?? 'http://127.0.0.1:1316';
 const FRAMES_DIR = process.env.FRAMES_DIR ?? 'site-video/frames';
 const MAX_STEPS = Math.max(0, Number(process.env.VIDEO_MAX_STEPS ?? 1));
 const LIMIT = Number(process.env.VIDEO_LIMIT ?? 0);
+const THEME = process.env.VIDEO_THEME ?? 'current';
 const WIDTH = 1440;
 const HEIGHT = 900;
 
@@ -78,9 +81,19 @@ const page = await browser.newPage({
   deviceScaleFactor: 1,
 });
 
+// Pin the brand theme before any page script runs; the site's theme
+// switcher reads localStorage and applies data-theme on load.
+await page.addInitScript((theme) => {
+  try {
+    localStorage.setItem('osgeo-theme', theme);
+  } catch {
+    /* storage unavailable — page falls back to the default theme */
+  }
+}, THEME);
+
 const paths = await pagePaths();
 console.log(
-  `Capturing ${paths.length} pages from ${BASE_URL} ` +
+  `Capturing ${paths.length} pages from ${BASE_URL} in "${THEME}" theme ` +
   (MAX_STEPS > 0 ? `(max ${MAX_STEPS} frames/page)` : '(full pages)'),
 );
 

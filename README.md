@@ -125,6 +125,8 @@ osgeo video --full          # scroll through each page top to bottom
 osgeo video --limit 10      # quick check, first 10 pages only
 osgeo video --fps 4         # faster playback
 osgeo video --max-steps 3   # cap scroll frames per page (0 = full page)
+osgeo video --theme bold    # capture in a brand-pack theme
+                            # (current|refresh|modern|bold|earth|vibrant)
 ```
 
 The frame-to-page mapping is written to `site-video/frames/manifest.tsv`.

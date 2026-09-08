@@ -24,6 +24,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   URL path burned into each frame). Also `nix run .#video` and
   `:SiteVideo` / `<leader>py` in Neovim. Node.js and ffmpeg are now
   provided by the flake dev shell.
+- `osgeo video --theme <name>`: capture screenshots in any brand-pack
+  theme; defaults to the `current` theme regardless of any theme
+  previously persisted by the site's theme switcher.
 - `osgeo review`: interactive terminal review of the screenshots from
   `osgeo video`, rendered with chafa (sixel/kitty capable). Yes/no
   verdict per page with resume support; verdicts accumulate in

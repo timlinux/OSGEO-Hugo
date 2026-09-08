@@ -10,6 +10,9 @@
 #   ./site-video.sh --limit 10      # only the first 10 pages (quick check)
 #   ./site-video.sh --fps 4         # faster playback
 #   ./site-video.sh --max-steps 3   # cap scroll frames per page (0 = full page)
+#   ./site-video.sh --theme bold    # capture in a brand-pack theme
+#                                   # (current|refresh|modern|bold|earth|vibrant;
+#                                   # default: current)
 #
 # Output: site-video/site.mp4 plus site-video/frames/ (with manifest.tsv
 # mapping each frame back to its page path).
@@ -30,7 +33,8 @@ while [[ $# -gt 0 ]]; do
         --limit) export VIDEO_LIMIT="$2"; shift 2 ;;
         --fps) FPS="$2"; shift 2 ;;
         --max-steps) export VIDEO_MAX_STEPS="$2"; shift 2 ;;
-        *) echo "Unknown option: $1 (supported: --full, --limit N, --fps N, --max-steps N)" >&2; exit 1 ;;
+        --theme) export VIDEO_THEME="$2"; shift 2 ;;
+        *) echo "Unknown option: $1 (supported: --full, --limit N, --fps N, --max-steps N, --theme NAME)" >&2; exit 1 ;;
     esac
 done
 
