@@ -67,7 +67,7 @@ print_menu() {
   menu_item "new-page" "Create a page: osgeo new-page about/contact"
   menu_item "new-post" "Create a news post: osgeo new-post \"My Post\""
   menu_item "harvest" "Harvest content from osgeo.org (supports --dry-run)"
-  menu_item "blocks" "Regenerate the shortcode gallery page (--check for drift)"
+  menu_item "blocks" "Regenerate the shortcode gallery (--check drift, --pdf deck)"
   menu_item "check-links" "Check links on the local dev site"
   menu_group "🪛 Utilities (production)"
   menu_item "deploy" "Deploy the site (pull, backup, rebuild)"
@@ -151,6 +151,9 @@ case "$cmd" in
     exec python3 "$OSGEO_HUGO_ROOT/scripts/harvest_osgeo.py" "$@"
     ;;
   blocks)
+    if [[ "${1:-}" == "--pdf" ]]; then
+      exec "$OSGEO_HUGO_ROOT/playwright/ci-test/blocks-deck.sh"
+    fi
     exec python3 "$OSGEO_HUGO_ROOT/scripts/generate_blocks_demo.py" "$@"
     ;;
   check-links)

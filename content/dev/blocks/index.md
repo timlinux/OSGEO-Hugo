@@ -18,6 +18,8 @@ the rendered block followed by the exact markup that produced it.
 
 ## Layout blocks
 
+<div class="block-demo-card" id="block-block-grid">
+
 ### `block-grid`
 
 Renders a colored section with inner markdown split by ---- into up to three columns/blocks, with optional subtitle, background image, and bottom bar.
@@ -42,7 +44,11 @@ A welcoming global network of contributors.
 {{</* /block-grid */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-box-start">
 
 ### `box-start`
 
@@ -60,7 +66,11 @@ This is **boxed content** with a ribbon.
 {{</* box-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-column-start">
 
 ### `column-start`
 
@@ -88,7 +98,11 @@ Right column content.
 {{</* columns-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-columns-start">
 
 ### `columns-start`
 
@@ -116,7 +130,11 @@ Second column.
 {{</* columns-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-content">
 
 ### `content`
 
@@ -134,7 +152,11 @@ Some **markdown** content rendered in a full-width column.
 {{</* /content */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-content-panel-grid-start">
 
 ### `content-panel-grid-start`
 
@@ -162,7 +184,11 @@ Second panel content.
 {{</* content-panel-grid-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-content-panel-start">
 
 ### `content-panel-start`
 
@@ -186,7 +212,11 @@ Join a working group, contribute code, or help with **documentation**.
 {{</* content-panel-end button-text="Learn More" button-link="/community/" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-content-start">
 
 ### `content-start`
 
@@ -206,7 +236,11 @@ Regular **markdown** content goes here.
 {{</* content-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-platform-content-start">
 
 ### `platform-content-start`
 
@@ -222,7 +256,11 @@ Windows-specific download instructions.
 {{</* platform-content-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-rich-box">
 
 ### `rich-box`
 
@@ -240,7 +278,11 @@ Some **markdown** content in a rich box.
 {{</* /rich-box */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-rich-box-start">
 
 ### `rich-box-start`
 
@@ -258,7 +300,11 @@ Content inside the rich box.
 {{</* rich-box-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-rich-content">
 
 ### `rich-content`
 
@@ -276,7 +322,11 @@ Some **markdown** content.
 {{</* /rich-content */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-rich-content-start">
 
 ### `rich-content-start`
 
@@ -294,7 +344,11 @@ Wrapped content here.
 {{</* rich-content-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-rich-right">
 
 ### `rich-right`
 
@@ -310,7 +364,11 @@ Renders inner content unchanged inside a rich-right aligned div.
 {{</* /rich-right */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-rich-right-start">
 
 ### `rich-right-start`
 
@@ -326,7 +384,11 @@ Right-side content here.
 {{</* rich-right-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-tab-content-start">
 
 ### `tab-content-start`
 
@@ -352,9 +414,13 @@ Detail content.
 {{</* tab-content-end */>}}
 ```
 
+</div>
+
 ---
 
 ## Content blocks
+
+<div class="block-demo-card" id="block-block">
 
 ### `block`
 
@@ -372,7 +438,11 @@ OSGeo is a **not-for-profit organization** fostering global adoption of open geo
 {{</* /block */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-block-section">
 
 ### `block-section`
 
@@ -390,7 +460,11 @@ Everyone is welcome to **contribute** to OSGeo projects.
 {{</* /block-section */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-button">
 
 ### `button`
 
@@ -404,7 +478,11 @@ Parameters: `class` — Bulma color class (default is-primary) · `fullwidth` �
 {{</* button text="Download OSGeoLive" link="/download/" class="is-primary" icon="fas fa-download" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-button-bar">
 
 ### `button-bar`
 
@@ -418,7 +496,11 @@ Parameters: `0` — Legacy fallback: positional args in the form icon-class:labe
 {{</* button-bar button1-text="Join OSGeo" button1-link="/community/" button2-text="Donate" button2-link="/donate/" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-csv-table">
 
 ### `csv-table`
 
@@ -440,7 +522,11 @@ Release,2026-06-01,Planned
 {{</* /csv-table */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-cta-box">
 
 ### `cta-box`
 
@@ -454,7 +540,11 @@ Parameters: `button1-link` — URL of the first button (default #) · `button1-t
 {{</* cta-box title="Ready to map the world?" subtitle="Join thousands of contributors building open geospatial software." button1-text="Get Started" button1-link="/community/" button2-text="Donate" button2-link="/donate/" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-feature">
 
 ### `feature`
 
@@ -468,7 +558,11 @@ Parameters: `col-text-1` — Text of the first sub-column · `col-text-2` — Te
 {{</* feature order="1" title="Open Standards" text="OSGeo projects implement open standards for interoperability." img="/img/osgeo/osgeo-logo.png" col-title-1="Interoperable" col-text-1="Works with OGC standards." col-title-2="Free" col-text-2="No licence fees, ever." col-title-3="Community" col-text-3="Built by volunteers worldwide." */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-hero-banner">
 
 ### `hero-banner`
 
@@ -486,7 +580,11 @@ The Open Source Geospatial Foundation
 {{</* /hero-banner */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-image">
 
 ### `image`
 
@@ -500,7 +598,11 @@ Parameters: `animate` — true (default) to add scroll animation classes · `ima
 {{</* image image="/img/osgeo/osgeo-logo.png" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-image-bar">
 
 ### `image-bar`
 
@@ -514,7 +616,11 @@ Parameters: `0` — Positional args, each in the form caption:image-url (repeat 
 {{</* image-bar "Community:/img/osgeo/osgeo-logo.png" "Projects:/img/osgeo/osgeo-logo.png" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-image-block-bar">
 
 ### `image-block-bar`
 
@@ -528,7 +634,11 @@ Parameters: `0` — Positional args, each in the form title:subtitle:image-url (
 {{</* image-block-bar "Software:Free geospatial tools:/img/osgeo/osgeo-logo.png" "Community:Global volunteer network:/img/osgeo/osgeo-logo.png" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-image-block-section-bar">
 
 ### `image-block-section-bar`
 
@@ -542,7 +652,11 @@ Parameters: `0` — Positional args, each in the form title:subtitle:image-url:b
 {{</* image-block-section-bar "Software:Free geospatial tools:/img/osgeo/osgeo-logo.png:primary" "Community:Global volunteer network:/img/osgeo/osgeo-logo.png:info" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-image-content-bar">
 
 ### `image-content-bar`
 
@@ -556,7 +670,11 @@ Parameters: `0` — Positional args, each in the form caption:image-url (repeat 
 {{</* image-content-bar "Open Source:/img/osgeo/osgeo-logo.png" "Open Data:/img/osgeo/osgeo-logo.png" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-img-grid">
 
 ### `img-grid`
 
@@ -570,7 +688,11 @@ Parameters: `0` — Positional args, each in the form label:image-url; at least 
 {{</* img-grid "a:/img/osgeo/osgeo-logo.png" "b:/img/osgeo/osgeo-logo.png" "c:/img/osgeo/osgeo-logo.png" "d:/img/osgeo/osgeo-logo.png" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-img-grid-1">
 
 ### `img-grid-1`
 
@@ -584,7 +706,11 @@ Parameters: `0` — Positional args, each in the form label:image-url (only the 
 {{</* img-grid-1 "a:/img/osgeo/osgeo-logo.png" "b:/img/osgeo/osgeo-logo.png" "c:/img/osgeo/osgeo-logo.png" "d:/img/osgeo/osgeo-logo.png" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-info-bar">
 
 ### `info-bar`
 
@@ -598,7 +724,11 @@ Parameters: `0` — Positional args, each in the form big-text:small-heading (re
 {{</* info-bar "20+:Projects" "30k:Contributors" "1994:Founded" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-info-card">
 
 ### `info-card`
 
@@ -612,7 +742,11 @@ Parameters: `0` — Image URL (positional) · `1` — Card heading (positional) 
 {{</* info-card "/img/osgeo/osgeo-logo.png" "About OSGeo" "OSGeo supports the collaborative development of open source geospatial software." */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-info-icons">
 
 ### `info-icons`
 
@@ -626,7 +760,11 @@ Parameters: `0` — Positional args, each in the form heading:fa-icon-class (rep
 {{</* info-icons "Global:fa-globe" "Open:fa-unlock" "Community:fa-users" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-progress-bar">
 
 ### `progress-bar`
 
@@ -640,7 +778,11 @@ Parameters: `autoHideAfter` — Milliseconds after which the bar is hidden via a
 {{</* progress-bar autoHideAfter="3000" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-qrcode">
 
 ### `qrcode`
 
@@ -654,7 +796,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* qrcode "https://www.osgeo.org/" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-rich-list">
 
 ### `rich-list`
 
@@ -668,7 +814,11 @@ Parameters: `icon` — Optional Font Awesome icon class · `image` — Optional 
 {{</* rich-list layoutClass="third" icon="fas fa-book" listTitle="Documentation" listSubtitle="Read the project docs" listLink="https://www.osgeo.org/" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-spoiler-start">
 
 ### `spoiler-start`
 
@@ -686,7 +836,11 @@ These are the **hidden details** revealed when the spoiler is opened.
 {{</* spoiler-end */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-steps-bar">
 
 ### `steps-bar`
 
@@ -700,7 +854,11 @@ Parameters: `0` — Positional args, each in the form fa-icon-class:step-text:is
 {{</* steps-bar "fas fa-download:Download the installer:true" "fas fa-cog:Run the setup wizard:false" "fas fa-map:Start mapping:false" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-table">
 
 ### `table`
 
@@ -724,7 +882,11 @@ Parameters: `class` — Extra CSS class(es) added to the table element · `id` �
 {{</* /table */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-tabs">
 
 ### `tabs`
 
@@ -750,9 +912,13 @@ Detail content here.
 {{</* tab-content-end */>}}
 ```
 
+</div>
+
 ---
 
 ## Data blocks
+
+<div class="block-demo-card" id="block-blogroll">
 
 ### `blogroll`
 
@@ -766,7 +932,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* blogroll showcase="planet" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-commercial-support">
 
 ### `commercial-support`
 
@@ -780,7 +950,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* commercial-support dataFile="providers" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-contributing-orgs">
 
 ### `contributing-orgs`
 
@@ -792,7 +966,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* contributing-orgs */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-contribution-stats">
 
 ### `contribution-stats`
 
@@ -806,7 +984,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* contribution-stats "all" "/community/contributors/" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-donors">
 
 ### `donors`
 
@@ -818,7 +1000,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* donors */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-download-table">
 
 ### `download-table`
 
@@ -830,7 +1016,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* download-table */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-flickr-images">
 
 ### `flickr-images`
 
@@ -844,7 +1034,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* flickr-images showcase="community" quantity="6" columns="4" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-flickr-images-old">
 
 ### `flickr-images-old`
 
@@ -858,7 +1052,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* flickr-images-old showcase="community" quantity="6" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-fund">
 
 ### `fund`
 
@@ -872,7 +1070,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* fund type="active" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-funders-simple">
 
 ### `funders-simple`
 
@@ -884,7 +1086,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* funders-simple */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-individual-contributors">
 
 ### `individual-contributors`
 
@@ -896,7 +1102,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* individual-contributors */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-linux-packages-explorer">
 
 ### `linux-packages-explorer`
 
@@ -910,7 +1120,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* linux-packages-explorer distribution="debian" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-param">
 
 ### `param`
 
@@ -924,7 +1138,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* param "version" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-param-link">
 
 ### `param-link`
 
@@ -938,7 +1156,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* param-link "download_link" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-payrexx-widget">
 
 ### `payrexx-widget`
 
@@ -952,7 +1174,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* payrexx-widget otherMethods="true" skipToDownload="true" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-s3-file-explorer">
 
 ### `s3-file-explorer`
 
@@ -964,7 +1190,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* s3-file-explorer */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-shortcodes">
 
 ### `shortcodes`
 
@@ -976,7 +1206,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* shortcodes */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-sol-katz-award">
 
 ### `sol-katz-award`
 
@@ -988,7 +1222,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* sol-katz-award */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-stripe-widget">
 
 ### `stripe-widget`
 
@@ -1002,7 +1240,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* stripe-widget otherMethods="true" alreadyDonated="true" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-supporting-contributors">
 
 ### `supporting-contributors`
 
@@ -1014,7 +1256,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* supporting-contributors */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-usecase">
 
 ### `usecase`
 
@@ -1026,7 +1272,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* usecase */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-usecases">
 
 ### `usecases`
 
@@ -1038,7 +1288,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* usecases */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-usecases-archive">
 
 ### `usecases-archive`
 
@@ -1050,7 +1304,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* usecases-archive */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-visualchangelogs">
 
 ### `visualchangelogs`
 
@@ -1062,9 +1320,13 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* visualchangelogs */>}}
 ```
 
+</div>
+
 ---
 
 ## Utility blocks
+
+<div class="block-demo-card" id="block-footnote">
 
 ### `footnote`
 
@@ -1078,7 +1340,11 @@ Parameters: `0` — Footnote number used for the anchor id and label (positional
 {{</* footnote "1" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-language-select">
 
 ### `language-select`
 
@@ -1090,7 +1356,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* language-select */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-rich-edit-on-gh">
 
 ### `rich-edit-on-gh`
 
@@ -1104,7 +1374,11 @@ Parameters: `layoutClass` — Layout/width CSS class added to the tile
 {{</* rich-edit-on-gh layoutClass="third" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-script">
 
 ### `script`
 
@@ -1118,7 +1392,11 @@ _This block depends on site data or external services and is not demoed inline._
 {{</* script src="js/carousel.js" */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-table-of-contents">
 
 ### `table-of-contents`
 
@@ -1130,7 +1408,11 @@ Renders the current page's Hugo-generated table of contents.
 {{</* table-of-contents */>}}
 ```
 
+</div>
+
 ---
+
+<div class="block-demo-card" id="block-yeartag">
 
 ### `yeartag`
 
@@ -1141,6 +1423,8 @@ Prints the current year at build time.
 ```text
 {{</* yeartag */>}}
 ```
+
+</div>
 
 ---
 

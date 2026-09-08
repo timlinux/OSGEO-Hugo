@@ -95,6 +95,9 @@ def render(entries: list[dict]) -> str:
             continue
         out.append(f"## {group} blocks\n\n")
         for entry in sorted(members, key=lambda e: e["name"]):
+            # The wrapper div lets tooling (osgeo blocks --pdf) capture
+            # each block as one slide.
+            out.append(f'<div class="block-demo-card" id="block-{entry["name"]}">\n\n')
             out.append(f"### `{entry['name']}`\n\n")
             out.append(f"{entry['description']}\n\n")
             if entry.get("params"):
@@ -113,7 +116,7 @@ def render(entries: list[dict]) -> str:
             # escaped delimiters as error tokens (ugly dark glyphs).
             out.append("```text\n")
             out.append(escape_snippet(entry["snippet"].rstrip()) + "\n")
-            out.append("```\n\n---\n\n")
+            out.append("```\n\n</div>\n\n---\n\n")
     return "".join(out)
 
 
