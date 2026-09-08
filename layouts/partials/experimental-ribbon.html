@@ -1,4 +1,13 @@
 {{/* Experimental Site Ribbon */}}
+<script>
+    /* Re-apply a dismissal from earlier in this browsing session before
+       the ribbon first paints. */
+    try {
+        if (sessionStorage.getItem('osgeo-ribbon-dismissed')) {
+            document.documentElement.classList.add('ribbon-dismissed');
+        }
+    } catch (e) { /* storage unavailable — ribbon stays visible */ }
+</script>
 <div class="experimental-ribbon">
     <div class="experimental-ribbon-content">
         <span class="experimental-ribbon-icon">
@@ -8,7 +17,7 @@
             <strong>Experimental R&amp;D Site</strong> - This is an unofficial prototype.
             Visit <a href="https://www.osgeo.org" target="_blank" rel="noopener">osgeo.org</a> for the official site.
         </span>
-        <button class="experimental-ribbon-close" onclick="var r=this.parentElement.parentElement;r.style.display='none';document.querySelector('.navbar.is-fixed-top').style.top='0';document.documentElement.style.paddingTop='3.25rem';" aria-label="Dismiss notice">
+        <button class="experimental-ribbon-close" onclick="document.documentElement.classList.add('ribbon-dismissed');try{sessionStorage.setItem('osgeo-ribbon-dismissed','1')}catch(e){}" aria-label="Dismiss notice">
             <i class="fa-solid fa-times"></i>
         </button>
     </div>

@@ -88,6 +88,21 @@ html.has-navbar-fixed-top {
     top: 2.5rem !important; /* Push navbar down by ribbon height */
 }
 
+/* Dismissed state: hide the ribbon and shift the navbar and page
+   content back up to reclaim its space. The extra html selector out-
+   specifies the !important offsets above (inline styles cannot). */
+html.ribbon-dismissed .experimental-ribbon {
+    display: none;
+}
+
+html.ribbon-dismissed.has-navbar-fixed-top {
+    padding-top: 3.25rem !important;
+}
+
+html.ribbon-dismissed .navbar.is-fixed-top {
+    top: 0 !important;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .experimental-ribbon {
