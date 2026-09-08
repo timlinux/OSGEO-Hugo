@@ -155,6 +155,7 @@
             "new-post"
             "harvest"
             "check-links"
+            "blocks"
             # Utilities
             "deploy"
             "revert-deploy"

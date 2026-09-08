@@ -54,6 +54,7 @@ The full command menu (also shown by `osgeo help`):
 | Content   | `new-page <path>`       | Create a page, e.g. `osgeo new-page about/contact` |
 |           | `new-post "<title>"`    | Create a news post                                 |
 |           | `harvest`               | Harvest content from osgeo.org (supports `--dry-run`) |
+|           | `blocks`                | Regenerate the shortcode gallery (`--check` for drift) |
 |           | `check-links`           | Check links on the local dev site                  |
 | Utilities | `deploy`                | Deploy the site (pull, backup, rebuild)            |
 |           | `revert-deploy`         | Revert to the previous deployment                  |
@@ -146,6 +147,21 @@ osgeo review --failed-only  # re-check the repair list after fixes
 
 Keys: `y` pass, `n` fail, `f`/`b` next/previous frame of the current
 page, `o` open the page in a browser, `q` quit with a summary.
+
+### Shortcode gallery
+
+`data/shortcodes.json` is the single source of truth for the project's
+content blocks. It drives three things that therefore stay in lockstep:
+
+- the gallery page at `/dev/blocks/` (live demo of every shortcode with
+  the exact syntax beneath it), regenerated with `osgeo blocks`;
+- the Neovim `:InsertBlock` picker (`<leader>pa`), which inserts the
+  same snippets at the cursor;
+- a drift check (`osgeo blocks --check`) that fails when a shortcode
+  exists on disk but not in the registry, or vice versa.
+
+When you add or change a shortcode, update `data/shortcodes.json` and
+run `osgeo blocks`.
 
 ## Project Structure
 

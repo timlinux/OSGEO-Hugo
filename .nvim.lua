@@ -51,7 +51,7 @@ local osgeo_commands = {
   'build', 'clean',
   'format', 'format-check', 'lint', 'lint-md', 'lint-html',
   'pre-commit', 'verify', 'test', 'video', 'review',
-  'new-page', 'new-post', 'harvest', 'check-links',
+  'new-page', 'new-post', 'harvest', 'check-links', 'blocks',
   'deploy', 'revert-deploy', 'help',
 }
 
@@ -231,6 +231,31 @@ vim.api.nvim_create_user_command('CleanPublic', function()
   osgeo_shell('clean')
 end, { desc = 'Clean build output directories (osgeo clean)' })
 
+-- Insert Block: enumerated shortcode templates from the same registry
+-- (data/shortcodes.json) that generates the /dev/blocks/ gallery page,
+-- so editor snippets, demo page and shortcodes stay in lockstep.
+vim.api.nvim_create_user_command('InsertBlock', function()
+  local root = vim.fs.root(0, 'data') or vim.fn.getcwd()
+  local registry = root .. '/data/shortcodes.json'
+  if vim.fn.filereadable(registry) ~= 1 then
+    vim.notify('data/shortcodes.json not found — run "osgeo blocks"', vim.log.levels.ERROR)
+    return
+  end
+  local entries = vim.json.decode(table.concat(vim.fn.readfile(registry), '\n'))
+  local numbered = {}
+  for i, e in ipairs(entries) do
+    e._label = string.format('%2d. [%s] %s — %s', i, e.group, e.name, e.description)
+    numbered[i] = e
+  end
+  vim.ui.select(numbered, {
+    prompt = 'Insert block:',
+    format_item = function(e) return e._label end,
+  }, function(choice)
+    if not choice then return end
+    vim.api.nvim_put(vim.split(choice.snippet, '\n'), 'l', true, true)
+  end)
+end, { desc = 'Insert a shortcode block template at the cursor' })
+
 -- Content helpers (keep the direct hugo call so the new file opens
 -- in the editor straight away)
 vim.api.nvim_create_user_command('NewPage', function(opts)
@@ -296,6 +321,7 @@ if wk_ok then
     -- Content creation & sync
     { '<leader>pn', '<cmd>NewPost<cr>', desc = 'New news post' },
     { '<leader>pN', '<cmd>NewPage<cr>', desc = 'New section page' },
+    { '<leader>pa', '<cmd>InsertBlock<cr>', desc = 'Insert Block (shortcode templates)' },
     { '<leader>ph', '<cmd>Harvest<cr>', desc = 'Harvest content (osgeo harvest)' },
     { '<leader>pK', '<cmd>CheckLinks<cr>', desc = 'Check links (osgeo check-links)' },
 

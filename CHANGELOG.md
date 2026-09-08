@@ -27,6 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `osgeo video --theme <name>`: capture screenshots in any brand-pack
   theme; defaults to the `current` theme regardless of any theme
   previously persisted by the site's theme switcher.
+- Shortcode gallery: `data/shortcodes.json` registry (71 blocks) drives
+  the generated `/dev/blocks/` demo page (`osgeo blocks`), the Neovim
+  `:InsertBlock` / `<leader>pa` snippet picker, and a lockstep drift
+  check (`osgeo blocks --check`).
 - `osgeo review`: interactive terminal review of the screenshots from
   `osgeo video`, rendered with chafa (sixel/kitty capable). Yes/no
   verdict per page with resume support; verdicts accumulate in

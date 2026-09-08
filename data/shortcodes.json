@@ -1,0 +1,869 @@
+[
+  {
+    "name": "block",
+    "group": "Content",
+    "description": "Renders a Bulma notification banner section with title/subtitle, optional side image block, optional link ribbon, and a collapsible read-more area fed by inner markdown.",
+    "paired": true,
+    "params": {
+      "title": "Banner title text (shown uppercase in side block, or centered when sub-block-side=cover)",
+      "subtitle": "Banner subtitle text shown in the central block",
+      "title-size": "Bulma title size class (default is-2)",
+      "subtitle-size": "Bulma subtitle size class (default is-4)",
+      "class": "Bulma color/modifier class for the block (default is-primary)",
+      "image": "Page-bundle image resource name used as the side/cover block background (matched via .Page.Resources.GetMatch)",
+      "sub-block-side": "Placement of the title sub-block: left, right, cover, bottom, or none (default none)",
+      "link": "Optional URL for the link ribbon (local path or http/mailto)",
+      "link-text": "Text for the link ribbon",
+      "animate": "true to add scroll animation classes (default false)"
+    },
+    "snippet": "{{< block title=\"Our Mission\" subtitle=\"Empowering everyone with open source geospatial software\" class=\"is-primary\" sub-block-side=\"left\" >}}\nOSGeo is a **not-for-profit organization** fostering global adoption of open geospatial technology.\n{{< /block >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "block-section",
+    "group": "Content",
+    "description": "Full-width fluid variant of the block banner: notification section with title/subtitle, optional side or cover image, optional background image, link ribbon, and collapsible inner markdown.",
+    "paired": true,
+    "params": {
+      "title": "Banner title text",
+      "subtitle": "Banner subtitle text shown in the central block",
+      "title-size": "Bulma title size class (default is-2)",
+      "subtitle-size": "Bulma subtitle size class (default is-5)",
+      "class": "Bulma color/modifier class for the block (default is-primary)",
+      "image": "Page-bundle image resource name for the side/cover block background",
+      "sub-block-side": "Placement of the title sub-block: left, right, cover, bottom, or none (default none)",
+      "backgroundImage": "Site-relative image path used as the whole-block background",
+      "link": "Optional URL for the link ribbon",
+      "link-text": "Text for the link ribbon",
+      "animate": "true to add scroll animation classes (default false)"
+    },
+    "snippet": "{{< block-section title=\"Get Involved\" subtitle=\"Join a global community of geospatial developers\" class=\"is-primary\" sub-block-side=\"left\" backgroundImage=\"/img/osgeo/osgeo-logo.png\" >}}\nEveryone is welcome to **contribute** to OSGeo projects.\n{{< /block-section >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "button",
+    "group": "Content",
+    "description": "Renders a single Bulma button link with optional Font Awesome icon.",
+    "paired": false,
+    "params": {
+      "text": "Button label text",
+      "link": "Target URL (passed through absURL)",
+      "class": "Bulma color class (default is-primary)",
+      "icon": "Optional Font Awesome icon class",
+      "fullwidth": "true to make the button full width (default false)"
+    },
+    "snippet": "{{< button text=\"Download OSGeoLive\" link=\"/download/\" class=\"is-primary\" icon=\"fas fa-download\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "button-bar",
+    "group": "Content",
+    "description": "Renders a centered row of one or two large buttons; supports named button1/button2 params or legacy positional icon:text:link arguments.",
+    "paired": false,
+    "params": {
+      "button1-text": "Label of the first button",
+      "button1-link": "URL of the first button (default #)",
+      "button1-class": "Bulma class of the first button (default is-osgeo-primary)",
+      "button2-text": "Label of the second button",
+      "button2-link": "URL of the second button (default #)",
+      "button2-class": "Bulma class of the second button (default is-osgeo-secondary)",
+      "animate": "true to add scroll animation classes (default false)",
+      "0": "Legacy fallback: positional args in the form icon-class:label:link (used only when no named button params are given)"
+    },
+    "snippet": "{{< button-bar button1-text=\"Join OSGeo\" button1-link=\"/community/\" button2-text=\"Donate\" button2-link=\"/donate/\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "csv-table",
+    "group": "Content",
+    "description": "Renders a roadmap-style HTML table from a CSV site resource (file param) or from inner CSV content, with :rm-xxx: cell class markers.",
+    "paired": true,
+    "params": {
+      "file": "Path to a CSV file in site assets (resources.Get); when omitted, the inner content is unmarshalled instead"
+    },
+    "snippet": "{{< csv-table >}}\nMilestone,Date,Status\nFeature freeze,2026-03-01,:rm-done:Complete\nRelease,2026-06-01,Planned\n{{< /csv-table >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "cta-box",
+    "group": "Content",
+    "description": "Renders a call-to-action section with a title, optional subtitle, and up to two large white buttons.",
+    "paired": false,
+    "params": {
+      "title": "CTA heading (default Join Us)",
+      "subtitle": "Optional CTA subtitle paragraph",
+      "button1-text": "Label of the first button",
+      "button1-link": "URL of the first button (default #)",
+      "button2-text": "Label of the second (outlined) button",
+      "button2-link": "URL of the second button (default #)"
+    },
+    "snippet": "{{< cta-box title=\"Ready to map the world?\" subtitle=\"Join thousands of contributors building open geospatial software.\" button1-text=\"Get Started\" button1-link=\"/community/\" button2-text=\"Donate\" button2-link=\"/donate/\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "feature",
+    "group": "Content",
+    "description": "Renders a decorated feature row with a heading, lead text, large image, and three captioned text columns beneath.",
+    "paired": false,
+    "params": {
+      "order": "Decoration variant number used in left-deco-N and deco-block-N CSS classes",
+      "title": "Feature heading",
+      "text": "Lead paragraph text",
+      "img": "Image path (passed through absURL)",
+      "col-title-1": "Title of the first sub-column",
+      "col-text-1": "Text of the first sub-column",
+      "col-title-2": "Title of the second sub-column",
+      "col-text-2": "Text of the second sub-column",
+      "col-title-3": "Title of the third sub-column",
+      "col-text-3": "Text of the third sub-column"
+    },
+    "snippet": "{{< feature order=\"1\" title=\"Open Standards\" text=\"OSGeo projects implement open standards for interoperability.\" img=\"/img/osgeo/osgeo-logo.png\" col-title-1=\"Interoperable\" col-text-1=\"Works with OGC standards.\" col-title-2=\"Free\" col-text-2=\"No licence fees, ever.\" col-title-3=\"Community\" col-text-3=\"Built by volunteers worldwide.\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "hero-banner",
+    "group": "Content",
+    "description": "Renders a large hero section with a positional title and inner content as subtitle, followed by a box showing the latest news page title.",
+    "paired": true,
+    "params": {
+      "0": "Hero title text (positional)"
+    },
+    "snippet": "{{< hero-banner \"Welcome to OSGeo\" >}}\nThe Open Source Geospatial Foundation\n{{< /hero-banner >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "image",
+    "group": "Content",
+    "description": "Renders a single full-width image inside a section/tile container.",
+    "paired": false,
+    "params": {
+      "image": "Image URL or path to display",
+      "animate": "true (default) to add scroll animation classes"
+    },
+    "snippet": "{{< image image=\"/img/osgeo/osgeo-logo.png\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "image-bar",
+    "group": "Content",
+    "description": "Renders a horizontal bar of small rounded images with centered captions, one per positional caption:image-url argument.",
+    "paired": false,
+    "params": {
+      "0": "Positional args, each in the form caption:image-url (repeat for more tiles)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)"
+    },
+    "snippet": "{{< image-bar \"Community:/img/osgeo/osgeo-logo.png\" \"Projects:/img/osgeo/osgeo-logo.png\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "image-block-bar",
+    "group": "Content",
+    "description": "Renders a dark bar of image tiles with a title and subtitle beneath each image, one per positional title:subtitle:image-url argument.",
+    "paired": false,
+    "params": {
+      "0": "Positional args, each in the form title:subtitle:image-url (repeat for more tiles)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)"
+    },
+    "snippet": "{{< image-block-bar \"Software:Free geospatial tools:/img/osgeo/osgeo-logo.png\" \"Community:Global volunteer network:/img/osgeo/osgeo-logo.png\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "image-block-section-bar",
+    "group": "Content",
+    "description": "Renders a dark section bar of image tiles with a colored title/subtitle panel beneath each image, one per positional title:subtitle:image-url:background-color argument.",
+    "paired": false,
+    "params": {
+      "0": "Positional args, each in the form title:subtitle:image-url:bulma-background-color (repeat for more tiles)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)",
+      "backgroundColor": "Declared with default #FFF but not used in the output"
+    },
+    "snippet": "{{< image-block-section-bar \"Software:Free geospatial tools:/img/osgeo/osgeo-logo.png:primary\" \"Community:Global volunteer network:/img/osgeo/osgeo-logo.png:info\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "image-content-bar",
+    "group": "Content",
+    "description": "Renders a plain bar of small images with centered captions, one per positional caption:image-url argument.",
+    "paired": false,
+    "params": {
+      "0": "Positional args, each in the form caption:image-url (repeat for more tiles)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)"
+    },
+    "snippet": "{{< image-content-bar \"Open Source:/img/osgeo/osgeo-logo.png\" \"Open Data:/img/osgeo/osgeo-logo.png\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "img-grid",
+    "group": "Content",
+    "description": "Renders images in two tile rows (first two args on top, the rest below), one per positional label:image-url argument (only the URL part is used).",
+    "paired": false,
+    "params": {
+      "0": "Positional args, each in the form label:image-url; at least 3 required (first row uses args 1-2, second row args 3+)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)"
+    },
+    "snippet": "{{< img-grid \"a:/img/osgeo/osgeo-logo.png\" \"b:/img/osgeo/osgeo-logo.png\" \"c:/img/osgeo/osgeo-logo.png\" \"d:/img/osgeo/osgeo-logo.png\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "img-grid-1",
+    "group": "Content",
+    "description": "Renders a styled two-row image grid (first two args in the top row, remaining args in the bottom row), one image per positional label:image-url argument.",
+    "paired": false,
+    "params": {
+      "0": "Positional args, each in the form label:image-url (only the URL part is used)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)"
+    },
+    "snippet": "{{< img-grid-1 \"a:/img/osgeo/osgeo-logo.png\" \"b:/img/osgeo/osgeo-logo.png\" \"c:/img/osgeo/osgeo-logo.png\" \"d:/img/osgeo/osgeo-logo.png\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "info-bar",
+    "group": "Content",
+    "description": "Renders a primary notification level bar of big statistic titles with small headings, one per positional title:heading argument.",
+    "paired": false,
+    "params": {
+      "0": "Positional args, each in the form big-text:small-heading (repeat for more items)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)"
+    },
+    "snippet": "{{< info-bar \"20+:Projects\" \"30k:Contributors\" \"1994:Founded\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "info-card",
+    "group": "Content",
+    "description": "Renders a two-column card with an image on the left and a heading plus text on the right, inside a primary notification section.",
+    "paired": false,
+    "params": {
+      "0": "Image URL (positional)",
+      "1": "Card heading (positional)",
+      "2": "Card body text (positional)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)"
+    },
+    "snippet": "{{< info-card \"/img/osgeo/osgeo-logo.png\" \"About OSGeo\" \"OSGeo supports the collaborative development of open source geospatial software.\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "info-icons",
+    "group": "Content",
+    "description": "Renders a primary notification level bar of stacked Font Awesome icons with headings, one per positional heading:icon-class argument.",
+    "paired": false,
+    "params": {
+      "0": "Positional args, each in the form heading:fa-icon-class (repeat for more items)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)"
+    },
+    "snippet": "{{< info-icons \"Global:fa-globe\" \"Open:fa-unlock\" \"Community:fa-users\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "progress-bar",
+    "group": "Content",
+    "description": "Renders an indeterminate Bulma progress bar, optionally auto-hidden after a timeout.",
+    "paired": false,
+    "params": {
+      "autoHideAfter": "Milliseconds after which the bar is hidden via an inline script"
+    },
+    "snippet": "{{< progress-bar autoHideAfter=\"3000\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "qrcode",
+    "group": "Content",
+    "description": "Renders a QR-code canvas for a URL (drawn client-side by the site's QR JS) with a Download button linking to the same URL.",
+    "paired": false,
+    "params": {
+      "0": "Target URL encoded in the QR code and used for the links (positional, default https://)"
+    },
+    "snippet": "{{< qrcode \"https://www.osgeo.org/\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "rich-list",
+    "group": "Content",
+    "description": "Renders a rich list tile (optionally a link) with icon or image, title, and subtitle; substitutes |version| and |ltrversion| placeholders from data/conf in the URL.",
+    "paired": false,
+    "params": {
+      "icon": "Optional Font Awesome icon class",
+      "image": "Optional image URL shown in the tile",
+      "layoutClass": "Layout/width CSS class (e.g. third)",
+      "listLink": "Optional target URL; supports |version| and |ltrversion| placeholders",
+      "listTitle": "Main title text of the tile",
+      "listSubtitle": "Subtitle text of the tile",
+      "linkAttr": "Extra raw attribute string added to the anchor tag"
+    },
+    "snippet": "{{< rich-list layoutClass=\"third\" icon=\"fas fa-book\" listTitle=\"Documentation\" listSubtitle=\"Read the project docs\" listLink=\"https://www.osgeo.org/\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "spoiler-start",
+    "group": "Content",
+    "description": "Opens a collapsible spoiler block with a clickable label heading; close with spoiler-end wrapping the hidden content.",
+    "paired": true,
+    "pair_end": "spoiler-end",
+    "params": {
+      "title": "Spoiler label heading",
+      "id": "Optional HTML id for the spoiler container"
+    },
+    "snippet": "{{< spoiler-start title=\"Show installation details\" id=\"install-details\" >}}\nThese are the **hidden details** revealed when the spoiler is opened.\n{{< spoiler-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "steps-bar",
+    "group": "Content",
+    "description": "Renders a numbered horizontal steps indicator with an icon and text per step, one per positional icon:text:is-active argument.",
+    "paired": false,
+    "params": {
+      "0": "Positional args, each in the form fa-icon-class:step-text:is-active (is-active true marks the active step)",
+      "animate": "true to add scroll animation classes (cannot be combined with positional args)"
+    },
+    "snippet": "{{< steps-bar \"fas fa-download:Download the installer:true\" \"fas fa-cog:Run the setup wizard:false\" \"fas fa-map:Start mapping:false\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "table",
+    "group": "Content",
+    "description": "Renders inner markdown containing a table as an accessible, scrollable data table with optional caption, custom class, and id.",
+    "paired": true,
+    "params": {
+      "title": "Optional caption text; also enables schema.org Table markup",
+      "class": "Extra CSS class(es) added to the table element",
+      "id": "HTML id for the table (random digits when omitted)"
+    },
+    "snippet": "{{< table title=\"Board members\" class=\"is-striped\" id=\"board-table\" >}}\n| Name | Role |\n| ---- | ---- |\n| Alice Example | Chair |\n| Bob Example | Treasurer |\n{{< /table >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "tabs",
+    "group": "Content",
+    "description": "Renders a Bulma tabs header with up to five tab labels and inline JS that toggles matching tab-content blocks; substitutes |version| and |ltrversion| placeholders from data/conf.",
+    "paired": false,
+    "params": {
+      "tab1": "Label of tab 1 (initially active)",
+      "tab2": "Label of tab 2",
+      "tab3": "Label of tab 3",
+      "tab4": "Label of tab 4",
+      "tab5": "Label of tab 5"
+    },
+    "snippet": "{{< tabs tab1=\"Overview\" tab2=\"Details\" >}}\n{{< tab-content-start tab=\"1\" >}}\nOverview content here.\n{{< tab-content-end >}}\n{{< tab-content-start tab=\"2\" >}}\nDetail content here.\n{{< tab-content-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "blogroll",
+    "group": "Data",
+    "description": "Renders a numbered list of community blog posts from the headless /community-blogs page bundle filtered by showcase type.",
+    "paired": false,
+    "params": {
+      "showcase": "Showcase type to match against each blog resource's showcase front-matter param"
+    },
+    "snippet": "{{< blogroll showcase=\"planet\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "commercial-support",
+    "group": "Data",
+    "description": "Renders a list of commercial support providers (logo, linked name, description) from a file under data/commercial_support.",
+    "paired": false,
+    "params": {
+      "dataFile": "Key of the data file under data/commercial_support to render"
+    },
+    "snippet": "{{< commercial-support dataFile=\"providers\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "contributing-orgs",
+    "group": "Data",
+    "description": "Renders cards for contributing organizations from data/contributors, sorted by total commits, with thematic contribution badges and activity indicators.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< contributing-orgs >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "contribution-stats",
+    "group": "Data",
+    "description": "Renders a grid of statistic cards (organizations, individual contributors, commits, supporting contributors, Sol Katz recipients) computed from data/contributors.",
+    "paired": false,
+    "params": {
+      "0": "Which stats to show: all, orgs, individuals, commits, supporting, or sol-katz (default all)",
+      "1": "Optional link URL applied to the stat cards"
+    },
+    "snippet": "{{< contribution-stats \"all\" \"/community/contributors/\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "donors",
+    "group": "Data",
+    "description": "Renders a sorted list of donor names from data/donors as rich-list tiles.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< donors >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "download-table",
+    "group": "Data",
+    "description": "Renders a static comparative pricing/download table (free, small business, teams, enterprise tiers) with donate/subscribe buttons linking into the download flow.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< download-table >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "flickr-images",
+    "group": "Data",
+    "description": "Renders a gallery of image tiles from the headless /flickr-images page bundle filtered by showcase type, with configurable column width.",
+    "paired": false,
+    "params": {
+      "showcase": "Showcase type to match against each image resource's showcase param",
+      "quantity": "Maximum number of images to show (default 100)",
+      "columns": "Bulma column width number per tile, or 'gallery' for a mixed 4/6 layout (default 2)"
+    },
+    "snippet": "{{< flickr-images showcase=\"community\" quantity=\"6\" columns=\"4\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "flickr-images-old",
+    "group": "Data",
+    "description": "Legacy variant that renders numbered notification cards of Flickr images from the headless /flickr-images page bundle filtered by showcase type.",
+    "paired": false,
+    "params": {
+      "showcase": "Showcase type to match against each image resource's showcase param",
+      "quantity": "Maximum number of resources considered (default 100)"
+    },
+    "snippet": "{{< flickr-images-old showcase=\"community\" quantity=\"6\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "fund",
+    "group": "Data",
+    "description": "Renders funder logo tiles grouped by level (Flagship, Large, Medium, Small) from the /funders page bundle or page-local funders resources, filtered to active, changelog, or past funders.",
+    "paired": false,
+    "params": {
+      "type": "active (current funders), changelog (page-bundle funders/*md resources), or anything else for past funders",
+      "relativeImgPath": "If set, logo paths are used as-is instead of being prefixed with the funders/contributors image path"
+    },
+    "snippet": "{{< fund type=\"active\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "funders-simple",
+    "group": "Data",
+    "description": "Renders the funders-simple partial, a simplified listing of funders from site data/pages.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< funders-simple >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "individual-contributors",
+    "group": "Data",
+    "description": "Renders ranked cards for individual GitHub contributors from data/contributors, with avatars, honorary-member badges, commit counts, and thematic badges.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< individual-contributors >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "linux-packages-explorer",
+    "group": "Data",
+    "description": "Renders a JavaScript file-tree explorer for Linux package downloads of a given distribution from data/downloads/linux_packages.",
+    "paired": false,
+    "params": {
+      "distribution": "Distribution key (dashes mapped to underscores) matching a file under data/downloads/linux_packages"
+    },
+    "snippet": "{{< linux-packages-explorer distribution=\"debian\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "param",
+    "group": "Data",
+    "description": "Prints the value of a key from data/conf as plain text.",
+    "paired": false,
+    "params": {
+      "0": "Key in data/conf to print (positional)"
+    },
+    "snippet": "{{< param \"version\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "param-link",
+    "group": "Data",
+    "description": "Prints the value of a key from data/conf rendered through markdownify (so markdown links become anchors).",
+    "paired": false,
+    "params": {
+      "0": "Key in data/conf to render as markdown (positional)"
+    },
+    "snippet": "{{< param-link \"download_link\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "payrexx-widget",
+    "group": "Data",
+    "description": "Renders a Payrexx donation widget with one-time/monthly amount pickers built from data/payrexx_products, currency selector, and optional skip/hide buttons.",
+    "paired": false,
+    "params": {
+      "otherMethods": "If set, shows a link to other donation methods",
+      "skipToDownload": "If set, shows a button to skip donating and go to download",
+      "alreadyDonated": "If set, shows a button to hide the donate prompt"
+    },
+    "snippet": "{{< payrexx-widget otherMethods=\"true\" skipToDownload=\"true\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "s3-file-explorer",
+    "group": "Data",
+    "description": "Renders a searchable, sortable JavaScript file-tree explorer over the S3 downloads tree from data/downloads/s3_downloads.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< s3-file-explorer >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "shortcodes",
+    "group": "Data",
+    "description": "Renders a thumbnail grid linking to every page under the docs/shortcodes/ section of the site.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< shortcodes >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "sol-katz-award",
+    "group": "Data",
+    "description": "Renders Sol Katz Award recipient cards (name, year badge, citation, description, links, photo) from data/contributors, newest first.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< sol-katz-award >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "stripe-widget",
+    "group": "Data",
+    "description": "Renders a Stripe donation widget with one-time/monthly amount pickers built from data/stripe_products, currency selector, and optional skip/hide buttons.",
+    "paired": false,
+    "params": {
+      "otherMethods": "If set, shows a link to other donation methods",
+      "skipToDownload": "If set, shows a button to skip donating and go to download",
+      "alreadyDonated": "If set, shows a button to hide the donate prompt"
+    },
+    "snippet": "{{< stripe-widget otherMethods=\"true\" alreadyDonated=\"true\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "supporting-contributors",
+    "group": "Data",
+    "description": "Renders supporting-contributor cards from data/contributors, split into Organizations and Individuals sections sorted by start date, with role badges.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< supporting-contributors >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "usecase",
+    "group": "Data",
+    "description": "Renders the usecase partial for the first case-study page found in the project section.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< usecase >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "usecases",
+    "group": "Data",
+    "description": "Renders featured case studies as a JS carousel plus a grid of active case studies and a link to the archive, from project-section case-study pages.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< usecases >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "usecases-archive",
+    "group": "Data",
+    "description": "Renders a grid of archived case-study pages from the project section, newest first.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< usecases-archive >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "visualchangelogs",
+    "group": "Data",
+    "description": "Renders a linked list of visual-changelog pages in the project section sorted by release date, newest first.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< visualchangelogs >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "block-grid",
+    "group": "Layout",
+    "description": "Renders a colored section with inner markdown split by ---- into up to three columns/blocks, with optional subtitle, background image, and bottom bar.",
+    "paired": true,
+    "params": {
+      "isSection": "Wrap the content in a padded section element (default true)",
+      "classes": "Extra CSS classes on the content div",
+      "sectionClasses": "Extra CSS classes on the section element",
+      "subtitle": "Small bold kicker text above the first column",
+      "backgroundColor": "Bulma background color name (default dark)",
+      "textColor": "Bulma text color name (default white)",
+      "subtitleColor": "Bulma color name for the kicker text (default complementary7)",
+      "showBottomBar": "Add a bottom-bar class to the content (default false)",
+      "backgroundImage": "Site-relative image path used as the block background"
+    },
+    "snippet": "{{< block-grid subtitle=\"WHY OSGEO\" backgroundColor=\"dark\" textColor=\"white\" >}}\n## Open Software\nFree geospatial tools for everyone.\n----\n## Open Community\nA welcoming global network of contributors.\n{{< /block-grid >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "box-start",
+    "group": "Layout",
+    "description": "Opens a Bulma box container with optional corner ribbon and background image; close with box-end, which appends a footer bar unless disabled.",
+    "paired": true,
+    "pair_end": "box-end",
+    "params": {
+      "class": "Custom classes for the box (prefixed with 'content'); overrides the default container styling",
+      "classes": "Alternative spelling of class, used when class is not given",
+      "ribbon": "Optional ribbon label text shown at the box corner",
+      "ribbon-class": "Bulma classes for the ribbon (default is-info is-small)",
+      "backgroundImage": "Site-relative image path used as the box background",
+      "no-footer": "On box-end: any non-empty value suppresses the footer bar"
+    },
+    "snippet": "{{< box-start ribbon=\"New\" ribbon-class=\"is-info is-small\" >}}\nThis is **boxed content** with a ribbon.\n{{< box-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "column-start",
+    "group": "Layout",
+    "description": "Opens a flex Bulma column inside a columns container; close with column-end.",
+    "paired": true,
+    "pair_end": "column-end",
+    "params": {
+      "class": "Extra CSS classes for the column",
+      "animate": "true to add scroll animation classes (default false)"
+    },
+    "snippet": "{{< columns-start >}}\n{{< column-start class=\"is-6\" >}}\nLeft column content.\n{{< column-end >}}\n{{< column-start class=\"is-6\" >}}\nRight column content.\n{{< column-end >}}\n{{< columns-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "columns-start",
+    "group": "Layout",
+    "description": "Opens a centered multiline Bulma columns container; close with columns-end.",
+    "paired": true,
+    "pair_end": "columns-end",
+    "params": {
+      "id": "Optional HTML id for the container"
+    },
+    "snippet": "{{< columns-start id=\"feature-columns\" >}}\n{{< column-start >}}\nFirst column.\n{{< column-end >}}\n{{< column-start >}}\nSecond column.\n{{< column-end >}}\n{{< columns-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "content",
+    "group": "Layout",
+    "description": "Renders inner markdown inside a full-width Bulma column with content typography.",
+    "paired": true,
+    "params": {
+      "classes": "Extra CSS classes for the column"
+    },
+    "snippet": "{{< content classes=\"has-text-centered\" >}}\nSome **markdown** content rendered in a full-width column.\n{{< /content >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "content-panel-grid-start",
+    "group": "Layout",
+    "description": "Opens a responsive grid container for content panels with a configurable column count; close with content-panel-grid-end.",
+    "paired": true,
+    "pair_end": "content-panel-grid-end",
+    "params": {
+      "columns": "Number of grid columns via the --grid-columns CSS variable (default 3)"
+    },
+    "snippet": "{{< content-panel-grid-start columns=\"2\" >}}\n{{< content-panel-start title=\"Panel One\" >}}\nFirst panel content.\n{{< content-panel-end >}}\n{{< content-panel-start title=\"Panel Two\" >}}\nSecond panel content.\n{{< content-panel-end >}}\n{{< content-panel-grid-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "content-panel-start",
+    "group": "Layout",
+    "description": "Opens a styled content panel with optional icon, title, subtitle, and variant styling; close with content-panel-end, which can add a footer button.",
+    "paired": true,
+    "pair_end": "content-panel-end",
+    "params": {
+      "title": "Panel title shown in the header",
+      "subtitle": "Optional subtitle under the title",
+      "icon": "Optional Font Awesome icon class shown in the header",
+      "variant": "Space-separated style variants: featured, teal, cyan, amber, dark, compact",
+      "id": "Optional HTML id for the panel",
+      "button-text": "On content-panel-end: footer button label",
+      "button-link": "On content-panel-end: footer button URL",
+      "button-class": "On content-panel-end: footer button class (default is-osgeo-primary)"
+    },
+    "snippet": "{{< content-panel-start title=\"Get Involved\" subtitle=\"Everyone is welcome\" icon=\"fa-solid fa-star\" variant=\"featured\" >}}\nJoin a working group, contribute code, or help with **documentation**.\n\n- Attend a local chapter meeting\n- Sponsor a project\n{{< content-panel-end button-text=\"Learn More\" button-link=\"/community/\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "content-start",
+    "group": "Layout",
+    "description": "Opens a content section with an Edit-on-GitHub button and optional page sidebar layout; close with content-end.",
+    "paired": true,
+    "pair_end": "content-end",
+    "params": {
+      "classes": "CSS classes for the inner container (default content)",
+      "header": "Read from params but not used in the output",
+      "animate": "true to add scroll animation classes (default false)",
+      "sidebar": "Read from params but the sidebar is driven by the page's sidebar front-matter param instead"
+    },
+    "snippet": "{{< content-start classes=\"content\" >}}\n## About this page\nRegular **markdown** content goes here.\n{{< content-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "platform-content-start",
+    "group": "Layout",
+    "description": "Opens a hidden tabpanel div tied to a platform key (shown by platform-detection JS); close with platform-content-end.",
+    "paired": true,
+    "pair_end": "platform-content-end",
+    "params": {
+      "platform": "Platform key stored in the data-platform attribute (e.g. windows, macos, linux)"
+    },
+    "snippet": "{{< platform-content-start platform=\"windows\" >}}\nWindows-specific download instructions.\n{{< platform-content-end >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "rich-box",
+    "group": "Layout",
+    "description": "Renders a rich container div with optional icon and inner content as markdown or raw HTML.",
+    "paired": true,
+    "params": {
+      "layoutClass": "Layout/width CSS class added to the rich container",
+      "id": "Optional HTML id for the container",
+      "icon": "Optional Font Awesome icon class shown at the top",
+      "mode": "html to render inner content raw; otherwise inner content is markdownified"
+    },
+    "snippet": "{{< rich-box layoutClass=\"third\" icon=\"fas fa-globe\" >}}\nSome **markdown** content in a rich box.\n{{< /rich-box >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "rich-box-start",
+    "group": "Layout",
+    "description": "Opens a rich container div with optional icon, for wrapping other shortcodes; close with rich-box-end.",
+    "paired": true,
+    "pair_end": "rich-box-end",
+    "params": {
+      "layoutClass": "Layout/width CSS class added to the rich container",
+      "id": "Optional HTML id for the container",
+      "icon": "Optional Font Awesome icon class shown at the top"
+    },
+    "snippet": "{{< rich-box-start layoutClass=\"third\" icon=\"fas fa-map\" >}}\nContent inside the rich box.\n{{< rich-box-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "rich-content",
+    "group": "Layout",
+    "description": "Renders inner markdown inside a themed cont div used within rich boxes.",
+    "paired": true,
+    "params": {
+      "themeClass": "Theme CSS class added to the cont div"
+    },
+    "snippet": "{{< rich-content themeClass=\"is-light\" >}}\nSome **markdown** content.\n{{< /rich-content >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "rich-content-start",
+    "group": "Layout",
+    "description": "Opens a themed cont div for wrapping other shortcodes inside rich boxes; close with rich-content-end.",
+    "paired": true,
+    "pair_end": "rich-content-end",
+    "params": {
+      "themeClass": "Theme CSS class added to the cont div"
+    },
+    "snippet": "{{< rich-content-start themeClass=\"is-light\" >}}\nWrapped content here.\n{{< rich-content-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "rich-right",
+    "group": "Layout",
+    "description": "Renders inner content unchanged inside a rich-right aligned div.",
+    "paired": true,
+    "params": {},
+    "snippet": "{{< rich-right >}}\n<span>Right-aligned content</span>\n{{< /rich-right >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "rich-right-start",
+    "group": "Layout",
+    "description": "Opens a rich-right aligned div for wrapping other shortcodes; close with rich-right-end.",
+    "paired": true,
+    "pair_end": "rich-right-end",
+    "params": {},
+    "snippet": "{{< rich-right-start >}}\nRight-side content here.\n{{< rich-right-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "tab-content-start",
+    "group": "Layout",
+    "description": "Opens a tab content panel div identified by content-tab-N, toggled by the tabs shortcode; close with tab-content-end.",
+    "paired": true,
+    "pair_end": "tab-content-end",
+    "params": {
+      "tab": "Tab number matching a tab defined in the tabs shortcode (builds id content-tab-N)",
+      "class": "Optional CSS class for the panel div"
+    },
+    "snippet": "{{< tabs tab1=\"Overview\" tab2=\"Details\" >}}\n{{< tab-content-start tab=\"1\" >}}\nOverview content.\n{{< tab-content-end >}}\n{{< tab-content-start tab=\"2\" >}}\nDetail content.\n{{< tab-content-end >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "footnote",
+    "group": "Utility",
+    "description": "Renders a bracketed numbered self-anchor link like [1] usable as a footnote marker.",
+    "paired": false,
+    "params": {
+      "0": "Footnote number used for the anchor id and label (positional)"
+    },
+    "snippet": "{{< footnote \"1\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "language-select",
+    "group": "Utility",
+    "description": "Renders a language dropdown built from the site's lang menu and JS that rewrites link-with-language URLs when the selection changes.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< language-select >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "rich-edit-on-gh",
+    "group": "Utility",
+    "description": "Renders a rich-list tile linking to the current page's GitHub edit URL, inviting readers to submit a PR.",
+    "paired": false,
+    "params": {
+      "layoutClass": "Layout/width CSS class added to the tile"
+    },
+    "snippet": "{{< rich-edit-on-gh layoutClass=\"third\" >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "script",
+    "group": "Utility",
+    "description": "Emits a deferred script tag for a JavaScript asset resolved from site assets via resources.Get.",
+    "paired": false,
+    "params": {
+      "src": "Asset path of the JavaScript file (relative to assets/)"
+    },
+    "snippet": "{{< script src=\"js/carousel.js\" >}}",
+    "demo_safe": false
+  },
+  {
+    "name": "table-of-contents",
+    "group": "Utility",
+    "description": "Renders the current page's Hugo-generated table of contents.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< table-of-contents >}}",
+    "demo_safe": true
+  },
+  {
+    "name": "yeartag",
+    "group": "Utility",
+    "description": "Prints the current year at build time.",
+    "paired": false,
+    "params": {},
+    "snippet": "{{< yeartag >}}",
+    "demo_safe": true
+  }
+]
