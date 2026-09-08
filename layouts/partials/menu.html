@@ -21,6 +21,42 @@
         {{/* Main Navigation Menu */}}
         <div id="osgeoNavbar" class="navbar-menu">
             <div class="navbar-start">
+                {{/* About Dropdown */}}
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="{{ absURL "about" }}">
+                        About
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item" href="{{ absURL "about" }}">
+                            <span class="icon has-text-primary"><i class="fa-solid fa-info-circle"></i></span>
+                            <span>
+                                <strong>About OSGeo</strong>
+                            </span>
+                        </a>
+                        <a class="navbar-item" href="{{ absURL "about/faq" }}">
+                            <span class="icon has-text-info"><i class="fa-solid fa-question-circle"></i></span>
+                            <span>FAQ</span>
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" href="{{ absURL "sponsors" }}">
+                            <span class="icon"><i class="fa-solid fa-handshake"></i></span>
+                            <span>Sponsors</span>
+                        </a>
+                        <a class="navbar-item" href="{{ absURL "about/awards" }}">
+                            <span class="icon"><i class="fa-solid fa-trophy"></i></span>
+                            <span>Awards</span>
+                        </a>
+                        <a class="navbar-item" href="{{ absURL "about/branding" }}">
+                            <span class="icon"><i class="fa-solid fa-palette"></i></span>
+                            <span>Branding</span>
+                        </a>
+                        <a class="navbar-item" href="{{ absURL "about/contact" }}">
+                            <span class="icon"><i class="fa-solid fa-paper-plane"></i></span>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                </div>
+
                 {{/* Projects Dropdown */}}
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link" href="{{ absURL "projects" }}">
@@ -124,42 +160,6 @@
                         <a class="navbar-item" href="{{ absURL "community/code-of-conduct" }}">
                             <span class="icon"><i class="fa-solid fa-heart"></i></span>
                             <span>Code of Conduct</span>
-                        </a>
-                    </div>
-                </div>
-
-                {{/* About Dropdown */}}
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="{{ absURL "about" }}">
-                        About
-                    </a>
-                    <div class="navbar-dropdown is-boxed">
-                        <a class="navbar-item" href="{{ absURL "about" }}">
-                            <span class="icon has-text-primary"><i class="fa-solid fa-info-circle"></i></span>
-                            <span>
-                                <strong>About OSGeo</strong>
-                            </span>
-                        </a>
-                        <a class="navbar-item" href="{{ absURL "about/faq" }}">
-                            <span class="icon has-text-info"><i class="fa-solid fa-question-circle"></i></span>
-                            <span>FAQ</span>
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item" href="{{ absURL "sponsors" }}">
-                            <span class="icon"><i class="fa-solid fa-handshake"></i></span>
-                            <span>Sponsors</span>
-                        </a>
-                        <a class="navbar-item" href="{{ absURL "about/awards" }}">
-                            <span class="icon"><i class="fa-solid fa-trophy"></i></span>
-                            <span>Awards</span>
-                        </a>
-                        <a class="navbar-item" href="{{ absURL "about/branding" }}">
-                            <span class="icon"><i class="fa-solid fa-palette"></i></span>
-                            <span>Branding</span>
-                        </a>
-                        <a class="navbar-item" href="{{ absURL "about/contact" }}">
-                            <span class="icon"><i class="fa-solid fa-paper-plane"></i></span>
-                            <span>Contact</span>
                         </a>
                     </div>
                 </div>

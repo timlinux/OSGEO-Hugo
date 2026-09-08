@@ -1057,34 +1057,21 @@ html {
    BUTTONS - VIBRANT & INTERACTIVE
    ============================================= */
 .button.is-osgeo-primary {
-  background: var(--gradient-earth);
+  background: var(--osgeo-green);
   border: none;
   color: white;
   font-weight: 600;
   padding: 1rem 2rem;
   border-radius: var(--radius-full);
   position: relative;
-  overflow: hidden;
   transition: all 0.3s var(--ease-smooth);
   box-shadow: var(--shadow-md);
 }
 
-.button.is-osgeo-primary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity 0.3s var(--ease-smooth);
-}
-
 .button.is-osgeo-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-xl), var(--shadow-glow);
-}
-
-.button.is-osgeo-primary:hover::before {
-  opacity: 1;
+  background: var(--osgeo-green-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .button.is-osgeo-primary:active {
