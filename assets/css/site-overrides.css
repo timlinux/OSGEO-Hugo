@@ -470,3 +470,9 @@ section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number .stat-plus {
   background: none !important;
   border: none !important;
 }
+
+/* Bulma paints <strong> in its own dark colour, which defeats
+   has-text-white captions on dark swatches; inherit instead. */
+.has-text-white strong {
+  color: inherit;
+}

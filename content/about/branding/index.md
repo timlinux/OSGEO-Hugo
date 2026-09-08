@@ -37,7 +37,7 @@ The OSGeo logo features a compass rose design symbolizing geographic orientation
 
 <div class="columns is-multiline mt-5">
 <div class="column is-6">
-<div class="box has-text-centered p-5">
+<div class="box has-background-white has-text-centered p-5" style="border: 1px solid rgba(0, 58, 64, 0.15);">
 <img src="/img/osgeo/osgeo-logo.svg" alt="OSGeo Logo" style="max-width: 200px;">
 <p class="mt-3"><strong>Primary Logo</strong></p>
 <p class="is-size-7">For light backgrounds</p>
