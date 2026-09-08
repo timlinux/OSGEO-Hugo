@@ -423,3 +423,16 @@ section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number .stat-plus {
 .article-body.has-no-hero {
   padding-top: 6rem;
 }
+
+/* Pages with right-hand card columns: inside a column layout the
+   section header drops its centred, hero-scale treatment so the left
+   content starts level with the right-hand cards and shares their
+   alignment. */
+.column .section-header {
+  text-align: left;
+  padding: 0 0 var(--space-md);
+}
+
+.column .section-header .section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
