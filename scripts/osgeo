@@ -61,7 +61,7 @@ print_menu() {
   menu_item "pre-commit" "Run pre-commit hooks on all files"
   menu_item "verify" "Verify content against osgeo.org (args pass through)"
   menu_item "test" "Run the Playwright e2e suite"
-  menu_item "video" "Record a validation video of every page (site-video/site.mp4)"
+  menu_item "video" "Record a validation video of every page (artifacts/site.mp4)"
   menu_item "review" "Review captured screenshots in the terminal (pass/fail lists)"
   menu_group "🪛 Content"
   menu_item "new-page" "Create a page: osgeo new-page about/contact"

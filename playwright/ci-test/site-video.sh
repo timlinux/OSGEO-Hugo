@@ -14,7 +14,7 @@
 #                                   # (current|refresh|modern|bold|earth|vibrant;
 #                                   # default: current)
 #
-# Output: site-video/site.mp4 plus site-video/frames/ (with manifest.tsv
+# Output: artifacts/site.mp4 plus artifacts/frames/ (with manifest.tsv
 # mapping each frame back to its page path).
 #
 set -euo pipefail
@@ -23,7 +23,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$HERE/../.." && pwd)"
 PORT="${SITE_VIDEO_PORT:-1316}"
 BASE_URL="http://127.0.0.1:${PORT}"
-OUT_DIR="$ROOT/site-video"
+OUT_DIR="$ROOT/artifacts"
 FRAMES_DIR="$OUT_DIR/frames"
 FPS="${VIDEO_FPS:-2}"
 
@@ -31,7 +31,7 @@ usage() {
     cat <<'USAGE'
 osgeo video — record a validation video of the site
 
-  osgeo video                 top of every page → site-video/site.mp4
+  osgeo video                 top of every page → artifacts/site.mp4
   osgeo video --full          scroll through each page top to bottom
   osgeo video --limit N       only the first N pages
   osgeo video --fps N         playback speed (default 2)

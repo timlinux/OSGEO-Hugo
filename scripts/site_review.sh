@@ -7,8 +7,8 @@
 # For every page: view its frames, then mark it [y] pass or [n] fail.
 # Results accumulate in:
 #
-#   site-video/review-passed.txt   pages confirmed OK
-#   site-video/review-failed.txt   pages needing repair (the worklist)
+#   artifacts/review-passed.txt   pages confirmed OK
+#   artifacts/review-failed.txt   pages needing repair (the worklist)
 #
 # Progress is saved after every answer, so you can quit with [q] and
 # resume later — already-reviewed pages are skipped. Options:
@@ -27,10 +27,10 @@ if [[ -z "${OSGEO_HUGO_ROOT:-}" ]]; then
 fi
 cd "$OSGEO_HUGO_ROOT"
 
-FRAMES_DIR="site-video/frames"
+FRAMES_DIR="artifacts/frames"
 MANIFEST="$FRAMES_DIR/manifest.tsv"
-PASSED_FILE="site-video/review-passed.txt"
-FAILED_FILE="site-video/review-failed.txt"
+PASSED_FILE="artifacts/review-passed.txt"
+FAILED_FILE="artifacts/review-failed.txt"
 
 RESTART=0
 FAILED_ONLY=0

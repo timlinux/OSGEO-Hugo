@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   theme; defaults to the `current` theme regardless of any theme
   previously persisted by the site's theme switcher.
 - `osgeo blocks --pdf`: one-slide-per-block gallery deck
-  (`site-video/blocks-deck.pdf`).
+  (`artifacts/blocks-deck.pdf`).
 - Dev-only pages: `content/dev/` renders on the local server only;
   production configs exclude it via a build cascade.
 - Shortcode gallery: `data/shortcodes.json` registry (71 blocks) drives
@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `osgeo review`: interactive terminal review of the screenshots from
   `osgeo video`, rendered with chafa (sixel/kitty capable). Yes/no
   verdict per page with resume support; verdicts accumulate in
-  `site-video/review-passed.txt` and `review-failed.txt` (the repair
+  `artifacts/review-passed.txt` and `review-failed.txt` (the repair
   worklist), with `--restart` and `--failed-only` modes.
 - The Neovim `<leader>p` which-key menu (`.nvim.lua`) now delegates to
   the `osgeo` dispatcher and gained `:Osgeo` (any subcommand, with

@@ -121,7 +121,7 @@ whole page with `--full`. Each frame shows the page's URL path in a
 banner so issues can be reported by path:
 
 ```bash
-osgeo video                 # top of every page → site-video/site.mp4
+osgeo video                 # top of every page → artifacts/site.mp4
 osgeo video --full          # scroll through each page top to bottom
 osgeo video --limit 10      # quick check, first 10 pages only
 osgeo video --fps 4         # faster playback
@@ -130,13 +130,13 @@ osgeo video --theme bold    # capture in a brand-pack theme
                             # (current|refresh|modern|bold|earth|vibrant)
 ```
 
-The frame-to-page mapping is written to `site-video/frames/manifest.tsv`.
+The frame-to-page mapping is written to `artifacts/frames/manifest.tsv`.
 
 After capturing, review every page interactively right in the terminal
 (screenshots rendered with chafa, using sixel/kitty graphics where the
 terminal supports them). Each page gets a yes/no verdict; results
-accumulate in `site-video/review-passed.txt` and
-`site-video/review-failed.txt` — the failed list is your repair
+accumulate in `artifacts/review-passed.txt` and
+`artifacts/review-failed.txt` — the failed list is your repair
 worklist:
 
 ```bash
@@ -160,7 +160,7 @@ content blocks. It drives three things that therefore stay in lockstep:
 - a drift check (`osgeo blocks --check`) that fails when a shortcode
   exists on disk but not in the registry, or vice versa;
 - a presentation deck (`osgeo blocks --pdf`) — one slide per block,
-  written to `site-video/blocks-deck.pdf`.
+  written to `artifacts/blocks-deck.pdf`.
 
 When you add or change a shortcode, update `data/shortcodes.json` and
 run `osgeo blocks`.

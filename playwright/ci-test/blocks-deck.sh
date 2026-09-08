@@ -2,7 +2,7 @@
 #
 # Build the shortcode gallery slide deck: regenerate the gallery page,
 # build and serve the site, capture each block card, and assemble
-# site-video/blocks-deck.pdf. Invoked as `osgeo blocks --pdf`.
+# artifacts/blocks-deck.pdf. Invoked as `osgeo blocks --pdf`.
 #
 set -euo pipefail
 
@@ -58,8 +58,8 @@ for _ in $(seq 1 30); do
 done
 
 echo "📸 Capturing block cards"
-rm -rf "$ROOT/site-video/block-cards"
-BASE_URL="$BASE_URL" CARDS_DIR="$ROOT/site-video/block-cards" node ./blocks-deck.mjs
+rm -rf "$ROOT/artifacts/block-cards"
+BASE_URL="$BASE_URL" CARDS_DIR="$ROOT/artifacts/block-cards" node ./blocks-deck.mjs
 
 echo "📑 Assembling the deck"
 python3 "$ROOT/scripts/make_blocks_deck.py"

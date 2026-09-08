@@ -9,7 +9,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const BASE_URL = process.env.BASE_URL ?? 'http://127.0.0.1:1316';
-const CARDS_DIR = process.env.CARDS_DIR ?? 'site-video/block-cards';
+const CARDS_DIR = process.env.CARDS_DIR ?? 'artifacts/block-cards';
 
 const browser = await chromium.launch(
   process.env.CHROMIUM_PATH

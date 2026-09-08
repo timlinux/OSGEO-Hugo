@@ -17,8 +17,8 @@ from PIL import JpegImagePlugin  # noqa: F401  (register the JPEG codec
 # explicitly: PIL's PDF writer looks it up before lazy plugin init)
 
 ROOT = Path(__file__).resolve().parent.parent
-CARDS_DIR = ROOT / "site-video" / "block-cards"
-OUTPUT = ROOT / "site-video" / "blocks-deck.pdf"
+CARDS_DIR = ROOT / "artifacts" / "block-cards"
+OUTPUT = ROOT / "artifacts" / "blocks-deck.pdf"
 REGISTRY = ROOT / "data" / "shortcodes.json"
 
 SLIDE_W, SLIDE_H = 1920, 1080

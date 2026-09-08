@@ -6,7 +6,7 @@
 //
 // Environment:
 //   BASE_URL         server to crawl        (default http://127.0.0.1:1316)
-//   FRAMES_DIR       output directory       (default site-video/frames)
+//   FRAMES_DIR       output directory       (default artifacts/frames)
 //   VIDEO_MAX_STEPS  max scroll frames/page, 0 = full page (default 1:
 //                    top of page only; use --full in site-video.sh for
 //                    the whole page)
@@ -19,7 +19,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const BASE_URL = process.env.BASE_URL ?? 'http://127.0.0.1:1316';
-const FRAMES_DIR = process.env.FRAMES_DIR ?? 'site-video/frames';
+const FRAMES_DIR = process.env.FRAMES_DIR ?? 'artifacts/frames';
 const MAX_STEPS = Math.max(0, Number(process.env.VIDEO_MAX_STEPS ?? 1));
 const LIMIT = Number(process.env.VIDEO_LIMIT ?? 0);
 const THEME = process.env.VIDEO_THEME ?? 'current';

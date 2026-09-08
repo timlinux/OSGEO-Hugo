@@ -127,7 +127,7 @@ Usage:
   osgeo blocks           regenerate content/dev/blocks/index.md and
                          report registry/file drift
   osgeo blocks --check   drift report only; exit 1 on drift (for CI)
-  osgeo blocks --pdf     build the slide deck (site-video/blocks-deck.pdf)
+  osgeo blocks --pdf     build the slide deck (artifacts/blocks-deck.pdf)
   osgeo blocks --help    show this help
 """
 
