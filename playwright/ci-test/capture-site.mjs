@@ -115,7 +115,9 @@ for (const [index, pagePath] of paths.entries()) {
   const steps = MAX_STEPS > 0 ? Math.min(MAX_STEPS, needed) : needed;
 
   for (let step = 0; step < steps; step += 1) {
-    const y = step === steps - 1 ? scrollHeight : step * HEIGHT;
+    // Single-frame pages capture the top; multi-frame pages end on the
+    // page bottom so the full height is covered.
+    const y = step === 0 ? 0 : step === steps - 1 ? scrollHeight : step * HEIGHT;
     await page.evaluate((top) => window.scrollTo(0, top), y);
     await page.waitForTimeout(150);
     const file = join(FRAMES_DIR, `frame_${String(frame).padStart(6, '0')}.png`);
