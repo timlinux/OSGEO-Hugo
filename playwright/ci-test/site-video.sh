@@ -49,6 +49,26 @@ for tool in hugo node ffmpeg; do
     fi
 done
 
+# Resolve a browser for the capture. Preference order: an explicit
+# CHROMIUM_PATH, a playwright browser bundle (PLAYWRIGHT_BROWSERS_PATH
+# or ~/.cache/ms-playwright), else fall back to a system chromium so
+# `osgeo video` works out of the box (the flake dev shell provides one).
+if [[ -z "${CHROMIUM_PATH:-}" && -z "${PLAYWRIGHT_BROWSERS_PATH:-}" ]]; then
+    for candidate in chromium chromium-browser google-chrome-stable google-chrome; do
+        if command -v "$candidate" >/dev/null 2>&1; then
+            CHROMIUM_PATH="$(command -v "$candidate")"
+            export CHROMIUM_PATH
+            echo "🧭 Using system browser: $CHROMIUM_PATH"
+            break
+        fi
+    done
+    if [[ -z "${CHROMIUM_PATH:-}" ]]; then
+        echo "❌ No browser found. Enter 'nix develop' (provides chromium)," >&2
+        echo "   or run 'npx playwright install chromium' in playwright/ci-test." >&2
+        exit 1
+    fi
+fi
+
 echo "🏗️  Building the site for ${BASE_URL}"
 ( cd "$ROOT" && rm -f .hugo_build.lock && hugo --gc --config ./config.toml -b "$BASE_URL" --quiet )
 

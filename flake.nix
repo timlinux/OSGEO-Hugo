@@ -83,6 +83,9 @@
             pkgs.ffmpeg # osgeo video frame stitching
             pkgs.curl # server readiness probe in site-video.sh
             pkgs.chafa # osgeo review terminal image rendering
+          ]
+          ++ nixpkgs.lib.optionals pkgs.stdenv.isLinux [
+            pkgs.chromium # osgeo video screenshot capture (linux only)
           ];
           text = ''
             if [[ -z "''${OSGEO_HUGO_ROOT:-}" ]]; then
@@ -265,6 +268,9 @@
               ffmpeg # osgeo video frame stitching
               chafa # osgeo review terminal image rendering
             ])
+            ++ nixpkgs.lib.optionals pkgs.stdenv.isLinux [
+              pkgs.chromium # osgeo video screenshot capture (linux only)
+            ]
             ++ [
               osgeoFor.${system} # `osgeo` project command dispatcher
             ];
