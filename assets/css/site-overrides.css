@@ -476,3 +476,15 @@ section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number .stat-plus {
 .has-text-white strong {
   color: inherit;
 }
+
+/* Section list pages: clear the fixed navbar like article pages do,
+   and render the page heading at a calmer header scale. */
+.list-body.has-no-hero {
+  padding-top: 6rem;
+}
+
+.list-body h1.title {
+  font-size: 1.75rem;
+  color: var(--osgeo-teal);
+  margin-bottom: 1.5rem;
+}

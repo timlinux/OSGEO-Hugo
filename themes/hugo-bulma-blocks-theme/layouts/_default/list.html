@@ -3,7 +3,7 @@
 {{ partial "submenu.html" . }}
 {{ partial "banner.html" . }}
 
-<section>
+<section class="section list-body{{ if not (or .Params.HasBanner .Params.HasDownloadBanner) }} has-no-hero{{ end }}">
     <div class="container content">
         {{/* Get the title in the _index.md frontmatter in the parent folder */}}
         <div class="columns is-multiline is-centered">
