@@ -30,10 +30,17 @@ Please subscribe at <https://lists.osgeo.org/mailman/listinfo/board>
 
 ## Postal address
 
+OSGeo at present has two legal entities.
+
 OSGeo  
 9450 SW Gemini Dr. #42523  
 Beaverton, Oregon 97008  
 United States
+
+Stichting OSGeo  
+Veenderweg 13  
+6721 WD Bennekom  
+The Netherlands
 
 ## Info Address
 
@@ -48,7 +55,7 @@ If you don’t have a question about an OSGeo Software project, you can complete
 
 ### Contact
 
-  * Instagram
+  * URL
 
 This field is for validation purposes and should be left unchanged.
 
@@ -68,4 +75,6 @@ This field is for validation purposes and should be left unchanged.
 
   * Message*
 
-  *
+  * 
+
+Send message

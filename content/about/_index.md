@@ -10,7 +10,12 @@ The foundation provides financial, organizational and legal support to the broad
 
 The foundation’s projects are all freely available and useable under an [Open Source Initiative](<http://www.opensource.org/licenses/>) certified open source license.
 
-OSGeo has [US 501(c)(4)](<https://en.wikipedia.org/wiki/501(c)_organization#501.28c.29.284.29>) legal status as a not-for-profit organization, supported by GeoCat and other [sponsors](</sponsors/>).
+OSGeo at present has two legal entities.
+
+  1. **Open Source Geospatial Foundation**  
+(EIN: 72-1613215) has a legal status as a not-for-profit organization in the United States.
+  2. **Stichting Open Source Geospatial Foundation**  
+(Dutch CoC/KvK: 42123017 ) is the recently established non-profit legal entity registered in The Netherlands. ANBI status has been requested for this entity and is currently under review.
 
 ## OSGeo Vision
 
@@ -45,10 +50,19 @@ The following aspirational goals support the overall mission. As a foundation we
 
 **Governance**
 
+OSGeo (US)
+
   * [Certificate of Incorporation](</wp-content/uploads/osgeo_certificate.pdf>) (pdf)
   * [Bylaws](</about/bylaws/>)
   * [Code of Conduct](</code_of_conduct/>)
+  * [Tax filings by year](<https://projects.propublica.org/nonprofits/organizations/721613215>)
   * [Board Meeting Archives](<https://wiki.osgeo.org/wiki/Board_of_Directors#Board_Activities_and_Meetings>)
+
+Stichting OSGeo (NL)
+
+  * Certificate of Incorporation available upon request
+  * [Bylaws](<https://www.osgeo.org/about/bylaws-stichting-osgeo/>)
+  * Tax filings by year (not available yet)
 
 **Bodies**
 

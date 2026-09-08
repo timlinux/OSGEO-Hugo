@@ -18,24 +18,27 @@ With a robust schedule of keynote speakers, workshops, paper sessions and talks,
 
 If you cannot make it to our global conference many regions and countries host smaller FOSS4G events, reach out to your [local chapter](</about/local-organizations/>) or visit our [Events](<https://www.osgeo.org/events/>) page.
 
-# FOSS4G 2025
+# FOSS4G Hiroshima 2026, Japan
 
-We are excited to welcome everyone to **FOSS4G 2025 in Auckland, New Zealand, from 17–23 November**
+We are excited to welcome everyone to **FOSS4G 2026 in Hiroshima, Japan, from 30 August–5 September 2026**
 
-This year’s conference offers a unique opportunity for both newcomers and regular attendees to immerse themselves in the world of open geospatial. Participants can make friends, meet some heroes, explore a diverse selection of presentations and hands-on workshops, and celebrate the things we do with open geospatial.
+Geospatial technology empowers communities to address real-world challenges such as disaster response, urban planning, and environmental resilience.
 
-With plenty of opportunities and a variety of social events, FOSS4G 2025 is the perfect occasion to experience the fun and collaborative spirit of open source! And Aotearoa/New Zealand is a wonderful country in the South Pacific with heaps of stuff to do before or after the conference, so bring the family and call it a holiday/vacation!
+At FOSS4G Hiroshima 2026, we will further highlight the humanitarian applications of open-source geospatial technologies — from supporting refugees to preserving cultural memory.
 
-The event is proudly supported by Auckland University of Technology’s School of Future Environments and will be held at the AUT City Campus in the heart of Auckland. This central location is just minutes from the business district, offering excellent public transport links and a wide range of accommodation options.
+As a “City of Peace and Reconstruction”, Hiroshima is an ideal place to explore how technology can foster empathy, inclusion, and international collaboration.
 
-For event details, visit the [official website](<https://2025.foss4g.org/>), and be sure to [sign up for the newsletter](<https://mailchi.mp/foss4g/mailing-list>) so you don’t miss any FOSS4G updates. See you there!
+And of course, we invite you to enjoy Hiroshima’s unique culture and delicious cuisine to the fullest!
 
-![FOSS4G Auckland 2025 Logo](https://www.osgeo.org/wp-content/uploads/Full-colour-205x250.png)
+For event details, visit the [official website](<https://2026.foss4g.org/>), and be sure to [sign up for the newsletter](<https://mailchi.mp/foss4g/mailing-list>) so you don’t miss any FOSS4G updates. See you there!
+
+![](https://www.osgeo.org/wp-content/uploads/foss4g2026logo740x412_740x412_acf_cropped-370x206.png)
 
 # Past Global Events
 
 Each FOSS4G website is a wealth of presentations, videos and information capturing the best and brightest open source activity for the year.
 
+  *   * [FOSS4G 2025 Auckland](<https://2025.foss4g.org>) (New Zealand)
   * [FOSS4G 2024 Bélem](<https://www.osgeo.org/events/foss4g-2024/>) (Brazil)
   * [FOSS4G 2023 Prizren](<https://www.osgeo.org/events/foss4g-2023/>) (Kosovo) [Videos](<https://av.tib.eu/series/1671/foss4g+prizren+kosovo+2023>)
   * [FOSS4G 2022 Firenze](<https://2022.foss4g.org/>) (Italy) [Videos](<https://www.youtube.com/playlist?list=PLqa06jy1NEM0ec9WH0cV4eDoSyHhLyQ7d>)
