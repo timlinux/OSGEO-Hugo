@@ -4,7 +4,7 @@
 {{ partial "contextmenu.html" . }}
 {{ partial "banner.html" . }}
 <section class="section">
-    <div class="container content">
+    <div class="container content article-body{{ if not (or .Params.HasBanner .Params.HasDownloadBanner) }} has-no-hero{{ end }}">
         {{ .Content }}
     </div>
 </section>

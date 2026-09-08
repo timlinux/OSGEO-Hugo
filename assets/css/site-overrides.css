@@ -401,3 +401,25 @@ section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number .stat-plus {
 .cta-section p {
   color: rgba(255, 255, 255, 0.88);
 }
+
+/* Prose pages (_default/single.html): keep bare body copy in a
+   comfortable centred reading column; shortcode layout blocks (divs)
+   keep the full container width. */
+.article-body > p,
+.article-body > h1, .article-body > h2, .article-body > h3,
+.article-body > h4, .article-body > h5, .article-body > h6,
+.article-body > ul, .article-body > ol,
+.article-body > blockquote, .article-body > table,
+.article-body > figure, .article-body > pre,
+.article-body > hr {
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Pages without a hero start directly under the fixed ribbon+navbar
+   (~120px tall); Bulma's default has-navbar-fixed-top offset is only
+   3.25rem, which left the page top hidden underneath. */
+.article-body.has-no-hero {
+  padding-top: 6rem;
+}
