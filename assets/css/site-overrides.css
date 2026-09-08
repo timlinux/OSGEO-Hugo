@@ -436,3 +436,37 @@ section.osgeo-hero .hero-stats-grid .hero-stat-card .stat-number .stat-plus {
 .column .section-header .section-title {
   font-size: clamp(1.5rem, 3vw, 2rem);
 }
+
+/* =============================================
+   UNIFIED CORNER RADIUS
+   ============================================= */
+/* Buttons and badge pills share the box radius (corner-radius = 4px)
+   so cards, buttons and pills read as one system. !important beats the
+   theme's pill radii and Bulma's is-rounded helper. Deliberately NOT
+   applied to circular icon controls (ribbon close, navbar burger,
+   social icons), which are not .button elements. */
+.button,
+.section-header-badge,
+.project-tag,
+.tag {
+  border-radius: 4px !important;
+}
+
+/* Badges must not look like buttons: strip the pill chrome so they
+   read as small uppercase eyebrow labels (icon + text), clearly
+   non-interactive, while buttons keep their solid 4px look. */
+.section-header-badge {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  animation: none !important;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.cta-section .section-header-badge,
+.section-header.is-dark .section-header-badge {
+  background: none !important;
+  border: none !important;
+}
